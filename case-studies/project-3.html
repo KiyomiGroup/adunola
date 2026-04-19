@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safari City Case Study — Adunola Babadiya</title>
+  <title>Safari City Case Study Adunola Babadiya</title>
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
   <div class="page-overlay" id="pageOverlay"></div>
 
   <div class="system-map" id="systemMap">
-    <button class="map-close" id="mapClose">✕ Close</button>
+    <button class="map-close" id="mapClose">x Close</button>
     <div class="map-title">Design System</div>
     <div class="map-subtitle">Click any world to explore</div>
     <div class="map-nodes">
@@ -23,17 +23,17 @@
       <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
       <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
       <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
-      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Lab</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
     </div>
     <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
   </div>
 
   <nav class="world-nav" id="mainNav">
     <div class="world-nav-left">
-      <a class="world-back" href="../index.html">← Back to Main</a>
+      <a class="world-back" href="../index.html">Back to Main</a>
       <span class="world-name">Case Study</span>
     </div>
-    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
   </nav>
 
   <section class="case-study-hero">
@@ -54,8 +54,8 @@
 
     <div class="cs-section reveal">
       <h2>Project Overview</h2>
-      <p>Maliyo Games is one of Africa's leading mobile gaming studios — creating games that celebrate African culture, characters, and stories. Safari City is one of their flagship titles: a city-building mobile game set in an African urban environment.</p>
-      <p>My role as Game UI Designer was to redesign and enhance the game's UI system — including the HUD (heads-up display), menus, icon system, and in-game interface components — with a focus on clarity, visual quality, and African aesthetic identity.</p>
+      <p>Maliyo Games is one of Africa's leading mobile gaming studios creating games that celebrate African culture, characters, and stories. Safari City is one of their flagship titles: a city-building mobile game set in an African urban environment.</p>
+      <p>My role as Game UI Designer was to redesign and enhance the game's UI system including the HUD (heads-up display), menus, icon system, and in-game interface components with a focus on clarity, visual quality, and African aesthetic identity.</p>
     </div>
 
     <div class="cs-highlight reveal">
@@ -66,19 +66,19 @@
       <h2>Problem Statement</h2>
       <p>The existing Safari City UI was functional but had several areas that needed improvement to match the visual quality and polish expected by modern mobile game audiences:</p>
       <ul>
-        <li>Icon system lacked visual consistency — different weights, styles, and levels of detail across the set</li>
+        <li>Icon system lacked visual consistency different weights, styles, and levels of detail across the set</li>
         <li>HUD elements were not optimised for different screen sizes and aspect ratios</li>
         <li>Menu flows had unnecessary steps and unclear visual hierarchy</li>
         <li>The African visual identity in the game world wasn't being reflected consistently in the UI layer</li>
-        <li>Some screens felt cluttered — too many elements competing for visual attention</li>
+        <li>Some screens felt cluttered too many elements competing for visual attention</li>
       </ul>
     </div>
 
     <div class="cs-section reveal">
-      <h2>User Flow — Game UI Screens</h2>
+      <h2>User Flow Game UI Screens</h2>
       <div class="cs-flow">
         <pre>
-SAFARI CITY — UI SCREEN HIERARCHY
+SAFARI CITY UI SCREEN HIERARCHY
 
 [Splash / Loading Screen]
          |
@@ -88,7 +88,7 @@ SAFARI CITY — UI SCREEN HIERARCHY
     ├── Achievements
     └── Settings
          |
-[City View — Core Gameplay]
+[City View Core Gameplay]
     ├── HUD (top bar): Currency / Coins / Population
     ├── Build Menu (bottom): Category tabs + items
     ├── Selected Building Info Panel
@@ -117,37 +117,37 @@ ICON CATEGORIES REDESIGNED:
     <div class="cs-section reveal">
       <h2>Design Process</h2>
       <p><strong>Phase 1: Audit & Style Reference</strong></p>
-      <p>I began by auditing all existing UI elements — documenting inconsistencies in icon style, spacing, colour usage, and layout behaviour across screen sizes. I also studied reference games in the city-builder genre alongside African art and design references to establish a visual direction that felt both competitive and distinctly Maliyo.</p>
+      <p>I began by auditing all existing UI elements documenting inconsistencies in icon style, spacing, colour usage, and layout behaviour across screen sizes. I also studied reference games in the city-builder genre alongside African art and design references to establish a visual direction that felt both competitive and distinctly Maliyo.</p>
       <p><strong>Phase 2: Icon System Redesign</strong></p>
       <p>The icon system was the foundational design work. I established a consistent visual style: slightly rounded corners, a unified stroke weight, 2px optical corrections for small sizes, and a colour palette that pulled from the game's world palette (warm ochres, deep greens, earthy reds).</p>
-      <p>Icons were designed at 4 sizes: 16px, 24px, 32px, 48px — with specific optical adjustments at each size rather than simply scaling.</p>
+      <p>Icons were designed at 4 sizes: 16px, 24px, 32px, 48px with specific optical adjustments at each size rather than simply scaling.</p>
       <p><strong>Phase 3: HUD Redesign</strong></p>
-      <p>The top-bar HUD was simplified — removing low-priority elements and creating clear visual hierarchy between primary resources (coins, gems) and secondary indicators. Backgrounds were refined with subtle African-pattern-inspired textures that add personality without distracting from gameplay.</p>
+      <p>The top-bar HUD was simplified removing low-priority elements and creating clear visual hierarchy between primary resources (coins, gems) and secondary indicators. Backgrounds were refined with subtle African-pattern-inspired textures that add personality without distracting from gameplay.</p>
       <p><strong>Phase 4: Menu Flows</strong></p>
-      <p>The Store and Build Menu flows were reworked for clarity — reducing the number of taps required for common actions and implementing a consistent tab system with clear active states.</p>
+      <p>The Store and Build Menu flows were reworked for clarity reducing the number of taps required for common actions and implementing a consistent tab system with clear active states.</p>
     </div>
 
     <div class="cs-section reveal">
       <h2>Visual Design Decisions</h2>
       <ul>
-        <li><strong>Colour palette:</strong> Warm golds, earthy ochres, and deep greens — grounded in African landscape colours while maintaining contrast for legibility</li>
+        <li><strong>Colour palette:</strong> Warm golds, earthy ochres, and deep greens grounded in African landscape colours while maintaining contrast for legibility</li>
         <li><strong>Typography:</strong> Rounded, bold display font for values and numbers; clean sans-serif for labels and descriptions</li>
-        <li><strong>Texture:</strong> Subtle woven/pattern overlays on panels — inspired by Kente and Adire textile patterns — adding cultural texture without visual noise</li>
+        <li><strong>Texture:</strong> Subtle woven/pattern overlays on panels inspired by Kente and Adire textile patterns adding cultural texture without visual noise</li>
         <li><strong>Animation intent:</strong> Documented micro-animation specs for icon feedback (tap, unlock, collect) for developer implementation</li>
-        <li><strong>Dark mode:</strong> All screens designed for dark UI — more immersive, better battery on OLED, and consistent with genre conventions</li>
+        <li><strong>Dark mode:</strong> All screens designed for dark UI more immersive, better battery on OLED, and consistent with genre conventions</li>
       </ul>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Wireframe Breakdown — HUD Layout</h2>
+      <h2>Wireframe Breakdown HUD Layout</h2>
       <div class="cs-flow">
         <pre>
-SAFARI CITY — HUD STRUCTURE
+SAFARI CITY HUD STRUCTURE
 
 BEFORE (Old Layout):
 ┌─────────────────────────────────────────┐
 │ [💰 Coins] [💎 Gems] [🌲 Wood] [🏠 Pop] [⚡ Energy] [⏰ Timer] │
-│ (Overloaded — 6 elements competing)                           │
+│ (Overloaded 6 elements competing)                           │
 └─────────────────────────────────────────┘
 
 AFTER (Redesigned):
@@ -159,7 +159,7 @@ AFTER (Redesigned):
 │ [⚡ Energy: ████░░] [🌲 Wood: 120]     │  ← Secondary (smaller)
 └─────────────┬──────────────────────────┘
               │
-         [Build Menu — Bottom Sheet]
+         [Build Menu Bottom Sheet]
          [🏠 Homes] [🏢 Business] [🌿 Parks] [⚙️ Civic]
 
 KEY PRINCIPLE: Primary resources always visible.
@@ -193,9 +193,9 @@ Build menu accessible without hiding gameplay.
 
     <div class="cs-section reveal">
       <h2>Design Reasoning & Reflection</h2>
-      <p>Game UI design is a discipline that rewards restraint. Every pixel is competing with the actual game — the world, the characters, the action. The best game UI is invisible until you need it, and satisfying when you interact with it.</p>
-      <p>Working on Safari City deepened my appreciation for icon design as a standalone craft — it requires both illustration skills and systematic thinking. The constraint of designing at small sizes forces clarity of concept: if an icon doesn't read at 16px, the concept isn't strong enough.</p>
-      <p>The most rewarding part of this project was finding ways to embed African cultural references into the UI without making them feel forced or decorative — the best moments were when the cultural identity emerged naturally from the design logic itself.</p>
+      <p>Game UI design is a discipline that rewards restraint. Every pixel is competing with the actual game the world, the characters, the action. The best game UI is invisible until you need it, and satisfying when you interact with it.</p>
+      <p>Working on Safari City deepened my appreciation for icon design as a standalone craft it requires both illustration skills and systematic thinking. The constraint of designing at small sizes forces clarity of concept: if an icon doesn't read at 16px, the concept isn't strong enough.</p>
+      <p>The most rewarding part of this project was finding ways to embed African cultural references into the UI without making them feel forced or decorative the best moments were when the cultural identity emerged naturally from the design logic itself.</p>
     </div>
 
   </div>
@@ -205,12 +205,12 @@ Build menu accessible without hiding gameplay.
     <div class="cs-next-grid">
       <div class="cs-next-card" onclick="navigateTo('project-1.html')">
         <span class="card-tag">UI/UX · Mobile Redesign</span>
-        <h4>Vitsetech — Mobile Responsiveness</h4>
+        <h4>Vitsetech Mobile Responsiveness</h4>
         <p>Auditing and redesigning mobile responsiveness for a live tech website.</p>
       </div>
       <div class="cs-next-card" onclick="navigateTo('project-2.html')">
         <span class="card-tag">Product Design · Mobile App</span>
-        <h4>Lifemap Naija — Wellness App</h4>
+        <h4>Lifemap Naija Wellness App</h4>
         <p>Full app design for a mental wellness and passion-discovery platform.</p>
       </div>
     </div>

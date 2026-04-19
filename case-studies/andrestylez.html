@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AndreStylez Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cs-accent: #e8a84c; }
+    .cs-hero-visual {
+      width: 100%; aspect-ratio: 16/7;
+      background: linear-gradient(135deg, #2a1508 0%, #1a0e04 60%, #110a02 100%);
+      border-radius: 4px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; margin: 40px 0;
+    }
+    .vibe-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,168,76,0.1); border: 1px solid rgba(232,168,76,0.25);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #e8a84c; margin-bottom: 20px;
+    }
+    .tool-pill {
+      display: inline-block;
+      background: rgba(232,168,76,0.08); border: 1px solid rgba(232,168,76,0.2);
+      color: #e8a84c; padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.06em; margin: 3px;
+    }
+    .live-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: #e8a84c; color: #1a0e04;
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .live-link-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body data-page="case-study">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">x Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <div class="vibe-badge">Vibe Coding Project</div>
+    <span class="section-tag reveal">Fashion · E-Commerce · Brand Identity</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      AndreStylez<br/>Fashion Brand Website
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Type</label><span>Vibe Coding / AI Development</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Designer and Builder</span></div>
+      <div class="cs-meta-item"><label>Tools Used</label><span>Claude, Cursor, HTML/CSS/JS</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
+      <div class="cs-meta-item"><label>URL</label><span><a href="https://andrestylez.com" target="_blank" style="color:var(--accent);">andrestylez.com</a></span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-hero-visual reveal">
+      <div style="text-align:center;z-index:1;">
+        <div style="font-family:var(--font-display);font-size:clamp(40px,7vw,100px);font-weight:300;color:#e8a84c;letter-spacing:0.08em;line-height:1;">ANDRE STYLEZ</div>
+        <div style="font-size:13px;color:rgba(232,168,76,0.55);margin-top:14px;letter-spacing:0.2em;text-transform:uppercase;">Fashion. Identity. Culture.</div>
+        <div style="margin-top:20px;display:flex;gap:16px;justify-content:center;">
+          <span style="background:#e8a84c;color:#1a0e04;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Shop Now</span>
+          <span style="border:1px solid rgba(232,168,76,0.4);color:#e8a84c;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Our Story</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>AndreStylez is a fashion brand with a strong personal identity and a growing audience. The brief was simple but had high stakes: build a website that captures the boldness of the brand without looking like another template fashion site. Every other fashion website in this space looks the same. AndreStylez needed to be different from the first second.</p>
+      <p style="margin-top:14px;">This was a vibe coding project, meaning the entire site was built using AI tools rather than traditional manual development. The design vision was mine. The AI handled the translation of that vision into code at a speed that would not have been possible otherwise.</p>
+      <div style="margin-top:24px;">
+        <div class="tool-pill">Claude AI</div>
+        <div class="tool-pill">Cursor</div>
+        <div class="tool-pill">HTML/CSS</div>
+        <div class="tool-pill">JavaScript</div>
+        <div class="tool-pill">Deployed Live</div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "Fashion brands live and die by first impressions. The website had to communicate the brand's personality before the visitor even read a single word."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The Brief</h2>
+      <p>Andre needed a web presence that matched the confidence of the brand. The existing social media presence had strong energy but there was no central home for the brand online. Without a website, the brand looked informal regardless of how good the actual product was. A strong online presence was the missing piece.</p>
+      <p style="margin-top:14px;">Key requirements were a bold visual identity, product showcase capability, a clear way for customers to get in touch or shop, and a mobile experience that worked just as well as desktop because most of the audience browses on their phones.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design Approach</h2>
+      <p>The color palette pulled from the brand's existing visual language. A deep amber gold as the primary accent against a rich near-black background creates the feeling of luxury without being cold or corporate. Fashion brands need warmth even when they are being bold.</p>
+      <p style="margin-top:14px;">Typography choice was deliberate. Large display type that announces rather than whispers. Space between elements so nothing feels cluttered. Product images given room to breathe. The entire composition is designed to make whoever is wearing the clothes look like the hero.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User Flow</h2>
+      <pre class="cs-flow">
+VISITOR JOURNEY
+User lands on homepage
+  → Bold hero with brand name and tagline
+    → Scrolls into featured collection
+      → Clicks product to view details
+        → Sees image, description, sizing
+          → Clicks to shop or contact
+            → Redirected to order channel
+
+MOBILE FLOW (Primary)
+Homepage loads on phone
+  → Hero image fills screen
+    → Single CTA button visible immediately
+      → Tap into collections
+        → Scroll product grid
+          → Quick contact via WhatsApp or DM
+      </pre>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Vibe Coding Process</h2>
+      <p>The build started with a detailed prompt to Claude describing the brand personality, the desired visual tone and the key pages needed. Claude generated the foundational structure which I then refined in Cursor, steering the AI to adjust specific visual decisions, fix spacing, and get the hover interactions right.</p>
+      <p style="margin-top:14px;">What would typically involve back and forth with a developer over days happened in a single afternoon. The final site went live the same day we started. That kind of speed changes what is possible when you are building for clients or for your own projects.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Outcome</h2>
+      <p>The AndreStylez website is live and serves as the brand's central online presence. It demonstrates how a fashion brand can get a premium feeling web presence without the premium agency price tag, using vibe coding as the bridge between vision and execution.</p>
+      <div style="margin-top:28px;">
+        <a href="https://andrestylez.com" target="_blank" class="live-link-btn">View Live Site</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <div class="cs-next-label">More Projects</div>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('streettasker.html')">
+        <span class="cs-next-tag">Vibe Coding · Gig Economy</span>
+        <h4>StreetTasker</h4>
+        <p>Gig economy platform built with AI</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('swappy.html')">
+        <span class="cs-next-tag">Vibe Coding · Marketplace</span>
+        <h4>Swappy</h4>
+        <p>Peer to peer trading platform</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

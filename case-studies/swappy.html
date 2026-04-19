@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swappy Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cs-accent: #4caf82; }
+    .vibe-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(76,175,130,0.1); border: 1px solid rgba(76,175,130,0.25);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #4caf82; margin-bottom: 20px;
+    }
+    .tool-pill {
+      display: inline-block;
+      background: rgba(76,175,130,0.08); border: 1px solid rgba(76,175,130,0.2);
+      color: #4caf82; padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.06em; margin: 3px;
+    }
+    .live-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: #4caf82; color: #0c1c11;
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .live-link-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body data-page="case-study">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">x Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <div class="vibe-badge">Vibe Coding Project</div>
+    <span class="section-tag reveal">Marketplace · Peer to Peer · Trade Platform</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      Swappy<br/>Peer to Peer Trading Platform
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Type</label><span>Vibe Coding / AI Development</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Designer and Builder</span></div>
+      <div class="cs-meta-item"><label>Tools Used</label><span>Claude, GitHub Pages, HTML/CSS/JS</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
+      <div class="cs-meta-item"><label>URL</label><span><a href="https://kiyomigroup.github.io/Swappy/" target="_blank" style="color:var(--accent);">kiyomigroup.github.io/Swappy</a></span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>Swappy is a peer to peer trading platform designed to make it easy for people to exchange goods and services without money changing hands. The concept taps into something that has always existed informally, the idea of swapping what you have for what you need, and brings it into a structured, trustworthy digital space.</p>
+      <p style="margin-top:14px;">Nigeria has a deeply ingrained culture of trading and exchange. Markets, informal networks and WhatsApp groups already do a version of this every day. Swappy gives that behavior a proper home with a UI designed to make listings easy, browsing intuitive and communication between traders direct.</p>
+      <div style="margin-top:24px;">
+        <div class="tool-pill">Claude AI</div>
+        <div class="tool-pill">HTML/CSS/JS</div>
+        <div class="tool-pill">GitHub Pages</div>
+        <div class="tool-pill">Responsive Design</div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "The hardest part of peer to peer platforms is not the technology. It is building enough trust that a stranger feels comfortable trading with another stranger."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The Problem</h2>
+      <p>Informal swapping and trading already happens constantly but with zero structure. People post in WhatsApp groups, get ignored, post again, get one reply, spend time negotiating with no clear format, and sometimes get scammed. The friction is real and it prevents the behavior from reaching its potential.</p>
+      <p style="margin-top:14px;">A proper platform solves this by giving both sides a structured way to list what they have, browse what they want, and initiate contact with a shared understanding of what the exchange involves.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User Flow</h2>
+      <pre class="cs-flow">
+LISTING FLOW
+User lands on homepage
+  → Clicks "List an Item"
+    → Fills in item name, condition, category
+      → Describes what they want in exchange
+        → Adds photo (optional)
+          → Listing goes live
+
+BROWSING FLOW
+User lands on homepage
+  → Browses listing categories
+    → Clicks into a listing
+      → Reads item details and desired swap
+        → Clicks "I Have This" to propose exchange
+          → Trader receives notification
+            → They connect to arrange the swap
+      </pre>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Trust and Safety Design</h2>
+      <p>Trust signals were baked into the design from the start. Listings show how long an item has been posted, the category it belongs to, and a clear condition rating. These small details help browsers quickly assess whether a swap is worth pursuing. Nothing fancy, but everything deliberate.</p>
+      <p style="margin-top:14px;">The contact flow is designed to keep communication on platform as long as possible. Direct messages stay visible so both parties have a record of what was agreed, reducing the chance of misunderstanding or dispute.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Vibe Coding Process</h2>
+      <p>Swappy was built using Claude as the primary coding partner. I described the functionality in detail and Claude generated the structure. I then refined it through iterative prompting, adjusting the visual design, tightening the layout and fixing edge cases as they appeared.</p>
+      <p style="margin-top:14px;">The marketplace listing logic, including filtering by category, sorting by recency and the swap proposal interface, was all generated through conversation with the AI. I reviewed, tested and shaped every piece, but the velocity was entirely different from traditional development.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Outcome</h2>
+      <p>Swappy is live on GitHub Pages. It is a functional proof of concept for a peer to peer trading platform built entirely through vibe coding. The speed of execution and the quality of the result demonstrate what becomes possible when design thinking is combined with AI development tools.</p>
+      <div style="margin-top:28px;">
+        <a href="https://kiyomigroup.github.io/Swappy/" target="_blank" class="live-link-btn">View Live Site</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <div class="cs-next-label">More Projects</div>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('streettasker.html')">
+        <span class="cs-next-tag">Vibe Coding · Gig Economy</span>
+        <h4>StreetTasker</h4>
+        <p>Task and gig economy platform</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('andrestylez.html')">
+        <span class="cs-next-tag">Vibe Coding · Fashion</span>
+        <h4>AndreStylez</h4>
+        <p>Fashion brand website</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

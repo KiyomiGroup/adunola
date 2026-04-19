@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailor CV Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cs-accent: #d4a843; }
+    .vibe-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(212,168,67,0.1); border: 1px solid rgba(212,168,67,0.25);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #d4a843; margin-bottom: 20px;
+    }
+    .tool-pill {
+      display: inline-block;
+      background: rgba(212,168,67,0.08); border: 1px solid rgba(212,168,67,0.2);
+      color: #d4a843; padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.06em; margin: 3px;
+    }
+    .live-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: #d4a843; color: #1a1406;
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .live-link-btn:hover { opacity: 0.85; }
+    .how-it-works-steps {
+      counter-reset: steps;
+      margin: 24px 0;
+    }
+    .how-it-works-step {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .how-it-works-step:last-child { border-bottom: none; }
+    .step-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(212,168,67,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 12px;
+      color: #d4a843;
+    }
+    .step-content h5 {
+      font-family: var(--font-display); font-size: 18px;
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .step-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+  </style>
+</head>
+<body data-page="case-study">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">x Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <div class="vibe-badge">Vibe Coding Project</div>
+    <span class="section-tag reveal">Career Tech · AI Tool · Resume Matching</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      Tailor CV<br/>AI Powered Resume Matching
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Type</label><span>Vibe Coding / AI Development</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Designer and Builder</span></div>
+      <div class="cs-meta-item"><label>Tools Used</label><span>Claude, GitHub Pages, HTML/CSS/JS</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
+      <div class="cs-meta-item"><label>URL</label><span><a href="https://kiyomigroup.github.io/tailor-cv/" target="_blank" style="color:var(--accent);">kiyomigroup.github.io/tailor-cv</a></span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>Tailor CV is a tool that solves one of the most frustrating parts of job hunting: the mismatch between what a job description asks for and what a generic CV says. Every recruiter will tell you that tailored applications perform dramatically better than generic ones. But most job seekers do not have the time or confidence to rewrite their CV for every single application.</p>
+      <p style="margin-top:14px;">Tailor CV bridges that gap. Paste in the job description, paste in your current CV, and the tool analyzes the match and suggests specific improvements. It is the kind of tool that turns a frustrating, time consuming process into something that takes five minutes.</p>
+      <div style="margin-top:24px;">
+        <div class="tool-pill">Claude AI</div>
+        <div class="tool-pill">HTML/CSS/JS</div>
+        <div class="tool-pill">GitHub Pages</div>
+        <div class="tool-pill">Text Analysis UI</div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "Sending the same CV to a hundred jobs is not job hunting. It is noise. Tailor CV helps you actually be heard."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The Problem</h2>
+      <p>Applicant tracking systems reject a huge portion of CVs before a human ever reads them, simply because the language in the CV does not match the keywords in the job description. This is a known problem in the hiring industry but most job seekers have no practical way to address it without spending significant time manually reworking their documents for every application.</p>
+      <p style="margin-top:14px;">The result is that talented people get filtered out not because they are underqualified but because their CV was not written in the right language for that specific role. Tailor CV was designed to fix that at scale, for free, using AI.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>How It Works</h2>
+      <div class="how-it-works-steps">
+        <div class="how-it-works-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h5>Paste the Job Description</h5>
+            <p>Copy the full job description from wherever you found the role. Paste it into the left input field on the tool.</p>
+          </div>
+        </div>
+        <div class="how-it-works-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h5>Paste Your Current CV</h5>
+            <p>Paste in the text content of your existing CV. The tool reads the language you are currently using and compares it to what the role is asking for.</p>
+          </div>
+        </div>
+        <div class="how-it-works-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h5>Analyze the Match</h5>
+            <p>The tool highlights keywords present in the job description that are missing from your CV, and identifies sections that could be strengthened for this specific role.</p>
+          </div>
+        </div>
+        <div class="how-it-works-step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h5>Apply the Suggestions</h5>
+            <p>Use the output to update your CV. The tool gives you the language and framing. You make the edits. Then apply with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design Decisions</h2>
+      <p>The interface was kept deliberately minimal because the user is already dealing with two documents. Adding visual complexity on top of that would create friction at exactly the wrong moment. The layout is two input panels with a clear action to analyze and a clean output section below.</p>
+      <p style="margin-top:14px;">Color coding in the output makes it easy to see at a glance which keywords are present, which are missing and which sections need the most work. The warm amber palette reinforces the sense of action and energy without feeling alarming or clinical.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Vibe Coding Process</h2>
+      <p>This was one of the more technically interesting vibe coding projects because the core functionality required text comparison logic. I described the matching algorithm I wanted to Claude in plain language and worked through several iterations to get the output format right. The AI generated the JavaScript logic, I tested the edge cases and we refined together until the tool behaved consistently.</p>
+      <p style="margin-top:14px;">The entire experience of building Tailor CV using AI tools to build a tool that helps users work with AI output felt appropriately circular in a way I enjoyed. The project was live within a day of starting.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Outcome</h2>
+      <p>Tailor CV is live on GitHub Pages and freely accessible. It is part of a growing suite of career focused tools I have built under the Kiyomi brand, all using vibe coding to ship real, useful products fast. The tool represents what I find most exciting about AI assisted development: the ability to solve real problems for real people without needing a full engineering team behind you.</p>
+      <div style="margin-top:28px;">
+        <a href="https://kiyomigroup.github.io/tailor-cv/" target="_blank" class="live-link-btn">View Live Site</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <div class="cs-next-label">More Projects</div>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('cvbykiyomi.html')">
+        <span class="cs-next-tag">Vibe Coding · Resume Builder</span>
+        <h4>CV by Kiyomi</h4>
+        <p>Beautiful resume builder platform</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('portfolia.html')">
+        <span class="cs-next-tag">Vibe Coding · Portfolio Tool</span>
+        <h4>Portfolia</h4>
+        <p>Creative portfolio builder</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

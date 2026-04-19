@@ -3,151 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vibe Lab — Adunola Babadiya</title>
+  <title>Vibe Coding — Adunola Babadiya</title>
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <style>
-    :root { --world-accent: #b89bd4; }
-    body { background: #07060d; }
-    .vibe-full-hero {
+    :root { --world-accent: #b28ef0; }
+    body { background: #09060f; }
+
+    .vibe-hero {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      padding: 120px 40px 60px;
+      position: relative; overflow: hidden;
+      padding: 120px 40px 80px;
     }
     canvas#vibeCanvas {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 0;
+      pointer-events: none; z-index: 0;
     }
-    .vibe-full-hero > * { position: relative; z-index: 1; }
-    .vibe-hero-tag {
-      font-size: 11px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--world-accent);
-      margin-bottom: 32px;
-      display: block;
+    .vibe-hero > * { position: relative; z-index: 1; }
+
+    .vibe-eyebrow {
+      font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--world-accent); margin-bottom: 24px; display: block;
     }
-    .vibe-hero-h1 {
+    .vibe-h1 {
       font-family: var(--font-display);
       font-size: clamp(56px, 9vw, 120px);
-      font-weight: 300;
-      line-height: 0.95;
-      letter-spacing: -0.02em;
-      margin-bottom: 32px;
+      font-weight: 300; line-height: 0.95;
+      letter-spacing: -0.02em; margin-bottom: 32px;
     }
-    .vibe-hero-h1 em { font-style: italic; color: var(--world-accent); }
-    .vibe-hero-p {
-      max-width: 480px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.8;
+    .vibe-h1 em { font-style: italic; color: var(--world-accent); }
+    .vibe-desc {
+      max-width: 560px; font-size: 14px;
+      color: var(--text-secondary); line-height: 1.8;
       margin: 0 auto 48px;
     }
-    .vibe-scroll-hint {
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      animation: blink 2s ease-in-out infinite;
+    .vibe-tool-row {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 48px;
     }
-    @keyframes blink { 0%,100%{opacity:0.3} 50%{opacity:1} }
-    .vibe-manifesto {
+    .vibe-tool-tag {
+      padding: 6px 16px;
+      border: 1px solid rgba(178,142,240,0.25);
+      border-radius: 20px; font-size: 11px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--world-accent);
+      background: rgba(178,142,240,0.07);
+    }
+
+    /* What is vibe coding */
+    .vibe-explainer {
       padding: 100px 60px;
       border-bottom: 1px solid var(--border);
-      text-align: center;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .vibe-explainer-text h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 300; line-height: 1.15; margin-bottom: 24px;
+    }
+    .vibe-explainer-text h2 em { font-style: italic; color: var(--world-accent); }
+    .vibe-explainer-text p {
+      font-size: 14px; color: var(--text-secondary);
+      line-height: 1.8; margin-bottom: 16px;
+    }
+    .vibe-explainer-tools {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
+    }
+    .vibe-tool-card {
+      background: var(--bg); padding: 28px 24px;
+      transition: background 0.3s;
+    }
+    .vibe-tool-card:hover { background: var(--bg-2); }
+    .vibe-tool-card-icon {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--world-accent); margin-bottom: 12px; display: block;
+    }
+    .vibe-tool-card h4 {
+      font-family: var(--font-display); font-size: 20px;
+      font-weight: 300; margin-bottom: 8px;
+    }
+    .vibe-tool-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* Projects Grid */
+    .vibe-projects { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .vibe-projects-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+    .vibe-project-card {
+      background: var(--bg); padding: 0;
+      overflow: hidden; cursor: pointer;
+      transition: background 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .vibe-project-card:hover { background: var(--bg-2); }
+    .vibe-project-visual {
+      aspect-ratio: 16/10;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .vibe-project-visual-inner { text-align: center; padding: 20px; }
+    .vibe-project-name {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 300; line-height: 1;
+    }
+    .vibe-project-tagline {
+      font-size: 11px; color: rgba(255,255,255,0.4);
+      margin-top: 8px; letter-spacing: 0.08em;
+    }
+    .vibe-project-info {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      flex: 1;
+    }
+    .vibe-project-category {
+      font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--world-accent); margin-bottom: 8px; display: block;
+    }
+    .vibe-project-info h3 {
+      font-family: var(--font-display); font-size: 18px;
+      font-weight: 300; margin-bottom: 8px;
+    }
+    .vibe-project-info p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+    .vibe-project-links { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .vibe-project-link {
+      font-size: 11px; color: var(--world-accent);
+      letter-spacing: 0.06em; transition: opacity 0.2s;
+    }
+    .vibe-project-link:hover { opacity: 0.7; }
+    .vibe-project-live {
+      font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); border: 1px solid var(--border);
+      padding: 3px 10px; border-radius: 2px;
+      text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    }
+    .vibe-project-live:hover { border-color: var(--world-accent); color: var(--world-accent); }
+
+    /* Process Section */
+    .vibe-process { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .vibe-process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+    .vibe-process-step {
+      background: var(--bg); padding: 36px 28px;
+      transition: background 0.3s;
+    }
+    .vibe-process-step:hover { background: var(--bg-2); }
+    .vibe-process-num {
+      font-family: var(--font-display); font-size: 40px;
+      font-weight: 300; color: var(--world-accent);
+      opacity: 0.4; display: block; margin-bottom: 16px;
+    }
+    .vibe-process-step h4 {
+      font-family: var(--font-display); font-size: 20px;
+      font-weight: 300; margin-bottom: 12px;
+    }
+    .vibe-process-step p { font-size: 12px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* Manifesto */
+    .vibe-manifesto {
+      padding: 100px 60px; text-align: center;
+      border-bottom: 1px solid var(--border);
     }
     .vibe-manifesto blockquote {
       font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 56px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--text-primary);
-      line-height: 1.3;
-      max-width: 900px;
-      margin: 0 auto 32px;
+      font-size: clamp(24px, 3.5vw, 52px);
+      font-weight: 300; font-style: italic;
+      line-height: 1.3; max-width: 900px; margin: 0 auto 28px;
     }
     .vibe-manifesto cite {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--world-accent);
+      font-size: 11px; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--world-accent);
     }
-    .vibe-experiments-section { padding: 80px 0; }
-    .vibe-exp-header {
-      padding: 0 60px;
-      margin-bottom: 48px;
+
+    /* Back nav */
+    .world-back-section {
+      padding: 60px;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    .vibe-exp-header span {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--world-accent);
-      display: block;
-      margin-bottom: 16px;
-    }
-    .vibe-exp-header p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      max-width: 480px;
-    }
-    .interactive-demo {
-      padding: 80px 60px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-    .demo-area {
-      width: 100%;
-      height: 320px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(184,155,212,0.03);
-      cursor: none;
-      position: relative;
-      overflow: hidden;
-      margin-top: 48px;
-    }
-    .demo-instructions {
-      font-size: 13px;
-      color: var(--text-muted);
-      text-align: center;
-      pointer-events: none;
-      transition: opacity 0.4s;
-    }
-    .demo-instructions span {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 300;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-    .ripple {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid var(--world-accent);
-      pointer-events: none;
-      animation: ripple-expand 1.4s ease-out forwards;
-    }
-    @keyframes ripple-expand {
-      0% { width: 0; height: 0; opacity: 0.6; transform: translate(-50%, -50%); }
-      100% { width: 300px; height: 300px; opacity: 0; transform: translate(-50%, -50%); }
+
+    @media (max-width: 1024px) {
+      .vibe-projects-grid { grid-template-columns: 1fr 1fr; }
+      .vibe-process-steps { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
-      .world-hero-num { display: none; }
-      .vibe-manifesto, .interactive-demo { padding: 60px 24px; }
-      .vibe-exp-header { padding: 0 24px; }
+      .vibe-explainer { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+      .vibe-projects { padding: 60px 24px; }
+      .vibe-projects-grid { grid-template-columns: 1fr; }
+      .vibe-process { padding: 60px 24px; }
+      .vibe-process-steps { grid-template-columns: 1fr; }
+      .vibe-manifesto { padding: 60px 24px; }
+      .world-back-section { padding: 40px 24px; flex-direction: column; gap: 20px; text-align: center; }
+      .vibe-explainer-tools { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -158,7 +216,7 @@
   <div class="page-overlay" id="pageOverlay"></div>
 
   <div class="system-map" id="systemMap">
-    <button class="map-close" id="mapClose">✕ Close</button>
+    <button class="map-close" id="mapClose">x Close</button>
     <div class="map-title">Design System</div>
     <div class="map-subtitle">Click any world to explore</div>
     <div class="map-nodes">
@@ -166,134 +224,256 @@
       <div class="map-node node-uiux" onclick="navigateTo('uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
       <div class="map-node node-graphic" onclick="navigateTo('graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
       <div class="map-node node-nocode" onclick="navigateTo('nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
-      <div class="map-node node-vibe" onclick="navigateTo('vibe-lab.html')"><div class="node-dot" style="background:var(--world-accent);"></div><span style="color:var(--world-accent);">Vibe Lab ✦</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
     </div>
     <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
   </div>
 
-  <nav class="world-nav" id="mainNav" style="background: rgba(7,6,13,0.9);">
+  <nav class="world-nav" id="mainNav">
     <div class="world-nav-left">
-      <a class="world-back" href="../index.html">← Back to Main</a>
-      <span class="world-name" style="color:var(--world-accent);">Vibe Lab</span>
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Vibe Coding</span>
     </div>
-    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
   </nav>
 
-  <!-- Particle Hero -->
-  <section class="vibe-full-hero">
+  <!-- Hero -->
+  <section class="vibe-hero">
     <canvas id="vibeCanvas"></canvas>
-    <span class="vibe-hero-tag">World 04 · Experimental</span>
-    <h1 class="vibe-hero-h1 reveal">Vibe<br/><em>Lab</em></h1>
-    <p class="vibe-hero-p reveal-delay">
-      Where design escapes the brief. Experiments in motion, interaction, and the aesthetic edges that don't belong in a case study — but belong here.
+    <span class="vibe-eyebrow">World 04 — Vibe Coding</span>
+    <h1 class="vibe-h1">
+      Building with<br/>
+      <em>AI as the engine.</em>
+    </h1>
+    <p class="vibe-desc">
+      Vibe coding is how I describe using AI tools to design, write and deploy entire websites without the traditional development cycle. The vision is mine. The execution happens at a pace that was not possible three years ago.
     </p>
-    <span class="vibe-scroll-hint">↓ Enter the lab</span>
+    <div class="vibe-tool-row">
+      <span class="vibe-tool-tag">Claude AI</span>
+      <span class="vibe-tool-tag">Cursor</span>
+      <span class="vibe-tool-tag">Lovable</span>
+      <span class="vibe-tool-tag">Bolt</span>
+      <span class="vibe-tool-tag">GitHub Pages</span>
+      <span class="vibe-tool-tag">Framer</span>
+    </div>
+    <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);animation:blink 2s ease-in-out infinite;">Scroll to explore</div>
+  </section>
+
+  <!-- What is Vibe Coding -->
+  <section class="vibe-explainer">
+    <div class="vibe-explainer-text reveal">
+      <h2>Design first.<br/><em>Ship immediately.</em></h2>
+      <p>Vibe coding is not about letting AI do everything. It is about removing the bottleneck between design intent and deployed product. When I have an idea for a product, I no longer have to wait weeks for a developer to build it. I describe what I want, iterate in real time, and the product goes live the same day.</p>
+      <p>The design thinking, the product decisions, the UX reasoning, all of that is still entirely human. What changes is the speed of translation from concept into working code. AI handles the syntax. I handle the soul.</p>
+      <p>Every project in this section was designed, built and deployed by me alone using AI coding tools. They are real, live products. Not mockups. Not prototypes.</p>
+    </div>
+    <div class="vibe-explainer-tools reveal-delay">
+      <div class="vibe-tool-card">
+        <span class="vibe-tool-card-icon">Conversation</span>
+        <h4>Claude AI</h4>
+        <p>My primary coding partner. I describe what I want, Claude generates the structure and logic, I refine and ship.</p>
+      </div>
+      <div class="vibe-tool-card">
+        <span class="vibe-tool-card-icon">Editor</span>
+        <h4>Cursor</h4>
+        <p>An AI powered code editor that makes iterating on visual design fast and precise without leaving the file.</p>
+      </div>
+      <div class="vibe-tool-card">
+        <span class="vibe-tool-card-icon">Builder</span>
+        <h4>Lovable</h4>
+        <p>For full stack web apps that need to go from prompt to production. Especially good for interactive platforms.</p>
+      </div>
+      <div class="vibe-tool-card">
+        <span class="vibe-tool-card-icon">Deploy</span>
+        <h4>GitHub Pages</h4>
+        <p>Free, fast deployment for static sites. Most of the vibe coding projects in this collection are hosted here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="vibe-projects">
+    <div class="section-header" style="padding:0 0 0 0;margin-bottom:0;">
+      <span class="section-tag reveal">Built and Deployed</span>
+      <h2 class="section-title reveal-delay">Vibe Coding Projects</h2>
+    </div>
+    <div class="vibe-projects-grid">
+
+      <!-- StreetTasker -->
+      <div class="vibe-project-card reveal" onclick="navigateTo('../case-studies/streettasker.html')">
+        <div class="vibe-project-visual" style="background:linear-gradient(135deg,#1a2744,#0f1829);">
+          <div class="vibe-project-visual-inner">
+            <div class="vibe-project-name" style="color:#5b9cf6;">StreetTasker</div>
+            <div class="vibe-project-tagline">Gig Economy Platform</div>
+          </div>
+        </div>
+        <div class="vibe-project-info">
+          <span class="vibe-project-category">Gig Economy · Full Platform</span>
+          <h3>StreetTasker</h3>
+          <p>Connecting local task workers with people who need things done. Built and deployed in a single focused sprint.</p>
+          <div class="vibe-project-links">
+            <span class="vibe-project-link">View Case Study</span>
+            <a href="https://streettasker.com" target="_blank" class="vibe-project-live" onclick="event.stopPropagation()">Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AndreStylez -->
+      <div class="vibe-project-card reveal" onclick="navigateTo('../case-studies/andrestylez.html')">
+        <div class="vibe-project-visual" style="background:linear-gradient(135deg,#2a1508,#1a0e04);">
+          <div class="vibe-project-visual-inner">
+            <div class="vibe-project-name" style="color:#e8a84c;letter-spacing:0.08em;">ANDRE STYLEZ</div>
+            <div class="vibe-project-tagline">Fashion Brand Website</div>
+          </div>
+        </div>
+        <div class="vibe-project-info">
+          <span class="vibe-project-category">Fashion · E-Commerce · Brand</span>
+          <h3>AndreStylez</h3>
+          <p>A bold fashion brand presence built with AI coding tools. From idea to live site in under a day.</p>
+          <div class="vibe-project-links">
+            <span class="vibe-project-link">View Case Study</span>
+            <a href="https://andrestylez.com" target="_blank" class="vibe-project-live" onclick="event.stopPropagation()">Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CV by Kiyomi -->
+      <div class="vibe-project-card reveal" onclick="navigateTo('../case-studies/cvbykiyomi.html')">
+        <div class="vibe-project-visual" style="background:linear-gradient(135deg,#0d1e30,#091525);">
+          <div class="vibe-project-visual-inner">
+            <div class="vibe-project-name" style="color:#64b5f6;font-size:22px;">CV by Kiyomi</div>
+            <div class="vibe-project-tagline">Resume Builder Platform</div>
+          </div>
+        </div>
+        <div class="vibe-project-info">
+          <span class="vibe-project-category">Career Tech · Resume Builder</span>
+          <h3>CV by Kiyomi</h3>
+          <p>Helping job seekers in Nigeria create standout CVs for free. Built with AI tools and deployed on GitHub Pages.</p>
+          <div class="vibe-project-links">
+            <span class="vibe-project-link">View Case Study</span>
+            <a href="https://kiyomigroup.github.io/CVbykiyomi/" target="_blank" class="vibe-project-live" onclick="event.stopPropagation()">Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Swappy -->
+      <div class="vibe-project-card reveal" onclick="navigateTo('../case-studies/swappy.html')">
+        <div class="vibe-project-visual" style="background:linear-gradient(135deg,#122518,#0c1c11);">
+          <div class="vibe-project-visual-inner">
+            <div class="vibe-project-name" style="color:#4caf82;">Swappy</div>
+            <div class="vibe-project-tagline">Peer to Peer Trading</div>
+          </div>
+        </div>
+        <div class="vibe-project-info">
+          <span class="vibe-project-category">Marketplace · Trade Platform</span>
+          <h3>Swappy</h3>
+          <p>A structured platform for peer to peer swapping and trading. Designed to bring trust to informal exchange.</p>
+          <div class="vibe-project-links">
+            <span class="vibe-project-link">View Case Study</span>
+            <a href="https://kiyomigroup.github.io/Swappy/" target="_blank" class="vibe-project-live" onclick="event.stopPropagation()">Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolia -->
+      <div class="vibe-project-card reveal" onclick="navigateTo('../case-studies/portfolia.html')">
+        <div class="vibe-project-visual" style="background:linear-gradient(135deg,#1e1230,#150e25);">
+          <div class="vibe-project-visual-inner">
+            <div class="vibe-project-name" style="color:#b28ef0;">portfolia.</div>
+            <div class="vibe-project-tagline">Creative Portfolio Builder</div>
+          </div>
+        </div>
+        <div class="vibe-project-info">
+          <span class="vibe-project-category">Portfolio Tool · Creatives</span>
+          <h3>Portfolia</h3>
+          <p>A portfolio builder designed for creatives who want beautiful presentation without technical complexity.</p>
+          <div class="vibe-project-links">
+            <span class="vibe-project-link">View Case Study</span>
+            <a href="https://kiyomigroup.github.io/portfolia/" target="_blank" class="vibe-project-live" onclick="event.stopPropagation()">Live Site</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tailor CV -->
+      <div class="vibe-project-card reveal" onclick="navigateTo('../case-studies/tailorcv.html')">
+        <div class="vibe-project-visual" style="background:linear-gradient(135deg,#261d08,#1a1406);">
+          <div class="vibe-project-visual-inner">
+            <div class="vibe-project-name" style="color:#d4a843;font-size:26px;">Tailor CV</div>
+            <div class="vibe-project-tagline">AI Resume Matching</div>
+          </div>
+        </div>
+        <div class="vibe-project-info">
+          <span class="vibe-project-category">Career Tech · AI Tool</span>
+          <h3>Tailor CV</h3>
+          <p>Match your CV to any job description with AI. Built to help job seekers stop getting filtered out before a human reads their application.</p>
+          <div class="vibe-project-links">
+            <span class="vibe-project-link">View Case Study</span>
+            <a href="https://kiyomigroup.github.io/tailor-cv/" target="_blank" class="vibe-project-live" onclick="event.stopPropagation()">Live Site</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="vibe-process">
+    <div class="section-header" style="margin-bottom:0;">
+      <span class="section-tag reveal">How It Happens</span>
+      <h2 class="section-title reveal-delay">The Vibe Coding Process</h2>
+    </div>
+    <div class="vibe-process-steps">
+      <div class="vibe-process-step reveal">
+        <span class="vibe-process-num">01</span>
+        <h4>Define the Product</h4>
+        <p>Every project starts with clarity about what it is, who it is for and what one thing it does better than anything else. No ambiguity before the build begins.</p>
+      </div>
+      <div class="vibe-process-step reveal">
+        <span class="vibe-process-num">02</span>
+        <h4>Prompt the Structure</h4>
+        <p>I write a detailed prompt for the AI describing the layout, functionality and visual direction. The AI generates the first working version.</p>
+      </div>
+      <div class="vibe-process-step reveal">
+        <span class="vibe-process-num">03</span>
+        <h4>Iterate the Design</h4>
+        <p>Using Cursor or continued conversation with Claude, I refine the visuals, fix interactions, adjust spacing and push the aesthetic until it matches the vision.</p>
+      </div>
+      <div class="vibe-process-step reveal">
+        <span class="vibe-process-num">04</span>
+        <h4>Deploy and Ship</h4>
+        <p>The finished site goes live on GitHub Pages, Netlify or Vercel. The whole process from blank canvas to deployed URL typically happens in a single day.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Manifesto -->
   <section class="vibe-manifesto">
     <blockquote class="reveal">
-      "Good design solves problems.<br/>Great design makes you feel something."
+      "The tools changed. The thinking did not.<br/>
+      Great products still come from great<br/>
+      <em>design decisions.</em>"
     </blockquote>
-    <cite class="reveal-delay">— A working principle</cite>
+    <cite class="reveal-delay">Adunola Babadiya — on vibe coding</cite>
   </section>
 
-  <!-- Experiments -->
-  <section class="vibe-experiments-section">
-    <div class="vibe-exp-header">
-      <span class="reveal">Experiments</span>
-      <p class="reveal-delay">Interactions, motion studies, and design concepts that exist for curiosity alone.</p>
+  <!-- Back nav -->
+  <div class="world-back-section">
+    <a href="../index.html" class="btn-ghost" style="font-size:13px;">Back to Main Portfolio</a>
+    <div style="display:flex;gap:16px;">
+      <a href="uiux.html" style="font-size:12px;color:var(--text-muted);letter-spacing:0.06em;">UI/UX World</a>
+      <a href="graphic.html" style="font-size:12px;color:var(--text-muted);letter-spacing:0.06em;">Graphic World</a>
+      <a href="nocode.html" style="font-size:12px;color:var(--text-muted);letter-spacing:0.06em;">No-Code World</a>
     </div>
-    <div class="vibe-experiments">
-      <div class="vibe-exp-card reveal">
-        <div class="vibe-exp-num">01</div>
-        <div>
-          <h3>Particle Fields</h3>
-          <p>Generative particle systems as ambient backgrounds — exploring how randomness can feel intentional and atmospheric.</p>
-        </div>
-        <span class="vibe-exp-tag">Motion</span>
-      </div>
-      <div class="vibe-exp-card reveal">
-        <div class="vibe-exp-num">02</div>
-        <div>
-          <h3>Cursor as Medium</h3>
-          <p>Custom cursors, ripple effects, and hover states that make every interaction a micro-moment of delight.</p>
-        </div>
-        <span class="vibe-exp-tag">Interaction</span>
-      </div>
-      <div class="vibe-exp-card reveal">
-        <div class="vibe-exp-num">03</div>
-        <div>
-          <h3>Dark Luxury Aesthetic</h3>
-          <p>An exploration of deep darks, gold accents, and serif typography — a premium design language built from scratch.</p>
-        </div>
-        <span class="vibe-exp-tag">Visual</span>
-      </div>
-      <div class="vibe-exp-card reveal">
-        <div class="vibe-exp-num">04</div>
-        <div>
-          <h3>Scroll as Narrative</h3>
-          <p>Using scroll position to tell stories — staggered reveals, parallax depth, and momentum-driven transitions.</p>
-        </div>
-        <span class="vibe-exp-tag">Animation</span>
-      </div>
-      <div class="vibe-exp-card reveal">
-        <div class="vibe-exp-num">05</div>
-        <div>
-          <h3>Multi-World Navigation</h3>
-          <p>This very site — a system map metaphor for a portfolio. The navigation IS the design statement.</p>
-        </div>
-        <span class="vibe-exp-tag">Concept</span>
-      </div>
-      <div class="vibe-exp-card reveal">
-        <div class="vibe-exp-num">06</div>
-        <div>
-          <h3>African Futurism</h3>
-          <p>Ongoing exploration of what African design sensibility looks like when it leads the aesthetic rather than decorates it.</p>
-        </div>
-        <span class="vibe-exp-tag">Identity</span>
-      </div>
-    </div>
-  </section>
+  </div>
 
-  <!-- Interactive Demo -->
-  <section class="interactive-demo">
-    <span class="world-section-title reveal" style="color:var(--world-accent);">Live Experiment</span>
-    <p class="reveal-delay" style="color:var(--text-secondary); font-size:13px;">Click anywhere in the area below to create ripples.</p>
-    <div class="demo-area" id="demoArea">
-      <div class="demo-instructions" id="demoInstructions">
-        <span>Click to interact</span>
-        Move your cursor here
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer" style="background: #07060d;">
-    <div class="footer-bottom" style="padding-top:40px; border-top: 1px solid var(--border);">
-      <span>Vibe Lab · The experimental wing of Adunola's design system</span>
-      <a href="../index.html" style="color:var(--world-accent);">Return to Main Site →</a>
+  <footer class="footer" style="border-top:1px solid var(--border);">
+    <div class="footer-bottom" style="padding:24px 60px;">
+      <span>2025 Adunola Babadiya. All rights reserved.</span>
+      <a href="../index.html" style="color:var(--text-muted);font-size:12px;">Back to Portfolio</a>
     </div>
   </footer>
 
   <script src="../script.js"></script>
-  <script>
-    // Demo area ripples
-    const demoArea = document.getElementById('demoArea');
-    const demoInstructions = document.getElementById('demoInstructions');
-    if (demoArea) {
-      demoArea.addEventListener('click', (e) => {
-        demoInstructions.style.opacity = '0';
-        const rect = demoArea.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const ripple = document.createElement('div');
-        ripple.className = 'ripple';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        demoArea.appendChild(ripple);
-        ripple.addEventListener('animationend', () => ripple.remove());
-      });
-    }
-  </script>
+  <style>@keyframes blink { 0%,100%{opacity:0.3} 50%{opacity:1} }</style>
 </body>
 </html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolia Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cs-accent: #b28ef0; }
+    .vibe-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(178,142,240,0.1); border: 1px solid rgba(178,142,240,0.25);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #b28ef0; margin-bottom: 20px;
+    }
+    .tool-pill {
+      display: inline-block;
+      background: rgba(178,142,240,0.08); border: 1px solid rgba(178,142,240,0.2);
+      color: #b28ef0; padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.06em; margin: 3px;
+    }
+    .live-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #b28ef0, #7c5cbf);
+      color: #fff;
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .live-link-btn:hover { opacity: 0.85; }
+    .feature-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); margin: 24px 0;
+    }
+    .feature-item {
+      background: var(--bg); padding: 28px 24px;
+      transition: background 0.3s;
+    }
+    .feature-item:hover { background: var(--bg-2); }
+    .feature-item h5 {
+      font-family: var(--font-display); font-size: 18px;
+      font-weight: 300; color: #b28ef0; margin-bottom: 8px;
+    }
+    .feature-item p { font-size: 12px; color: var(--text-secondary); line-height: 1.7; }
+    @media (max-width: 600px) { .feature-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-page="case-study">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">x Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <div class="vibe-badge">Vibe Coding Project</div>
+    <span class="section-tag reveal">Portfolio Tool · Creatives · Career</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      Portfolia<br/>Creative Portfolio Builder
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Type</label><span>Vibe Coding / AI Development</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Designer and Builder</span></div>
+      <div class="cs-meta-item"><label>Tools Used</label><span>Claude, GitHub Pages, HTML/CSS/JS</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
+      <div class="cs-meta-item"><label>URL</label><span><a href="https://kiyomigroup.github.io/portfolia/" target="_blank" style="color:var(--accent);">kiyomigroup.github.io/portfolia</a></span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>Portfolia is a portfolio builder designed specifically for creatives who want to show their work beautifully without dealing with complex tools or expensive subscriptions. The target user is a designer, illustrator, photographer or creative professional who has great work to show but no easy way to present it online in a way that does it justice.</p>
+      <p style="margin-top:14px;">The name itself says what the product does. It is your portfolio, made easy. The entire platform was built using vibe coding, allowing me to go from concept to a fully functional deployed product without a traditional development process.</p>
+      <div style="margin-top:24px;">
+        <div class="tool-pill">Claude AI</div>
+        <div class="tool-pill">HTML/CSS/JS</div>
+        <div class="tool-pill">GitHub Pages</div>
+        <div class="tool-pill">Drag and Drop UI</div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "Most creatives are not developers. They should not have to be in order to have a portfolio that represents their work well."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The Problem</h2>
+      <p>The options available to creatives who want a portfolio online sit at two frustrating extremes. On one end there are tools like Behance or Dribbble that are controlled environments where your work competes with everyone else's on the same platform. On the other end there are site builders like Webflow or WordPress that require real technical investment to do well.</p>
+      <p style="margin-top:14px;">Portfolia aims to sit in the middle. A tool that produces something that looks genuinely custom, feels personal to the creator and requires zero technical knowledge to set up. The creative fills in the blanks. The platform handles the rest.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Core Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h5>Project Gallery</h5>
+          <p>Upload project images and organize them by category. The gallery layout adjusts automatically to present work in the best possible way.</p>
+        </div>
+        <div class="feature-item">
+          <h5>About Section</h5>
+          <p>A dedicated space to tell your story. Short bio, skills list and contact information all in one clean section that complements the work.</p>
+        </div>
+        <div class="feature-item">
+          <h5>Custom Themes</h5>
+          <p>Choose from a small set of carefully considered visual themes. Each one is designed to let the work be the focus rather than the template.</p>
+        </div>
+        <div class="feature-item">
+          <h5>One Link Sharing</h5>
+          <p>Every portfolio gets a clean shareable URL. One link to share in your bio, your email signature or your CV.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User Flow</h2>
+      <pre class="cs-flow">
+SETUP FLOW
+User lands on portfolia homepage
+  → Sees example portfolios and value proposition
+    → Clicks "Build My Portfolio"
+      → Enters name, role and short bio
+        → Uploads profile image
+          → Adds projects with title, description and images
+            → Selects a visual theme
+              → Previews the portfolio
+                → Gets shareable link
+                  → Shares it everywhere
+      </pre>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design Decisions</h2>
+      <p>The setup flow was the most important design challenge. Every step needed to feel achievable. I kept each screen focused on a single decision so the user is never overwhelmed. The progress indicator at the top of each step makes the process feel finite and manageable.</p>
+      <p style="margin-top:14px;">The portfolio output itself was designed with the audience in mind as much as the creator. Recruiters and clients who view a Portfolia portfolio see clean, fast loading pages that focus entirely on the creative's work. No distracting UI. No platform branding competing for attention.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Vibe Coding Process</h2>
+      <p>Building Portfolia was a great exercise in using AI for feature-dense UI. The gallery upload logic, the live theme preview and the link generation were all built through extended prompting sessions with Claude. I would describe the behavior I wanted, Claude would generate the implementation, and I would test, refine and improve the output until it matched the vision.</p>
+      <p style="margin-top:14px;">The gap between what I could describe and what Claude could build closed significantly as the session went on. The AI got better at understanding my conventions and preferences, and I got better at describing what I actually wanted with precision.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Outcome</h2>
+      <p>Portfolia is live. It is a real tool that creatives can use to build and share their portfolios today. It demonstrates a design philosophy I believe in strongly: the best tools get out of the way and let the work speak. Portfolia does exactly that.</p>
+      <div style="margin-top:28px;">
+        <a href="https://kiyomigroup.github.io/portfolia/" target="_blank" class="live-link-btn">View Live Site</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <div class="cs-next-label">More Projects</div>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('cvbykiyomi.html')">
+        <span class="cs-next-tag">Vibe Coding · Resume Builder</span>
+        <h4>CV by Kiyomi</h4>
+        <p>Resume builder platform for job seekers</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('tailorcv.html')">
+        <span class="cs-next-tag">Vibe Coding · AI Career Tool</span>
+        <h4>Tailor CV</h4>
+        <p>AI powered resume matching tool</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

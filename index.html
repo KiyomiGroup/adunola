@@ -11,16 +11,12 @@
 </head>
 <body class="main-site" data-page="home">
 
-  <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
-
-  <!-- Page Transition Overlay -->
   <div class="page-overlay" id="pageOverlay"></div>
 
-  <!-- System Map Overlay -->
   <div class="system-map" id="systemMap">
-    <button class="map-close" id="mapClose" aria-label="Close system map">✕ Close</button>
+    <button class="map-close" id="mapClose" aria-label="Close system map">x Close</button>
     <div class="map-title">Design System</div>
     <div class="map-subtitle">Click any world to explore</div>
     <div class="map-nodes">
@@ -29,22 +25,10 @@
         <span class="node-label-main">Adunola</span>
         <span class="node-sub">Product Design</span>
       </div>
-      <div class="map-node node-uiux" onclick="navigateTo('worlds/uiux.html')">
-        <div class="node-dot"></div>
-        <span>UI/UX</span>
-      </div>
-      <div class="map-node node-graphic" onclick="navigateTo('worlds/graphic.html')">
-        <div class="node-dot"></div>
-        <span>Graphic</span>
-      </div>
-      <div class="map-node node-nocode" onclick="navigateTo('worlds/nocode.html')">
-        <div class="node-dot"></div>
-        <span>No-Code</span>
-      </div>
-      <div class="map-node node-vibe" onclick="navigateTo('worlds/vibe-lab.html')">
-        <div class="node-dot"></div>
-        <span>Vibe Lab</span>
-      </div>
+      <div class="map-node node-uiux" onclick="navigateTo('worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
     </div>
     <svg class="map-lines" id="mapLines" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
       <line class="map-line" x1="400" y1="300" x2="200" y2="120" />
@@ -54,28 +38,28 @@
     </svg>
   </div>
 
-  <!-- Navigation -->
   <nav class="nav" id="mainNav">
     <a href="index.html" class="nav-logo">Adunola<span class="logo-dot">.</span></a>
     <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#work" class="nav-link">Work</a>
       <a href="mailto:Adunoladiya@gmail.com" class="nav-link">Contact</a>
-      <button class="nav-system-btn" id="openSystemMap">Explore System ⊕</button>
+      <button class="nav-system-btn" id="openSystemMap">Explore System</button>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero-eyebrow reveal">Product Designer</div>
+    <div class="hero-eyebrow reveal">Product Designer · Vibe Coder · Visual Creator</div>
     <h1 class="hero-headline reveal-delay">
-      Designing experiences<br/>
-      <em>that feel inevitable.</em>
+      I design things that<br/>
+      <em>feel right before they load.</em>
     </h1>
     <p class="hero-sub reveal-delay-2">
-      I help SaaS and AI startups craft intuitive, conversion-driven interfaces—blending strategic UX thinking with the eye of a UI artist.
+      Adunola Babadiya is a Lagos based product designer, visual creator and vibe coder who builds experiences people actually enjoy using. From Figma to fully deployed sites, the gap between design and reality is where I live.
     </p>
     <div class="hero-cta reveal-delay-3">
       <a href="#work" class="btn-primary">View Work</a>
-      <a href="mailto:Adunoladiya@gmail.com" class="btn-ghost">Let's Talk →</a>
+      <a href="mailto:Adunoladiya@gmail.com" class="btn-ghost">Lets Talk</a>
     </div>
     <div class="hero-scroll-hint reveal-delay-3">
       <span>Scroll</span>
@@ -83,51 +67,85 @@
     </div>
   </section>
 
-  <!-- Marquee -->
   <div class="marquee-track">
     <div class="marquee-inner">
       <span>UI/UX Design</span><span class="sep">·</span>
-      <span>Game UI</span><span class="sep">·</span>
+      <span>Vibe Coding</span><span class="sep">·</span>
       <span>Product Design</span><span class="sep">·</span>
       <span>Figma</span><span class="sep">·</span>
       <span>No-Code</span><span class="sep">·</span>
-      <span>Illustration</span><span class="sep">·</span>
+      <span>Graphic Design</span><span class="sep">·</span>
       <span>Design Systems</span><span class="sep">·</span>
+      <span>AI Tools</span><span class="sep">·</span>
+      <span>Game UI</span><span class="sep">·</span>
       <span>UI/UX Design</span><span class="sep">·</span>
-      <span>Game UI</span><span class="sep">·</span>
+      <span>Vibe Coding</span><span class="sep">·</span>
       <span>Product Design</span><span class="sep">·</span>
-      <span>Figma</span><span class="sep">·</span>
-      <span>No-Code</span><span class="sep">·</span>
-      <span>Illustration</span><span class="sep">·</span>
-      <span>Design Systems</span><span class="sep">·</span>
+      <span>AI Tools</span><span class="sep">·</span>
+      <span>Game UI</span><span class="sep">·</span>
     </div>
   </div>
 
-  <!-- About Strip -->
-  <section class="about-strip">
+  <section class="about-strip" id="about">
     <div class="about-grid">
       <div class="about-copy reveal">
-        <h2>A designer who thinks in systems, builds in Figma, and ships in code.</h2>
-        <p>Based in Lagos, Nigeria — I've worked with startups, agencies, and gaming companies to create interfaces that are not only functional and data-driven, but visually distinctive and emotionally engaging.</p>
+        <h2>A designer who thinks in systems, builds with AI, and ships work that holds up.</h2>
+        <p>Based in Lagos, Nigeria, I work at the intersection of product design, visual identity and AI assisted development. I have spent years helping startups, agencies and gaming companies create interfaces that are not only functional and thoughtful but visually sharp and emotionally resonant.</p>
+        <p style="margin-top:16px;">What makes my work different is the range. I move between Figma and a code editor without losing the thread. I use AI tools like Claude, Cursor and Lovable to ship production ready websites faster than most teams expect, while keeping the design quality high. Whether it is a mobile app, a brand identity or a fully built website, the intent is always the same: make it feel inevitable.</p>
       </div>
       <div class="about-stats reveal-delay">
-        <div class="stat">
-          <span class="stat-num">3+</span>
-          <span class="stat-label">Years Experience</span>
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Projects Shipped</span></div>
+        <div class="stat"><span class="stat-num">5</span><span class="stat-label">Design Worlds</span></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Live Vibe Sites</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-i-work">
+    <div class="section-header">
+      <span class="section-tag reveal">Process</span>
+      <h2 class="section-title reveal-delay">How I Work</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <span class="process-num">01</span>
+        <div class="process-body">
+          <h3>Listen and Define</h3>
+          <p>Every project starts with understanding the actual problem, not just the brief. I ask the questions most designers skip so I can design for the right outcome from day one.</p>
         </div>
-        <div class="stat">
-          <span class="stat-num">10+</span>
-          <span class="stat-label">Projects Shipped</span>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">02</span>
+        <div class="process-body">
+          <h3>Research and Structure</h3>
+          <p>I look at what exists, what users actually do, and where the friction lives. Then I map out the information architecture and user flows before touching any visual tool.</p>
         </div>
-        <div class="stat">
-          <span class="stat-num">5</span>
-          <span class="stat-label">Design Worlds</span>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">03</span>
+        <div class="process-body">
+          <h3>Design with Intention</h3>
+          <p>In Figma I work from wireframes to high fidelity without losing clarity. Every decision around spacing, type scale, color and interaction has a reason behind it that I can explain.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">04</span>
+        <div class="process-body">
+          <h3>Build and Ship</h3>
+          <p>For projects that need to go live fast, I use AI assisted tools like Cursor, Claude, Lovable and Framer to turn designs into real deployed websites. No waiting on a developer.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-num">05</span>
+        <div class="process-body">
+          <h3>Iterate and Improve</h3>
+          <p>Good design does not stop at launch. I stay involved through feedback cycles and make sure what ships keeps getting better over time.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Work Section -->
   <section class="work" id="work">
     <div class="section-header">
       <span class="section-tag reveal">Selected Work</span>
@@ -135,7 +153,142 @@
     </div>
 
     <div class="work-grid">
-      <!-- Project 1 -->
+
+      <article class="work-card reveal" onclick="navigateTo('case-studies/streettasker.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#1a1f2e,#0d1117);">
+            <div class="site-preview-embed">
+              <div class="site-preview-bar"><span></span><span></span><span></span></div>
+              <div class="site-preview-content" style="background:linear-gradient(160deg,#1a2744,#0f1829);">
+                <div class="preview-headline" style="color:#5b9cf6;">Task. Earn. Repeat.</div>
+                <div class="preview-sub">Connecting workers with everyday jobs</div>
+                <div class="preview-btn" style="background:#5b9cf6;color:#fff;">Get Started</div>
+              </div>
+            </div>
+            <span class="project-type-badge" style="background:rgba(91,156,246,0.15);color:#5b9cf6;border-color:rgba(91,156,246,0.3);">Vibe Coding</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vibe Coding · AI Built · Gig Economy</span>
+          <h3 class="card-title">StreetTasker — Gig Economy Platform</h3>
+          <p class="card-desc">A fully deployed platform connecting everyday people with local task workers. Designed and built using AI tools in a single focused sprint from concept to live site.</p>
+          <span class="card-link">View Case Study</span>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('case-studies/andrestylez.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#1f1208,#2a1a06);">
+            <div class="site-preview-embed">
+              <div class="site-preview-bar"><span></span><span></span><span></span></div>
+              <div class="site-preview-content" style="background:linear-gradient(160deg,#2a1508,#1a0e04);">
+                <div class="preview-headline" style="color:#e8a84c;letter-spacing:0.1em;">ANDRE STYLEZ</div>
+                <div class="preview-sub" style="color:#9a7a4a;">Fashion. Identity. Culture.</div>
+                <div class="preview-btn" style="background:#e8a84c;color:#1a0e04;">Shop Now</div>
+              </div>
+            </div>
+            <span class="project-type-badge" style="background:rgba(232,168,76,0.15);color:#e8a84c;border-color:rgba(232,168,76,0.3);">Vibe Coding</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vibe Coding · Fashion · E-Commerce</span>
+          <h3 class="card-title">AndreStylez — Fashion Brand Website</h3>
+          <p class="card-desc">A bold fashion brand presence built entirely with AI coding tools. The aesthetic captures the energy of the brand and the site went from idea to deployed in under a day.</p>
+          <span class="card-link">View Case Study</span>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('case-studies/cvbykiyomi.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a1520,#141e2a);">
+            <div class="site-preview-embed">
+              <div class="site-preview-bar"><span></span><span></span><span></span></div>
+              <div class="site-preview-content" style="background:linear-gradient(160deg,#0d1e30,#091525);">
+                <div class="preview-headline" style="color:#64b5f6;font-size:14px;">CV by Kiyomi</div>
+                <div class="preview-sub" style="color:#78909c;">Beautiful CV builder. Stand out instantly.</div>
+                <div style="display:flex;gap:6px;margin-top:8px;">
+                  <div style="background:#1e3a5f;border-radius:3px;padding:4px 8px;font-size:9px;color:#64b5f6;">Template A</div>
+                  <div style="background:#1e3a5f;border-radius:3px;padding:4px 8px;font-size:9px;color:#64b5f6;">Template B</div>
+                </div>
+              </div>
+            </div>
+            <span class="project-type-badge" style="background:rgba(100,181,246,0.15);color:#64b5f6;border-color:rgba(100,181,246,0.3);">Vibe Coding</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vibe Coding · Career Tech · Resume Tool</span>
+          <h3 class="card-title">CV by Kiyomi — Resume Builder Platform</h3>
+          <p class="card-desc">A clean AI assisted resume builder that helps job seekers create standout CVs. Designed for simplicity and built and deployed using vibe coding techniques.</p>
+          <span class="card-link">View Case Study</span>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('case-studies/swappy.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0f1f18,#142a1e);">
+            <div class="site-preview-embed">
+              <div class="site-preview-bar"><span></span><span></span><span></span></div>
+              <div class="site-preview-content" style="background:linear-gradient(160deg,#122518,#0c1c11);">
+                <div class="preview-headline" style="color:#4caf82;font-size:18px;">Swappy</div>
+                <div class="preview-sub" style="color:#6a9a7a;">Trade anything. Fast. Safe.</div>
+                <div class="preview-btn" style="background:#4caf82;color:#0c1c11;">Start Trading</div>
+              </div>
+            </div>
+            <span class="project-type-badge" style="background:rgba(76,175,130,0.15);color:#4caf82;border-color:rgba(76,175,130,0.3);">Vibe Coding</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vibe Coding · Marketplace · Trade Platform</span>
+          <h3 class="card-title">Swappy — Peer to Peer Trading Platform</h3>
+          <p class="card-desc">A swap and trade platform built with AI coding tools. The interface was designed to make peer to peer exchanges feel safe, simple and fast for everyday users.</p>
+          <span class="card-link">View Case Study</span>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('case-studies/portfolia.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#1a1020,#231530);">
+            <div class="site-preview-embed">
+              <div class="site-preview-bar"><span></span><span></span><span></span></div>
+              <div class="site-preview-content" style="background:linear-gradient(160deg,#1e1230,#150e25);">
+                <div class="preview-headline" style="color:#b28ef0;font-size:18px;">portfolia.</div>
+                <div class="preview-sub" style="color:#7a6a9a;">Your creative work, beautifully shown.</div>
+                <div class="preview-btn" style="background:linear-gradient(90deg,#b28ef0,#7c5cbf);color:#fff;">Build Portfolio</div>
+              </div>
+            </div>
+            <span class="project-type-badge" style="background:rgba(178,142,240,0.15);color:#b28ef0;border-color:rgba(178,142,240,0.3);">Vibe Coding</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vibe Coding · Portfolio Tool · Creatives</span>
+          <h3 class="card-title">Portfolia — Creative Portfolio Builder</h3>
+          <p class="card-desc">A portfolio building tool designed for creatives who want to showcase their work without technical overhead. Fully built and deployed with AI coding assistance.</p>
+          <span class="card-link">View Case Study</span>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('case-studies/tailorcv.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder" style="background:linear-gradient(135deg,#1f1a0a,#2a2210);">
+            <div class="site-preview-embed">
+              <div class="site-preview-bar"><span></span><span></span><span></span></div>
+              <div class="site-preview-content" style="background:linear-gradient(160deg,#261d08,#1a1406);">
+                <div class="preview-headline" style="color:#d4a843;font-size:16px;">Tailor CV</div>
+                <div class="preview-sub" style="color:#8a7a4a;">Match every application. Land more interviews.</div>
+                <div class="preview-btn" style="background:#d4a843;color:#1a1406;">Tailor My CV</div>
+              </div>
+            </div>
+            <span class="project-type-badge" style="background:rgba(212,168,67,0.15);color:#d4a843;border-color:rgba(212,168,67,0.3);">Vibe Coding</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Vibe Coding · Career Tech · AI Tool</span>
+          <h3 class="card-title">Tailor CV — AI Powered Resume Matching</h3>
+          <p class="card-desc">A smart resume tailoring tool that helps job seekers align their CV with specific job descriptions. Built end to end using AI coding tools with a clean focused interface.</p>
+          <span class="card-link">View Case Study</span>
+        </div>
+      </article>
+
       <article class="work-card reveal" onclick="navigateTo('case-studies/project-1.html')">
         <div class="card-image">
           <div class="card-img-placeholder vitsetech">
@@ -144,14 +297,13 @@
           </div>
         </div>
         <div class="card-body">
-          <span class="card-tag">UI/UX · Responsiveness</span>
+          <span class="card-tag">UI/UX · Mobile Responsiveness</span>
           <h3 class="card-title">Vitsetech — Mobile Responsiveness Redesign</h3>
-          <p class="card-desc">Redesigned the mobile experience of a tech company's website — improving layout, readability, and touch interaction across all breakpoints.</p>
-          <span class="card-link">View Case Study →</span>
+          <p class="card-desc">Redesigned the mobile experience of a tech company website improving layout, readability and touch interaction across all breakpoints.</p>
+          <span class="card-link">View Case Study</span>
         </div>
       </article>
 
-      <!-- Project 2 -->
       <article class="work-card reveal" onclick="navigateTo('case-studies/project-2.html')">
         <div class="card-image">
           <div class="card-img-placeholder lifemap">
@@ -162,13 +314,12 @@
         <div class="card-body">
           <span class="card-tag">Product Design · Mobile</span>
           <h3 class="card-title">Lifemap Naija — Mental Wellness App</h3>
-          <p class="card-desc">Designed a passion-discovery and mental wellness app for Nigerian users — grounding emotional UX in accessible, culturally aware design.</p>
-          <span class="card-link">View Case Study →</span>
+          <p class="card-desc">Designed a passion discovery and mental wellness app for Nigerian users grounding emotional UX in accessible, culturally aware design.</p>
+          <span class="card-link">View Case Study</span>
         </div>
       </article>
 
-      <!-- Project 3 -->
-      <article class="work-card reveal" onclick="navigateTo('case-studies/project-3.html')">
+      <article class="work-card work-card--wide reveal" onclick="navigateTo('case-studies/project-3.html')">
         <div class="card-image">
           <div class="card-img-placeholder safari">
             <div class="placeholder-pattern"></div>
@@ -176,32 +327,16 @@
           </div>
         </div>
         <div class="card-body">
-          <span class="card-tag">Game UI · Illustration</span>
+          <span class="card-tag">Game UI · Illustration · Maliyo Games</span>
           <h3 class="card-title">Safari City — Game UI Redesign</h3>
-          <p class="card-desc">Redesigned the game UI for Maliyo Games' Safari City — bringing visual clarity, African-inspired aesthetics, and engaging micro-interactions.</p>
-          <span class="card-link">View Case Study →</span>
+          <p class="card-desc">Redesigned the game UI for Maliyo Games Safari City bringing visual clarity, African inspired aesthetics and engaging micro interactions to Africa's leading mobile game.</p>
+          <span class="card-link">View Case Study</span>
         </div>
       </article>
 
-      <!-- Project 4 - Full Width -->
-      <article class="work-card work-card--wide reveal" onclick="navigateTo('case-studies/project-1.html')">
-        <div class="card-image">
-          <div class="card-img-placeholder retro">
-            <div class="placeholder-pattern"></div>
-            <span class="project-type-badge">Dashboard</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <span class="card-tag">UI Design · FinTech</span>
-          <h3 class="card-title">Retro — Crypto Portfolio Dashboard</h3>
-          <p class="card-desc">A clean, premium crypto dashboard interface with real-time portfolio tracking, designed for clarity under complexity.</p>
-          <span class="card-link">View Case Study →</span>
-        </div>
-      </article>
     </div>
   </section>
 
-  <!-- Services -->
   <section class="services">
     <div class="section-header">
       <span class="section-tag reveal">What I Do</span>
@@ -210,28 +345,37 @@
     <div class="services-grid">
       <div class="service-item reveal">
         <span class="service-num">01</span>
-        <h3>Product & UX Design</h3>
-        <p>End-to-end product design — from research and wireframes to polished Figma prototypes and handoff-ready specs.</p>
+        <h3>Product and UX Design</h3>
+        <p>End to end product design from research and wireframes to polished Figma prototypes and handoff ready specs. I work through the entire process, not just the pretty parts.</p>
       </div>
       <div class="service-item reveal">
         <span class="service-num">02</span>
-        <h3>UI & Visual Design</h3>
-        <p>Pixel-perfect interfaces with a strong visual identity — for SaaS, AI tools, apps, and websites.</p>
+        <h3>UI and Visual Design</h3>
+        <p>Pixel perfect interfaces with a strong visual identity for SaaS, AI tools, apps and websites. I care about how things look because first impressions matter and aesthetics convert.</p>
       </div>
       <div class="service-item reveal">
         <span class="service-num">03</span>
-        <h3>Game UI Design</h3>
-        <p>Game interfaces with personality — HUDs, menus, and icon systems crafted in Figma and Adobe Illustrator.</p>
+        <h3>Vibe Coding</h3>
+        <p>Full websites designed and deployed using AI tools like Claude, Cursor, Lovable and Bolt. Fast, functional and genuinely well designed without waiting on a traditional dev cycle.</p>
       </div>
       <div class="service-item reveal">
         <span class="service-num">04</span>
+        <h3>Game UI Design</h3>
+        <p>Game interfaces with personality including HUDs, menus and icon systems crafted in Figma and Adobe Illustrator. Built for engagement and cultural resonance.</p>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">05</span>
+        <h3>Graphic Design</h3>
+        <p>Brand identity, flyers, logos and social media visuals that communicate clearly and look exceptional. Design that works across both print and screen.</p>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">06</span>
         <h3>No-Code Development</h3>
-        <p>Building and deploying polished web experiences with Framer, WordPress, and Webflow — fast, functional, beautiful.</p>
+        <p>Building and deploying polished web experiences with Framer, WordPress and Webflow. Fast, functional and beautiful without writing traditional code from scratch.</p>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
   <section class="experience">
     <div class="section-header">
       <span class="section-tag reveal">Background</span>
@@ -243,7 +387,7 @@
         <div class="exp-body">
           <h3>Senior Web Designer</h3>
           <span class="exp-company">Scrum Consult</span>
-          <p>Leading web design and UI/UX for client projects — website design, mobile UI, and design system development.</p>
+          <p>Leading web design and UI/UX for client projects covering website design, mobile UI and design system development. Working closely with development teams to ensure designs ship exactly as intended.</p>
         </div>
       </div>
       <div class="exp-item reveal">
@@ -251,42 +395,48 @@
         <div class="exp-body">
           <h3>Game UI Designer</h3>
           <span class="exp-company">Maliyo Games</span>
-          <p>Designed game interfaces and icon systems for Safari City — Africa's leading mobile gaming platform.</p>
+          <p>Designed game interfaces and icon systems for Safari City, Africa's leading mobile gaming platform. Balanced functional clarity with vibrant African visual identity across the entire UI.</p>
         </div>
       </div>
       <div class="exp-item reveal">
         <div class="exp-year">2022 – 2024</div>
         <div class="exp-body">
-          <h3>WordPress Developer</h3>
-          <span class="exp-company">Kiyomi (Self-directed)</span>
-          <p>Built and maintained websites with WordPress — developing a full stack of design and development skills.</p>
+          <h3>WordPress Developer and Designer</h3>
+          <span class="exp-company">Kiyomi (Self Directed)</span>
+          <p>Built and maintained websites for clients across Nigeria using WordPress. Developed a deep understanding of how design decisions affect real user behavior and business outcomes.</p>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-year">2023 – Present</div>
+        <div class="exp-body">
+          <h3>Independent Designer and Vibe Coder</h3>
+          <span class="exp-company">Kiyomi Groups</span>
+          <p>Running my own design and build practice. Working with startups, entrepreneurs and brands across Nigeria to create products that are both visually strong and technically deployed. Specializing in AI assisted development for fast turnaround projects.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Explore System CTA -->
   <section class="system-cta">
     <div class="cta-inner reveal">
       <span class="cta-tag">More than one world</span>
-      <h2>Explore the full design system.</h2>
-      <p>Beyond product design, there are four more worlds — each with its own aesthetic and focus.</p>
-      <button class="btn-primary" id="ctaOpenMap">View Full System ⊕</button>
+      <h2>There is more to explore.</h2>
+      <p>Beyond product design, there are four more worlds. Each one has its own aesthetic, its own focus, and its own kind of work.</p>
+      <button class="btn-primary" id="ctaOpenMap">View Full System</button>
     </div>
     <div class="cta-worlds-preview">
       <a class="world-chip reveal" href="worlds/uiux.html">UI/UX World</a>
       <a class="world-chip reveal" href="worlds/graphic.html">Graphic Design</a>
       <a class="world-chip reveal" href="worlds/nocode.html">No-Code / Dev</a>
-      <a class="world-chip reveal" href="worlds/vibe-lab.html">Vibe Lab ✦</a>
+      <a class="world-chip reveal" href="worlds/vibe-lab.html">Vibe Coding</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-left">
         <span class="footer-logo">Adunola<span class="logo-dot">.</span></span>
-        <p>Product Designer · UI Artist · Based in Lagos, Nigeria</p>
+        <p>Product Designer · Vibe Coder · Based in Lagos, Nigeria</p>
         <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
       </div>
       <div class="footer-links">
@@ -294,7 +444,7 @@
         <a href="worlds/uiux.html">UI/UX Design</a>
         <a href="worlds/graphic.html">Graphic Design</a>
         <a href="worlds/nocode.html">No-Code / Dev</a>
-        <a href="worlds/vibe-lab.html">Vibe Lab</a>
+        <a href="worlds/vibe-lab.html">Vibe Coding</a>
       </div>
       <div class="footer-links">
         <h4>Connect</h4>
@@ -305,8 +455,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Adunola Babadiya. All rights reserved.</span>
-      <span>Designed & built by Adunola.</span>
+      <span>2025 Adunola Babadiya. All rights reserved.</span>
+      <span>Designed and built by Adunola.</span>
     </div>
   </footer>
 

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreetTasker Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --cs-accent: #5b9cf6; }
+    .cs-hero-visual {
+      width: 100%; aspect-ratio: 16/7;
+      background: linear-gradient(135deg, #1a2744 0%, #0f1829 60%, #0a1020 100%);
+      border-radius: 4px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; margin: 40px 0;
+    }
+    .cs-hero-visual-inner {
+      text-align: center; z-index: 1;
+    }
+    .cs-hero-visual-title {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 6vw, 90px);
+      font-weight: 300; color: #5b9cf6;
+      line-height: 1;
+    }
+    .cs-hero-visual-sub {
+      font-size: 14px; color: rgba(91,156,246,0.6);
+      margin-top: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .vibe-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(91,156,246,0.1); border: 1px solid rgba(91,156,246,0.25);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #5b9cf6; margin-bottom: 20px;
+    }
+    .tool-pill {
+      display: inline-block;
+      background: rgba(91,156,246,0.08); border: 1px solid rgba(91,156,246,0.2);
+      color: #5b9cf6; padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.06em; margin: 3px;
+    }
+    .live-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: #5b9cf6; color: #0a0a09;
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .live-link-btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body data-page="case-study">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">x Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <div class="vibe-badge">Vibe Coding Project</div>
+    <span class="section-tag reveal">AI Built · Gig Economy · Full Platform</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      StreetTasker<br/>Gig Economy Platform
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Type</label><span>Vibe Coding / AI Development</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Designer and Builder</span></div>
+      <div class="cs-meta-item"><label>Tools Used</label><span>Claude, Cursor, HTML/CSS/JS</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
+      <div class="cs-meta-item"><label>URL</label><span><a href="https://streettasker.com" target="_blank" style="color:var(--accent);">streettasker.com</a></span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-hero-visual reveal">
+      <div class="cs-hero-visual-inner">
+        <div class="cs-hero-visual-title">StreetTasker</div>
+        <div class="cs-hero-visual-sub">Task. Earn. Repeat.</div>
+        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <span style="background:rgba(91,156,246,0.15);border:1px solid rgba(91,156,246,0.3);color:#5b9cf6;padding:6px 16px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Post a Task</span>
+          <span style="background:#5b9cf6;color:#0a0a09;padding:6px 16px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Find Work</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>StreetTasker is a gig economy platform designed to connect everyday people with local workers who can get things done. Think of it as the missing middle layer between someone who needs help and someone nearby who has the time and skill to help them. The concept was born from a simple observation: Lagos is full of capable, hardworking people who just need a reliable way to find consistent work, and full of busy people who need small jobs done without the complexity of a formal hiring process.</p>
+      <p style="margin-top:14px;">This project was built entirely using vibe coding, which means I used AI tools throughout the entire process, from generating the initial structure, to writing the logic, to deploying the finished platform. The design decisions were still mine. The product thinking was still mine. But the speed of execution changed completely.</p>
+      <div style="margin-top:24px;">
+        <div class="tool-pill">Claude AI</div>
+        <div class="tool-pill">Cursor</div>
+        <div class="tool-pill">HTML/CSS</div>
+        <div class="tool-pill">Vanilla JS</div>
+        <div class="tool-pill">GitHub Pages</div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "The platform needed to feel professional enough for users to trust it, but simple enough that a first-time user could post or find a task in under two minutes."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The Problem</h2>
+      <p>Informal labor markets in Nigeria are massive but deeply fragmented. Workers rely on word of mouth, neighborhood networks and social media posts that disappear in hours. People who need help have no reliable way to find vetted, available workers nearby. Both sides of this equation are losing value every day because there is no platform built specifically for this context.</p>
+      <p style="margin-top:14px;">Existing platforms like Fiverr or TaskRabbit were not designed with the Nigerian market in mind. The pricing models, payment infrastructure and language patterns do not fit. StreetTasker needed to be something built specifically for the reality of how things work here.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User Flows</h2>
+      <pre class="cs-flow">
+TASK POSTER FLOW
+User lands on homepage
+  → Sees clear value proposition
+    → Clicks "Post a Task"
+      → Fills in task name, description, location, budget
+        → Task goes live on board
+          → Workers browse and send interest
+            → Poster picks a worker
+              → Job gets done
+
+WORKER FLOW
+Worker lands on homepage
+  → Clicks "Find Work"
+    → Browses available tasks by category or location
+      → Clicks a task to view details
+        → Sends interest with a short message
+          → Task poster responds
+            → Work begins
+      </pre>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design Decisions</h2>
+      <p>The interface uses a clean two-sided layout. The homepage immediately communicates both use cases side by side, so users can self-select into the right path without confusion. I used a dark blue palette to suggest trust and reliability, which matters a lot when people are making decisions about hiring someone they have never met.</p>
+      <p style="margin-top:14px;">Task cards are deliberately simple. Name of task, category, rough location, and a budget range. No clutter. The goal was to let workers scan quickly and act fast. Attention on these platforms is short and the design respects that.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Vibe Coding Process</h2>
+      <p>This platform was built in a single extended session using Claude and Cursor. I started by describing the product concept and letting Claude generate the base HTML structure and component logic. Then I shaped the visual design by iterating on the CSS in Cursor, making changes in conversation with the AI rather than writing everything manually from scratch.</p>
+      <p style="margin-top:14px;">The result is a platform that would have taken a small team two to three weeks to build traditionally. Using vibe coding it was live in roughly two days. That speed does not compromise the quality. If anything, the tight feedback loop between me and the AI meant I could explore more design directions faster and land on better solutions.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Outcome</h2>
+      <p>StreetTasker is live at streettasker.com. The platform demonstrates that a functional, well designed gig economy product can be scoped, designed and built by one person with the right tools. It stands as a proof of concept for what vibe coding makes possible, and as a real product that could scale with the right community behind it.</p>
+      <div style="margin-top:28px;">
+        <a href="https://streettasker.com" target="_blank" class="live-link-btn">View Live Site</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <div class="cs-next-label">More Projects</div>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('andrestylez.html')">
+        <span class="cs-next-tag">Vibe Coding · Fashion</span>
+        <h4>AndreStylez</h4>
+        <p>Fashion brand website built with AI</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('cvbykiyomi.html')">
+        <span class="cs-next-tag">Vibe Coding · Career Tech</span>
+        <h4>CV by Kiyomi</h4>
+        <p>Resume builder platform</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,137 +1,64 @@
-# Adunola Babadiya — Multi-World Portfolio
+# Adunola Babadiya — Portfolio
 
-A premium, dark-luxury design portfolio with a multi-world system. Built with HTML + CSS + Vanilla JS. GitHub Pages ready.
+Premium multi-world creative portfolio. Built for GitHub Pages.
 
----
+## Live Deployment
 
-## 📁 File Structure
+1. Create a GitHub repo named `adunolababadiya` (or any name)
+2. Upload all files maintaining the folder structure
+3. Go to Settings > Pages
+4. Set Branch: main, Folder: /root
+5. Save — your site goes live at `https://yourusername.github.io/reponame`
+
+## Local Preview
+
+Just open `index.html` in your browser. Or use VS Code Live Server for best results.
+
+## File Structure
 
 ```
-/
-├── index.html              ← Main site (Product Design homepage)
-├── styles.css              ← Global design system
-├── script.js               ← All interactions & transitions
-│
-├── worlds/
-│   ├── uiux.html           ← UI/UX Design World
-│   ├── graphic.html        ← Graphic Design World
-│   ├── nocode.html         ← No-Code / Development World
-│   └── vibe-lab.html       ← Vibe Lab (experimental)
-│
-├── case-studies/
-│   ├── project-1.html      ← Vitsetech Mobile Redesign
-│   ├── project-2.html      ← Lifemap Naija Wellness App
-│   └── project-3.html      ← Safari City Game UI Redesign
-│
-└── assets/
-    ├── images/             ← Add project screenshots here
-    └── icons/              ← Add custom icons here
+/index.html              Main Product Design portfolio
+/styles.css              Full design system styles
+/script.js               All JS: transitions, map, scroll reveals
+
+/worlds/
+  uiux.html              UI/UX Design world
+  graphic.html           Graphic Design world (with upload gallery)
+  nocode.html            No-Code / Dev world
+  vibe-lab.html          Vibe Coding world
+
+/case-studies/
+  streettasker.html      StreetTasker case study
+  andrestylez.html       AndreStylez case study
+  cvbykiyomi.html        CV by Kiyomi case study
+  swappy.html            Swappy case study
+  portfolia.html         Portfolia case study
+  tailorcv.html          Tailor CV case study
+  project-1.html         Vitsetech case study
+  project-2.html         Lifemap Naija case study
+  project-3.html         Safari City case study
 ```
 
----
+## Adding Graphics
 
-## 🧪 Local Preview
+On the Graphic Design world page (`worlds/graphic.html`):
+- Click the `+` upload slots in any gallery section (Flyers, Logos, Social, Brand)
+- Select one or multiple images
+- They appear in the gallery immediately
+- Note: uploads are session-only (browser memory). To make them permanent, replace the placeholder `div` elements with `<img>` tags pointing to files in `/assets/images/`
 
-### Option 1: Direct open (quickest)
-Simply double-click `index.html` — it will open in your browser.
+## Vibe Coding Projects
 
-> ⚠️ Note: Some browsers may block relative file navigation due to local security policies. Use Option 2 for full functionality.
+All 6 live vibe coding projects are linked from both the main index and the Vibe Coding world:
+- streettasker.com
+- andrestylez.com
+- kiyomigroup.github.io/CVbykiyomi/
+- kiyomigroup.github.io/Swappy/
+- kiyomigroup.github.io/portfolia/
+- kiyomigroup.github.io/tailor-cv/
 
-### Option 2: VS Code Live Server (recommended)
-1. Open the portfolio folder in VS Code
-2. Install the **Live Server** extension (by Ritwick Dey)
-3. Right-click `index.html` → **"Open with Live Server"**
-4. Your site opens at `http://127.0.0.1:5500`
+## Contact
 
-### Option 3: Python local server
-```bash
-cd /path/to/portfolio
-python3 -m http.server 8000
-# Then visit: http://localhost:8000
-```
-
----
-
-## 🎬 How the Site Works
-
-### Flow
-1. User lands on **index.html** — the Product Design homepage
-2. They scroll through the hero, case studies, services, and experience sections
-3. They notice **"Explore System ⊕"** in the navigation or the CTA section
-4. Clicking it opens the **System Map overlay** — a full-screen node diagram
-5. Each node represents a world; clicking navigates to that world
-
-### System Map
-- Triggered by: nav button or CTA button on homepage
-- Shows 5 nodes: Adunola (center), UI/UX, Graphic, No-Code, Vibe Lab
-- Click any node → navigates to that world with a fade transition
-- Press **Escape** or click **✕ Close** to dismiss
-- Available on every page via the nav
-
-### Page Transitions
-All navigation uses the `navigateTo(url)` function in `script.js` which:
-1. Fades in the overlay (`.page-overlay`)
-2. After 400ms, navigates to the URL
-3. On page load, fades the overlay back out
-
-### Worlds
-Each world (`worlds/*.html`) is a standalone mini-site with:
-- Its own accent color (CSS variable `--world-accent`)
-- Its own hero, content sections, and footer
-- The same system map available in the nav
-- "← Back to Main" always accessible
-
----
-
-## 🚀 GitHub Pages Deployment
-
-1. Create a new GitHub repo named: `adunolababadiya` (or any name)
-2. Upload all files maintaining the same folder structure
-3. Go to **Settings → Pages**
-4. Set:
-   - Branch: `main`
-   - Folder: `/ (root)`
-5. Click **Save**
-6. Your site goes live at: `https://[yourusername].github.io/[reponame]/`
-
-### Quick deploy with GitHub CLI:
-```bash
-git init
-git add .
-git commit -m "Initial portfolio deploy"
-git remote add origin https://github.com/yourusername/adunolababadiya.git
-git push -u origin main
-```
-
----
-
-## 🎨 Design System
-
-- **Background:** `#0a0a09` (near-black warm)
-- **Accent:** `#c8a96e` (warm gold)
-- **Typography:** Cormorant Garamond (display) + DM Mono (body)
-- **World Accents:** Blue (`uiux`), Terracotta (`graphic`), Green (`nocode`), Lavender (`vibe`)
-
----
-
-## ✉️ Contact Info Used
-- Email: Adunoladiya@gmail.com
-- WhatsApp: +234 708 844 8530
-- Twitter: @Nolagraphics_
-- YouTube: NolaDesigns
-
----
-
-## 📝 Adding Real Project Images
-
-To replace the placeholder gradient backgrounds with real project screenshots:
-
-1. Add images to `/assets/images/`
-2. In the relevant HTML, replace `.card-img-placeholder` with:
-```html
-<img src="../assets/images/your-project-image.jpg" alt="Project name" />
-```
-
----
-
-*Built by Adunola Babadiya · 2025*
+Email: Adunoladiya@gmail.com
+WhatsApp: +2347088448530
+Twitter: @Nolagraphics_
