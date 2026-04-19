@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adunola Babadiya — Product Designer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body class="main-site" data-page="home">
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <!-- System Map Overlay -->
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose" aria-label="Close system map">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('index.html')">
+        <div class="node-ring"></div>
+        <span class="node-label-main">Adunola</span>
+        <span class="node-sub">Product Design</span>
+      </div>
+      <div class="map-node node-uiux" onclick="navigateTo('worlds/uiux.html')">
+        <div class="node-dot"></div>
+        <span>UI/UX</span>
+      </div>
+      <div class="map-node node-graphic" onclick="navigateTo('worlds/graphic.html')">
+        <div class="node-dot"></div>
+        <span>Graphic</span>
+      </div>
+      <div class="map-node node-nocode" onclick="navigateTo('worlds/nocode.html')">
+        <div class="node-dot"></div>
+        <span>No-Code</span>
+      </div>
+      <div class="map-node node-vibe" onclick="navigateTo('worlds/vibe-lab.html')">
+        <div class="node-dot"></div>
+        <span>Vibe Lab</span>
+      </div>
+    </div>
+    <svg class="map-lines" id="mapLines" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+      <line class="map-line" x1="400" y1="300" x2="200" y2="120" />
+      <line class="map-line" x1="400" y1="300" x2="620" y2="150" />
+      <line class="map-line" x1="400" y1="300" x2="150" y2="430" />
+      <line class="map-line" x1="400" y1="300" x2="650" y2="430" />
+    </svg>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <a href="index.html" class="nav-logo">Adunola<span class="logo-dot">.</span></a>
+    <div class="nav-links">
+      <a href="mailto:Adunoladiya@gmail.com" class="nav-link">Contact</a>
+      <button class="nav-system-btn" id="openSystemMap">Explore System ⊕</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-eyebrow reveal">Product Designer</div>
+    <h1 class="hero-headline reveal-delay">
+      Designing experiences<br/>
+      <em>that feel inevitable.</em>
+    </h1>
+    <p class="hero-sub reveal-delay-2">
+      I help SaaS and AI startups craft intuitive, conversion-driven interfaces—blending strategic UX thinking with the eye of a UI artist.
+    </p>
+    <div class="hero-cta reveal-delay-3">
+      <a href="#work" class="btn-primary">View Work</a>
+      <a href="mailto:Adunoladiya@gmail.com" class="btn-ghost">Let's Talk →</a>
+    </div>
+    <div class="hero-scroll-hint reveal-delay-3">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <span>UI/UX Design</span><span class="sep">·</span>
+      <span>Game UI</span><span class="sep">·</span>
+      <span>Product Design</span><span class="sep">·</span>
+      <span>Figma</span><span class="sep">·</span>
+      <span>No-Code</span><span class="sep">·</span>
+      <span>Illustration</span><span class="sep">·</span>
+      <span>Design Systems</span><span class="sep">·</span>
+      <span>UI/UX Design</span><span class="sep">·</span>
+      <span>Game UI</span><span class="sep">·</span>
+      <span>Product Design</span><span class="sep">·</span>
+      <span>Figma</span><span class="sep">·</span>
+      <span>No-Code</span><span class="sep">·</span>
+      <span>Illustration</span><span class="sep">·</span>
+      <span>Design Systems</span><span class="sep">·</span>
+    </div>
+  </div>
+
+  <!-- About Strip -->
+  <section class="about-strip">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <h2>A designer who thinks in systems, builds in Figma, and ships in code.</h2>
+        <p>Based in Lagos, Nigeria — I've worked with startups, agencies, and gaming companies to create interfaces that are not only functional and data-driven, but visually distinctive and emotionally engaging.</p>
+      </div>
+      <div class="about-stats reveal-delay">
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">10+</span>
+          <span class="stat-label">Projects Shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Design Worlds</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <span class="section-tag reveal">Selected Work</span>
+      <h2 class="section-title reveal-delay">Case Studies</h2>
+    </div>
+
+    <div class="work-grid">
+      <!-- Project 1 -->
+      <article class="work-card reveal" onclick="navigateTo('case-studies/project-1.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder vitsetech">
+            <div class="placeholder-pattern"></div>
+            <span class="project-type-badge">Mobile UI</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">UI/UX · Responsiveness</span>
+          <h3 class="card-title">Vitsetech — Mobile Responsiveness Redesign</h3>
+          <p class="card-desc">Redesigned the mobile experience of a tech company's website — improving layout, readability, and touch interaction across all breakpoints.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="work-card reveal" onclick="navigateTo('case-studies/project-2.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder lifemap">
+            <div class="placeholder-pattern"></div>
+            <span class="project-type-badge">App Design</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Product Design · Mobile</span>
+          <h3 class="card-title">Lifemap Naija — Mental Wellness App</h3>
+          <p class="card-desc">Designed a passion-discovery and mental wellness app for Nigerian users — grounding emotional UX in accessible, culturally aware design.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="work-card reveal" onclick="navigateTo('case-studies/project-3.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder safari">
+            <div class="placeholder-pattern"></div>
+            <span class="project-type-badge">Game UI</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Game UI · Illustration</span>
+          <h3 class="card-title">Safari City — Game UI Redesign</h3>
+          <p class="card-desc">Redesigned the game UI for Maliyo Games' Safari City — bringing visual clarity, African-inspired aesthetics, and engaging micro-interactions.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </article>
+
+      <!-- Project 4 - Full Width -->
+      <article class="work-card work-card--wide reveal" onclick="navigateTo('case-studies/project-1.html')">
+        <div class="card-image">
+          <div class="card-img-placeholder retro">
+            <div class="placeholder-pattern"></div>
+            <span class="project-type-badge">Dashboard</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">UI Design · FinTech</span>
+          <h3 class="card-title">Retro — Crypto Portfolio Dashboard</h3>
+          <p class="card-desc">A clean, premium crypto dashboard interface with real-time portfolio tracking, designed for clarity under complexity.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <div class="section-header">
+      <span class="section-tag reveal">What I Do</span>
+      <h2 class="section-title reveal-delay">Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-item reveal">
+        <span class="service-num">01</span>
+        <h3>Product & UX Design</h3>
+        <p>End-to-end product design — from research and wireframes to polished Figma prototypes and handoff-ready specs.</p>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">02</span>
+        <h3>UI & Visual Design</h3>
+        <p>Pixel-perfect interfaces with a strong visual identity — for SaaS, AI tools, apps, and websites.</p>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">03</span>
+        <h3>Game UI Design</h3>
+        <p>Game interfaces with personality — HUDs, menus, and icon systems crafted in Figma and Adobe Illustrator.</p>
+      </div>
+      <div class="service-item reveal">
+        <span class="service-num">04</span>
+        <h3>No-Code Development</h3>
+        <p>Building and deploying polished web experiences with Framer, WordPress, and Webflow — fast, functional, beautiful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="experience">
+    <div class="section-header">
+      <span class="section-tag reveal">Background</span>
+      <h2 class="section-title reveal-delay">Experience</h2>
+    </div>
+    <div class="exp-list">
+      <div class="exp-item reveal">
+        <div class="exp-year">2024 – Present</div>
+        <div class="exp-body">
+          <h3>Senior Web Designer</h3>
+          <span class="exp-company">Scrum Consult</span>
+          <p>Leading web design and UI/UX for client projects — website design, mobile UI, and design system development.</p>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-year">Mar – Jul 2025</div>
+        <div class="exp-body">
+          <h3>Game UI Designer</h3>
+          <span class="exp-company">Maliyo Games</span>
+          <p>Designed game interfaces and icon systems for Safari City — Africa's leading mobile gaming platform.</p>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-year">2022 – 2024</div>
+        <div class="exp-body">
+          <h3>WordPress Developer</h3>
+          <span class="exp-company">Kiyomi (Self-directed)</span>
+          <p>Built and maintained websites with WordPress — developing a full stack of design and development skills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore System CTA -->
+  <section class="system-cta">
+    <div class="cta-inner reveal">
+      <span class="cta-tag">More than one world</span>
+      <h2>Explore the full design system.</h2>
+      <p>Beyond product design, there are four more worlds — each with its own aesthetic and focus.</p>
+      <button class="btn-primary" id="ctaOpenMap">View Full System ⊕</button>
+    </div>
+    <div class="cta-worlds-preview">
+      <a class="world-chip reveal" href="worlds/uiux.html">UI/UX World</a>
+      <a class="world-chip reveal" href="worlds/graphic.html">Graphic Design</a>
+      <a class="world-chip reveal" href="worlds/nocode.html">No-Code / Dev</a>
+      <a class="world-chip reveal" href="worlds/vibe-lab.html">Vibe Lab ✦</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <span class="footer-logo">Adunola<span class="logo-dot">.</span></span>
+        <p>Product Designer · UI Artist · Based in Lagos, Nigeria</p>
+        <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
+      </div>
+      <div class="footer-links">
+        <h4>Worlds</h4>
+        <a href="worlds/uiux.html">UI/UX Design</a>
+        <a href="worlds/graphic.html">Graphic Design</a>
+        <a href="worlds/nocode.html">No-Code / Dev</a>
+        <a href="worlds/vibe-lab.html">Vibe Lab</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://x.com/Nolagraphics_" target="_blank">Twitter / X</a>
+        <a href="https://youtube.com/NolaDesigns-s5z" target="_blank">YouTube</a>
+        <a href="http://wa.me/+2347088448530" target="_blank">WhatsApp</a>
+        <a href="https://kiyomigroups.framer.website" target="_blank">Framer Site</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Adunola Babadiya. All rights reserved.</span>
+      <span>Designed & built by Adunola.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

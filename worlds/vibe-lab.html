@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Lab — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --world-accent: #b89bd4; }
+    body { background: #07060d; }
+    .vibe-full-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 40px 60px;
+    }
+    canvas#vibeCanvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .vibe-full-hero > * { position: relative; z-index: 1; }
+    .vibe-hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--world-accent);
+      margin-bottom: 32px;
+      display: block;
+    }
+    .vibe-hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 9vw, 120px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+    .vibe-hero-h1 em { font-style: italic; color: var(--world-accent); }
+    .vibe-hero-p {
+      max-width: 480px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0 auto 48px;
+    }
+    .vibe-scroll-hint {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:0.3} 50%{opacity:1} }
+    .vibe-manifesto {
+      padding: 100px 60px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .vibe-manifesto blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 56px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.3;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+    .vibe-manifesto cite {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--world-accent);
+    }
+    .vibe-experiments-section { padding: 80px 0; }
+    .vibe-exp-header {
+      padding: 0 60px;
+      margin-bottom: 48px;
+    }
+    .vibe-exp-header span {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--world-accent);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .vibe-exp-header p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      max-width: 480px;
+    }
+    .interactive-demo {
+      padding: 80px 60px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .demo-area {
+      width: 100%;
+      height: 320px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(184,155,212,0.03);
+      cursor: none;
+      position: relative;
+      overflow: hidden;
+      margin-top: 48px;
+    }
+    .demo-instructions {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+    .demo-instructions span {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--world-accent);
+      pointer-events: none;
+      animation: ripple-expand 1.4s ease-out forwards;
+    }
+    @keyframes ripple-expand {
+      0% { width: 0; height: 0; opacity: 0.6; transform: translate(-50%, -50%); }
+      100% { width: 300px; height: 300px; opacity: 0; transform: translate(-50%, -50%); }
+    }
+    @media (max-width: 768px) {
+      .world-hero-num { display: none; }
+      .vibe-manifesto, .interactive-demo { padding: 60px 24px; }
+      .vibe-exp-header { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body class="world-page" data-world="vibe">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('vibe-lab.html')"><div class="node-dot" style="background:var(--world-accent);"></div><span style="color:var(--world-accent);">Vibe Lab ✦</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav" style="background: rgba(7,6,13,0.9);">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">← Back to Main</a>
+      <span class="world-name" style="color:var(--world-accent);">Vibe Lab</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+  </nav>
+
+  <!-- Particle Hero -->
+  <section class="vibe-full-hero">
+    <canvas id="vibeCanvas"></canvas>
+    <span class="vibe-hero-tag">World 04 · Experimental</span>
+    <h1 class="vibe-hero-h1 reveal">Vibe<br/><em>Lab</em></h1>
+    <p class="vibe-hero-p reveal-delay">
+      Where design escapes the brief. Experiments in motion, interaction, and the aesthetic edges that don't belong in a case study — but belong here.
+    </p>
+    <span class="vibe-scroll-hint">↓ Enter the lab</span>
+  </section>
+
+  <!-- Manifesto -->
+  <section class="vibe-manifesto">
+    <blockquote class="reveal">
+      "Good design solves problems.<br/>Great design makes you feel something."
+    </blockquote>
+    <cite class="reveal-delay">— A working principle</cite>
+  </section>
+
+  <!-- Experiments -->
+  <section class="vibe-experiments-section">
+    <div class="vibe-exp-header">
+      <span class="reveal">Experiments</span>
+      <p class="reveal-delay">Interactions, motion studies, and design concepts that exist for curiosity alone.</p>
+    </div>
+    <div class="vibe-experiments">
+      <div class="vibe-exp-card reveal">
+        <div class="vibe-exp-num">01</div>
+        <div>
+          <h3>Particle Fields</h3>
+          <p>Generative particle systems as ambient backgrounds — exploring how randomness can feel intentional and atmospheric.</p>
+        </div>
+        <span class="vibe-exp-tag">Motion</span>
+      </div>
+      <div class="vibe-exp-card reveal">
+        <div class="vibe-exp-num">02</div>
+        <div>
+          <h3>Cursor as Medium</h3>
+          <p>Custom cursors, ripple effects, and hover states that make every interaction a micro-moment of delight.</p>
+        </div>
+        <span class="vibe-exp-tag">Interaction</span>
+      </div>
+      <div class="vibe-exp-card reveal">
+        <div class="vibe-exp-num">03</div>
+        <div>
+          <h3>Dark Luxury Aesthetic</h3>
+          <p>An exploration of deep darks, gold accents, and serif typography — a premium design language built from scratch.</p>
+        </div>
+        <span class="vibe-exp-tag">Visual</span>
+      </div>
+      <div class="vibe-exp-card reveal">
+        <div class="vibe-exp-num">04</div>
+        <div>
+          <h3>Scroll as Narrative</h3>
+          <p>Using scroll position to tell stories — staggered reveals, parallax depth, and momentum-driven transitions.</p>
+        </div>
+        <span class="vibe-exp-tag">Animation</span>
+      </div>
+      <div class="vibe-exp-card reveal">
+        <div class="vibe-exp-num">05</div>
+        <div>
+          <h3>Multi-World Navigation</h3>
+          <p>This very site — a system map metaphor for a portfolio. The navigation IS the design statement.</p>
+        </div>
+        <span class="vibe-exp-tag">Concept</span>
+      </div>
+      <div class="vibe-exp-card reveal">
+        <div class="vibe-exp-num">06</div>
+        <div>
+          <h3>African Futurism</h3>
+          <p>Ongoing exploration of what African design sensibility looks like when it leads the aesthetic rather than decorates it.</p>
+        </div>
+        <span class="vibe-exp-tag">Identity</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Demo -->
+  <section class="interactive-demo">
+    <span class="world-section-title reveal" style="color:var(--world-accent);">Live Experiment</span>
+    <p class="reveal-delay" style="color:var(--text-secondary); font-size:13px;">Click anywhere in the area below to create ripples.</p>
+    <div class="demo-area" id="demoArea">
+      <div class="demo-instructions" id="demoInstructions">
+        <span>Click to interact</span>
+        Move your cursor here
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="background: #07060d;">
+    <div class="footer-bottom" style="padding-top:40px; border-top: 1px solid var(--border);">
+      <span>Vibe Lab · The experimental wing of Adunola's design system</span>
+      <a href="../index.html" style="color:var(--world-accent);">Return to Main Site →</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Demo area ripples
+    const demoArea = document.getElementById('demoArea');
+    const demoInstructions = document.getElementById('demoInstructions');
+    if (demoArea) {
+      demoArea.addEventListener('click', (e) => {
+        demoInstructions.style.opacity = '0';
+        const rect = demoArea.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const ripple = document.createElement('div');
+        ripple.className = 'ripple';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        demoArea.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+      });
+    }
+  </script>
+</body>
+</html>

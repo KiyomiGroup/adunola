@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic Design World — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --world-accent: #d4896a; }
+    .world-hero::before {
+      content: '';
+      position: absolute; top: -200px; left: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(212,137,106,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .world-hero-num {
+      position: absolute; right: 60px; bottom: 80px;
+      font-family: var(--font-display); font-size: 200px; font-weight: 300;
+      color: rgba(212,137,106,0.04); line-height: 1; pointer-events: none;
+    }
+    .graphic-showcase { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .showcase-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+    .showcase-item {
+      background: var(--bg); padding: 0;
+      overflow: hidden; aspect-ratio: 1;
+      display: flex; flex-direction: column;
+      transition: background 0.3s;
+    }
+    .showcase-item:hover { background: var(--bg-2); }
+    .showcase-thumb {
+      flex: 1;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 48px; font-weight: 300;
+      color: rgba(255,255,255,0.04);
+      position: relative; overflow: hidden;
+    }
+    .showcase-thumb.g1 { background: linear-gradient(135deg, #2a1f15, #1a1208); }
+    .showcase-thumb.g2 { background: linear-gradient(135deg, #1f2015, #121408); }
+    .showcase-thumb.g3 { background: linear-gradient(135deg, #151f2a, #08121a); }
+    .showcase-thumb.g4 { background: linear-gradient(135deg, #201520, #150815); }
+    .showcase-thumb.g5 { background: linear-gradient(135deg, #202015, #141408); }
+    .showcase-thumb.g6 { background: linear-gradient(135deg, #152020, #081414); }
+    .showcase-thumb::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(212,137,106,0.08) 0%, transparent 60%);
+    }
+    .showcase-label {
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+    }
+    .showcase-label h4 { font-family: var(--font-display); font-size: 16px; font-weight: 300; }
+    .showcase-label span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--world-accent); }
+    @media (max-width: 768px) {
+      .showcase-grid { grid-template-columns: 1fr 1fr; }
+      .world-hero-num { display: none; }
+      .graphic-showcase { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body class="world-page" data-world="graphic">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('graphic.html')"><div class="node-dot" style="background:var(--world-accent);"></div><span style="color:var(--world-accent);">Graphic ✦</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('vibe-lab.html')"><div class="node-dot"></div><span>Vibe Lab</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">← Back to Main</a>
+      <span class="world-name">Graphic Design World</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+  </nav>
+
+  <section class="world-hero">
+    <span class="world-tag reveal">World 02</span>
+    <h1 class="reveal-delay">Graphic<br/><em>Design</em></h1>
+    <p class="reveal-delay-2">Visual identity, illustration, flyer design, and brand communication — crafted with Adobe tools and a strong sense of African visual culture.</p>
+    <div class="world-hero-num">02</div>
+  </section>
+
+  <!-- Showcase -->
+  <section class="graphic-showcase">
+    <span class="world-section-title reveal">Visual Work</span>
+    <div class="showcase-grid">
+      <div class="showcase-item reveal">
+        <div class="showcase-thumb g1">
+          <div class="placeholder-pattern"></div>
+          <span>Illustration</span>
+        </div>
+        <div class="showcase-label">
+          <h4>African Character Illustration</h4>
+          <span>Adobe Illustrator</span>
+        </div>
+      </div>
+      <div class="showcase-item reveal">
+        <div class="showcase-thumb g2">
+          <div class="placeholder-pattern"></div>
+          <span>Poster</span>
+        </div>
+        <div class="showcase-label">
+          <h4>ScrumConsult Brand Flyer</h4>
+          <span>Figma · Print Design</span>
+        </div>
+      </div>
+      <div class="showcase-item reveal">
+        <div class="showcase-thumb g3">
+          <div class="placeholder-pattern"></div>
+          <span>Game Art</span>
+        </div>
+        <div class="showcase-label">
+          <h4>Safari City Game Icons</h4>
+          <span>Adobe Illustrator · Game UI</span>
+        </div>
+      </div>
+      <div class="showcase-item reveal">
+        <div class="showcase-thumb g4">
+          <div class="placeholder-pattern"></div>
+          <span>Identity</span>
+        </div>
+        <div class="showcase-label">
+          <h4>Brand Identity Work</h4>
+          <span>Figma · Visual Design</span>
+        </div>
+      </div>
+      <div class="showcase-item reveal">
+        <div class="showcase-thumb g5">
+          <div class="placeholder-pattern"></div>
+          <span>Layout</span>
+        </div>
+        <div class="showcase-label">
+          <h4>Social Media Design</h4>
+          <span>Figma · Canva Pro</span>
+        </div>
+      </div>
+      <div class="showcase-item reveal">
+        <div class="showcase-thumb g6">
+          <div class="placeholder-pattern"></div>
+          <span>Editorial</span>
+        </div>
+        <div class="showcase-label">
+          <h4>Kiyomi Visual Systems</h4>
+          <span>Brand Design · Web</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Graphic Work -->
+  <section class="world-section" style="border-bottom: 1px solid var(--border);">
+    <span class="world-section-title reveal">Approach to Visual Design</span>
+    <div class="world-grid">
+      <div class="world-card reveal">
+        <span class="card-tag" style="color:var(--world-accent);">Illustration</span>
+        <h3>Character & Conceptual Illustration</h3>
+        <p>Combining Adobe Illustrator with a strong sense of African visual language — creating characters, icons, and editorial illustrations that communicate brand personality.</p>
+      </div>
+      <div class="world-card reveal">
+        <span class="card-tag" style="color:var(--world-accent);">Brand Design</span>
+        <h3>Visual Identity Systems</h3>
+        <p>Logos, color systems, typography hierarchies, and usage guidelines that give brands a consistent, memorable presence across every touchpoint.</p>
+      </div>
+      <div class="world-card reveal">
+        <span class="card-tag" style="color:var(--world-accent);">Marketing Design</span>
+        <h3>Flyer & Social Design</h3>
+        <p>Fast-turnaround marketing graphics — event flyers, social media templates, and promotional materials that stand out and convert.</p>
+      </div>
+      <div class="world-card reveal">
+        <span class="card-tag" style="color:var(--world-accent);">Game Art</span>
+        <h3>Game UI & Icon Systems</h3>
+        <p>Custom icon sets and HUD elements for mobile games — designed at multiple scales with a balance of clarity, personality, and platform guidelines.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="padding-top:40px; border-top: 1px solid var(--border);">
+      <span>Graphic Design World · Part of the Adunola Design System</span>
+      <a href="../index.html" style="color:var(--world-accent);">Return to Main Site →</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

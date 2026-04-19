@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>No-Code World — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --world-accent: #82c9a0; }
+    .world-hero::before {
+      content: '';
+      position: absolute; bottom: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(130,201,160,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .world-hero-num {
+      position: absolute; right: 60px; bottom: 80px;
+      font-family: var(--font-display); font-size: 200px; font-weight: 300;
+      color: rgba(130,201,160,0.04); line-height: 1; pointer-events: none;
+    }
+    .stack-section { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .stack-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); border: 1px solid var(--border);
+    }
+    .stack-item {
+      background: var(--bg); padding: 40px 36px;
+      transition: background 0.3s;
+    }
+    .stack-item:hover { background: var(--bg-2); }
+    .stack-icon {
+      width: 48px; height: 48px; border: 1px solid var(--border);
+      border-radius: 4px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-size: 11px; color: var(--world-accent);
+      letter-spacing: 0.05em;
+    }
+    .stack-item h3 { font-family: var(--font-display); font-size: 22px; font-weight: 300; margin-bottom: 10px; }
+    .stack-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+    .stack-level {
+      font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--world-accent); border: 1px solid rgba(130,201,160,0.25);
+      padding: 4px 10px; display: inline-block; border-radius: 2px;
+    }
+    .projects-live { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .live-item {
+      display: grid; grid-template-columns: 1fr 240px;
+      align-items: center; gap: 40px;
+      padding: 32px 0; border-bottom: 1px solid var(--border);
+    }
+    .live-item:last-child { border-bottom: none; }
+    .live-item h3 { font-family: var(--font-display); font-size: 26px; font-weight: 300; margin-bottom: 6px; }
+    .live-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+    .live-tag { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--world-accent); margin-bottom: 10px; display: block; }
+    .live-link {
+      display: inline-block; padding: 12px 24px;
+      border: 1px solid var(--world-accent); color: var(--world-accent);
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em;
+      text-transform: uppercase; border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .live-link:hover { background: var(--world-accent); color: var(--bg); }
+    @media (max-width: 768px) {
+      .stack-grid { grid-template-columns: 1fr 1fr; }
+      .live-item { grid-template-columns: 1fr; gap: 20px; }
+      .world-hero-num { display: none; }
+      .stack-section, .projects-live { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body class="world-page" data-world="nocode">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('nocode.html')"><div class="node-dot" style="background:var(--world-accent);"></div><span style="color:var(--world-accent);">No-Code ✦</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('vibe-lab.html')"><div class="node-dot"></div><span>Vibe Lab</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">← Back to Main</a>
+      <span class="world-name">No-Code / Dev World</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+  </nav>
+
+  <section class="world-hero">
+    <span class="world-tag reveal">World 03</span>
+    <h1 class="reveal-delay">No-Code<br/><em>Development</em></h1>
+    <p class="reveal-delay-2">Design that ships. I build, deploy, and manage polished web experiences — without waiting for a developer. Fast, flexible, and production-ready.</p>
+    <div class="world-hero-num">03</div>
+  </section>
+
+  <!-- Stack -->
+  <section class="stack-section">
+    <span class="world-section-title reveal">Technology Stack</span>
+    <div class="stack-grid">
+      <div class="stack-item reveal">
+        <div class="stack-icon">FRM</div>
+        <h3>Framer</h3>
+        <p>Building portfolio sites, landing pages, and interactive web experiences with full animation control and CMS integration.</p>
+        <span class="stack-level">Advanced</span>
+      </div>
+      <div class="stack-item reveal">
+        <div class="stack-icon">WP</div>
+        <h3>WordPress</h3>
+        <p>Built and managed full business websites — themes, plugins, custom page builders, performance optimization, and SEO.</p>
+        <span class="stack-level">Advanced</span>
+      </div>
+      <div class="stack-item reveal">
+        <div class="stack-icon">WFL</div>
+        <h3>Webflow</h3>
+        <p>Design-to-code workflows for marketing sites — interactions, CMS, and pixel-perfect layouts without writing code.</p>
+        <span class="stack-level">Intermediate</span>
+      </div>
+      <div class="stack-item reveal">
+        <div class="stack-icon">HTML</div>
+        <h3>HTML / CSS</h3>
+        <p>Foundational web skills for customizing no-code outputs, writing component overrides, and understanding what's under the hood.</p>
+        <span class="stack-level">Working Knowledge</span>
+      </div>
+      <div class="stack-item reveal">
+        <div class="stack-icon">FIG</div>
+        <h3>Figma → Build</h3>
+        <p>Bridging design and development — creating handoff-ready files, using Figma's Dev Mode, and working with developer partners.</p>
+        <span class="stack-level">Expert</span>
+      </div>
+      <div class="stack-item reveal">
+        <div class="stack-icon">GIT</div>
+        <h3>GitHub Pages</h3>
+        <p>Deploying static sites with version control — this very portfolio is a GitHub Pages deployment.</p>
+        <span class="stack-level">Working Knowledge</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Projects -->
+  <section class="projects-live">
+    <span class="world-section-title reveal">Live Builds</span>
+    <div class="live-item reveal">
+      <div>
+        <span class="live-tag">Framer · Portfolio</span>
+        <h3>Kiyomi Portfolio Site</h3>
+        <p>Personal portfolio built entirely in Framer — showcasing work, services, and case studies with smooth animations and clean CMS-driven content.</p>
+      </div>
+      <a href="https://kiyomigroups.framer.website" target="_blank" class="live-link">View Live →</a>
+    </div>
+    <div class="live-item reveal">
+      <div>
+        <span class="live-tag">WordPress · Business</span>
+        <h3>Vitsetech Website</h3>
+        <p>Designed and optimized the mobile experience for a live tech company website — responsive overhaul, improved layout and performance.</p>
+      </div>
+      <a href="https://vitsetech.com/" target="_blank" class="live-link">View Live →</a>
+    </div>
+    <div class="live-item reveal">
+      <div>
+        <span class="live-tag">WordPress · Agency</span>
+        <h3>Scrum Consult Website</h3>
+        <p>Senior web designer role — overseeing design system implementation, mobile responsiveness, and brand consistency for a growing agency.</p>
+      </div>
+      <a href="../index.html" class="live-link">In Progress</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom" style="padding-top:40px; border-top: 1px solid var(--border);">
+      <span>No-Code World · Part of the Adunola Design System</span>
+      <a href="../index.html" style="color:var(--world-accent);">Return to Main Site →</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

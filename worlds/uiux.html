@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UI/UX World — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root { --world-accent: #7eb8c8; }
+    .world-hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(126,184,200,0.06) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .world-hero-num {
+      position: absolute; right: 60px; bottom: 80px;
+      font-family: var(--font-display);
+      font-size: 200px;
+      font-weight: 300;
+      color: rgba(126,184,200,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .uiux-process { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--border); }
+    .process-step {
+      padding: 40px 28px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .process-step:last-child { border-right: none; }
+    .process-step::after {
+      content: '→';
+      position: absolute;
+      right: -12px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--world-accent);
+      font-size: 16px;
+      z-index: 1;
+    }
+    .process-step:last-child::after { display: none; }
+    .ps-num {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--world-accent);
+      margin-bottom: 16px;
+    }
+    .process-step h4 { font-family: var(--font-display); font-size: 18px; font-weight: 300; margin-bottom: 10px; }
+    .process-step p { font-size: 12px; color: var(--text-secondary); line-height: 1.65; }
+    .tools-section { padding: 80px 60px; border-bottom: 1px solid var(--border); }
+    .tools-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 0; }
+    .tool-pill {
+      padding: 10px 20px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tool-pill:hover { border-color: var(--world-accent); color: var(--world-accent); }
+    @media (max-width: 768px) {
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .world-hero-num { display: none; }
+      .uiux-process, .tools-section { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body class="world-page" data-world="uiux">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <!-- System Map -->
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')">
+        <div class="node-ring"></div>
+        <span class="node-label-main">Adunola</span>
+        <span class="node-sub">Product Design</span>
+      </div>
+      <div class="map-node node-uiux" onclick="navigateTo('uiux.html')" style="opacity:1;">
+        <div class="node-dot" style="background:var(--world-accent);"></div>
+        <span style="color:var(--world-accent);">UI/UX ✦</span>
+      </div>
+      <div class="map-node node-graphic" onclick="navigateTo('graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('vibe-lab.html')"><div class="node-dot"></div><span>Vibe Lab</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+      <line class="map-line" x1="400" y1="300" x2="200" y2="120" /><line class="map-line" x1="400" y1="300" x2="620" y2="150" />
+      <line class="map-line" x1="400" y1="300" x2="150" y2="430" /><line class="map-line" x1="400" y1="300" x2="650" y2="430" />
+    </svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">← Back to Main</a>
+      <span class="world-name">UI/UX World</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="world-hero">
+    <span class="world-tag reveal">World 01</span>
+    <h1 class="reveal-delay">UI/UX<br/><em>Design</em></h1>
+    <p class="reveal-delay-2">Interfaces that are not just usable — but unmistakable. Every flow, every state, every interaction designed with intention and clarity.</p>
+    <div class="world-hero-num">01</div>
+  </section>
+
+  <!-- Process -->
+  <section class="uiux-process">
+    <span class="world-section-title reveal">Design Process</span>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <span class="ps-num">01</span>
+        <h4>Discover</h4>
+        <p>User research, competitor audit, stakeholder interviews, and context mapping.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="ps-num">02</span>
+        <h4>Define</h4>
+        <p>Problem framing, user personas, jobs-to-be-done, and design principles.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="ps-num">03</span>
+        <h4>Design</h4>
+        <p>Wireframes, information architecture, component systems, and high-fidelity UI.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="ps-num">04</span>
+        <h4>Prototype</h4>
+        <p>Interactive Figma prototypes with real micro-interactions and flow coverage.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="ps-num">05</span>
+        <h4>Deliver</h4>
+        <p>Handoff-ready specs, design tokens, component docs, and developer support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Grid -->
+  <section class="world-section" style="padding-top: 80px;">
+    <span class="world-section-title reveal">Selected UI/UX Projects</span>
+    <div class="world-grid">
+      <div class="work-card reveal" onclick="navigateTo('../case-studies/project-1.html')">
+        <div class="card-image"><div class="card-img-placeholder vitsetech"><div class="placeholder-pattern"></div><span class="project-type-badge">Mobile Redesign</span></div></div>
+        <div class="card-body">
+          <span class="card-tag" style="color:var(--world-accent);">Mobile · Responsiveness</span>
+          <h3 class="card-title">Vitsetech — Mobile UX Redesign</h3>
+          <p class="card-desc">Audited and redesigned the mobile experience of a tech company — improving touch targets, layout clarity, and scroll behavior.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </div>
+      <div class="work-card reveal" onclick="navigateTo('../case-studies/project-2.html')">
+        <div class="card-image"><div class="card-img-placeholder lifemap"><div class="placeholder-pattern"></div><span class="project-type-badge">App Design</span></div></div>
+        <div class="card-body">
+          <span class="card-tag" style="color:var(--world-accent);">Mobile App · Wellness</span>
+          <h3 class="card-title">Lifemap Naija — Wellness App</h3>
+          <p class="card-desc">Full UX design for a mental wellness and passion-discovery app — from user flows to final UI screens.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </div>
+      <div class="work-card reveal" onclick="navigateTo('../case-studies/project-1.html')">
+        <div class="card-image"><div class="card-img-placeholder retro"><div class="placeholder-pattern"></div><span class="project-type-badge">Dashboard</span></div></div>
+        <div class="card-body">
+          <span class="card-tag" style="color:var(--world-accent);">Web App · FinTech</span>
+          <h3 class="card-title">Retro — Crypto Dashboard</h3>
+          <p class="card-desc">Data-dense dashboard design with a premium aesthetic — balancing information density with visual clarity.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </div>
+      <div class="work-card reveal" onclick="navigateTo('../case-studies/project-1.html')">
+        <div class="card-image"><div class="card-img-placeholder safari" style="background: linear-gradient(135deg,#1f2a20,#0f1a10);"><div class="placeholder-pattern"></div><span class="project-type-badge">Website</span></div></div>
+        <div class="card-body">
+          <span class="card-tag" style="color:var(--world-accent);">Web Design · Real Estate</span>
+          <h3 class="card-title">Hotview — Property Platform</h3>
+          <p class="card-desc">Ongoing UI/UX design for a global property marketplace — complex filters, map interfaces, and listing flows.</p>
+          <span class="card-link">View Case Study →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="tools-section">
+    <span class="world-section-title reveal">Tools & Skills</span>
+    <div class="tools-grid">
+      <span class="tool-pill reveal">Figma</span>
+      <span class="tool-pill reveal">Auto Layout</span>
+      <span class="tool-pill reveal">Component Systems</span>
+      <span class="tool-pill reveal">Prototyping</span>
+      <span class="tool-pill reveal">User Research</span>
+      <span class="tool-pill reveal">Wireframing</span>
+      <span class="tool-pill reveal">Usability Testing</span>
+      <span class="tool-pill reveal">Accessibility (WCAG)</span>
+      <span class="tool-pill reveal">Design Tokens</span>
+      <span class="tool-pill reveal">Handoff Specs</span>
+      <span class="tool-pill reveal">Information Architecture</span>
+      <span class="tool-pill reveal">Journey Mapping</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom" style="padding-top:40px; border-top: 1px solid var(--border);">
+      <span>UI/UX World · Part of the Adunola Design System</span>
+      <a href="../index.html" style="color:var(--world-accent);">Return to Main Site →</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

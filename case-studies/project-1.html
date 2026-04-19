@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitsetech Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body data-page="case-study">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Lab</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">← Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="case-study-hero">
+    <span class="section-tag reveal">UI/UX · Mobile Design</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      Vitsetech — Mobile<br/>Responsiveness Redesign
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Client</label><span>Vitse Technologies</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>UI/UX Designer</span></div>
+      <div class="cs-meta-item"><label>Scope</label><span>Mobile Responsiveness, Layout</span></div>
+      <div class="cs-meta-item"><label>Tools</label><span>Figma</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Delivered</span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <!-- Overview -->
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>Vitsetech is a technology-focused company with a functional desktop website — but the mobile experience was inconsistent, cramped, and difficult to navigate on smaller screens. I was brought in to redesign and optimize the mobile responsiveness without rebuilding the site from scratch.</p>
+      <p>The goal was clear: make the existing website feel as polished and usable on a phone as it does on a desktop — improving layout logic, touch usability, and readability at every breakpoint.</p>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "A responsive site isn't just one that fits on a phone. It's one that feels <em>designed</em> for a phone."
+    </div>
+
+    <!-- Problem Statement -->
+    <div class="cs-section reveal">
+      <h2>Problem Statement</h2>
+      <p>The Vitsetech website was built primarily with desktop users in mind. When accessed on mobile, several critical issues degraded the experience:</p>
+      <ul>
+        <li>Layouts collapsed unpredictably at smaller breakpoints — text overlapped, images broke out of containers</li>
+        <li>Text sizing and line-height was not adjusted for smaller screens, reducing readability</li>
+        <li>Interactive elements (buttons, links, forms) had inadequate touch target sizes — below the recommended 44×44px minimum</li>
+        <li>Navigation was difficult to use on mobile — the hamburger menu was inconsistent and slow to respond</li>
+        <li>Visual hierarchy broke down on narrow viewports — sections that looked structured on desktop felt cluttered on mobile</li>
+      </ul>
+    </div>
+
+    <!-- User Flow Diagram -->
+    <div class="cs-section reveal">
+      <h2>User Flow Analysis</h2>
+      <p>Before redesigning, I mapped the key user journeys on mobile to understand which pages and flows had the most impact on usability:</p>
+      <div class="cs-flow">
+        <pre>
+MOBILE USER FLOW — VITSETECH
+
+[Landing Page]
+    |
+    ├── Hero Section
+    │       → CTA Button (View Services / Contact)
+    │
+    ├── Services Section
+    │       → Service Cards (tap to expand or navigate)
+    │
+    ├── About / Team
+    │       → Scrollable content block
+    │
+    ├── Contact / CTA
+    │       → Form / WhatsApp link
+    │
+    └── Footer
+            → Social links, nav links
+
+BREAKPOINTS AUDITED:
+  375px  (iPhone SE)
+  390px  (iPhone 14)
+  414px  (Pixel)
+  768px  (Tablet)
+  1024px (Tablet landscape)
+        </pre>
+      </div>
+    </div>
+
+    <!-- Process -->
+    <div class="cs-section reveal">
+      <h2>Design Process</h2>
+      <p><strong>1. Audit & Analysis</strong></p>
+      <p>I started by systematically reviewing the live site across five mobile breakpoints — documenting every layout failure, spacing inconsistency, and touch usability issue. Each problem was logged with its location, severity, and recommended fix.</p>
+      <p><strong>2. Mobile-First Restructuring</strong></p>
+      <p>Rather than simply scaling down desktop layouts, I re-approached key sections with mobile-first thinking. This meant asking: "If this section was designed only for mobile, how would it be structured?" — then building upward from there.</p>
+      <p><strong>3. Component-Level UI Fixes</strong></p>
+      <ul>
+        <li>Adjusted all font sizes and line-heights for sub-768px viewports</li>
+        <li>Increased padding on buttons and tap targets to meet accessibility minimums</li>
+        <li>Converted side-by-side layouts to stacked single-column on mobile</li>
+        <li>Simplified navigation to a clean, accessible mobile menu</li>
+        <li>Optimized image display — proper aspect ratios, no overflow</li>
+      </ul>
+    </div>
+
+    <!-- UX Audit Notes -->
+    <div class="cs-section reveal">
+      <h2>UX Audit Notes</h2>
+      <p>These were the specific design decisions made during the audit and improvement phase:</p>
+      <ul>
+        <li>Heading font sizes reduced from desktop (48px → 32px mobile) for better proportion</li>
+        <li>Section padding reduced from 80px to 40px on mobile — preventing excessive whitespace</li>
+        <li>CTA buttons increased from 38px to 48px height — ensuring accessible tap targets</li>
+        <li>Grid layouts (2-col, 3-col) converted to single column below 768px</li>
+        <li>Image containers constrained with max-width and border-radius consistency</li>
+        <li>Navigation z-index and backdrop fixed — no more menu appearing behind content</li>
+        <li>Scroll performance improved by removing fixed-position elements that caused jank</li>
+      </ul>
+    </div>
+
+    <!-- Outcome -->
+    <div class="cs-outcome reveal">
+      <h3>Project Outcome</h3>
+      <div class="cs-outcome-grid">
+        <div class="cs-outcome-item">
+          <label>Mobile Usability</label>
+          <span>Significantly improved across all 5 tested breakpoints</span>
+        </div>
+        <div class="cs-outcome-item">
+          <label>Touch Accessibility</label>
+          <span>All interactive elements meet minimum touch target standards</span>
+        </div>
+        <div class="cs-outcome-item">
+          <label>Visual Hierarchy</label>
+          <span>Consistent heading scale and spacing across all mobile views</span>
+        </div>
+        <div class="cs-outcome-item">
+          <label>Brand Consistency</label>
+          <span>Mobile design aligned with Vitsetech's existing visual identity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design Reasoning -->
+    <div class="cs-section reveal">
+      <h2>Design Reasoning Notes</h2>
+      <p>This project reinforced an important principle: <strong>responsive design is not an afterthought</strong>. Mobile users are often in higher-intent moments — they've found you through search or a referral link and they're making a quick judgment. If the site doesn't work on their device, that moment is lost.</p>
+      <p>The constraint of working within an existing site (rather than redesigning from scratch) required precision over creativity — identifying exactly what was broken and fixing it systematically. This kind of audit-and-improve workflow is a core skill in professional UI/UX practice.</p>
+    </div>
+
+  </div>
+
+  <!-- Next Projects -->
+  <div class="cs-next">
+    <h3>More Case Studies</h3>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('project-2.html')">
+        <span class="card-tag">Product Design · Mobile App</span>
+        <h4>Lifemap Naija — Wellness App</h4>
+        <p>Full app design for a mental wellness and passion-discovery platform.</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('project-3.html')">
+        <span class="card-tag">Game UI · Maliyo Games</span>
+        <h4>Safari City — Game UI Redesign</h4>
+        <p>Redesigning a mobile game's UI for Maliyo Games.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>

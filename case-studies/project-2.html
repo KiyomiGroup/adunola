@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lifemap Naija Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+</head>
+<body data-page="case-study">
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">✕ Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Product Design</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Lab</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">← Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map ⊕</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <span class="section-tag reveal">Product Design · Mobile App</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      Lifemap Naija —<br/>Mental Wellness App
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Project Type</label><span>Mobile App Design</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Product Designer</span></div>
+      <div class="cs-meta-item"><label>Scope</label><span>UX Research, UI Design, Prototyping</span></div>
+      <div class="cs-meta-item"><label>Tools</label><span>Figma</span></div>
+      <div class="cs-meta-item"><label>Platform</label><span>iOS / Android (Concept)</span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>Lifemap Naija is a mobile app concept designed for Nigerian users — combining mental wellness support with a passion and purpose discovery experience. The product addresses a real gap: most wellness apps are designed for Western audiences and don't speak to the social, cultural, or economic realities of life in Nigeria.</p>
+      <p>The design challenge was to create an app that is emotionally resonant, accessible to users across varying levels of smartphone literacy, and culturally grounded — while still feeling modern and premium.</p>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "Wellness tools built for Lagos must understand Lagos first — its pace, its pressure, its people."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Problem Statement</h2>
+      <p>Young Nigerians experience significant mental health challenges — economic pressure, career uncertainty, identity formation in a rapidly changing society — yet the tools available are either clinically detached, culturally foreign, or both.</p>
+      <p>The specific problem Lifemap Naija was designed to solve:</p>
+      <ul>
+        <li>Lack of accessible, relatable mental wellness tools designed for Nigerian users</li>
+        <li>No existing app combines passion discovery with emotional wellbeing in one experience</li>
+        <li>Existing apps have high friction onboarding — discouraging casual users</li>
+        <li>Most wellness apps don't reflect African visual culture or communication styles</li>
+      </ul>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User & Business Goals</h2>
+      <p><strong>User Goals:</strong></p>
+      <ul>
+        <li>Understand and manage their emotional state with simple, daily check-ins</li>
+        <li>Discover their interests, strengths, and possible life paths through guided prompts</li>
+        <li>Feel seen and understood by an app that reflects their lived experience</li>
+        <li>Access wellness support without stigma or clinical intimidation</li>
+      </ul>
+      <p><strong>Business Goals:</strong></p>
+      <ul>
+        <li>Build a product that can grow through word-of-mouth and community resonance</li>
+        <li>Create a freemium experience with clear upgrade triggers</li>
+        <li>Establish brand credibility in the growing African wellness market</li>
+      </ul>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User Flow Diagram</h2>
+      <div class="cs-flow">
+        <pre>
+LIFEMAP NAIJA — CORE USER FLOW
+
+[Splash Screen]
+      |
+[Onboarding (3 screens)]
+      |
+      ├── Name / Age / Location
+      ├── "How are you feeling today?" (mood entry)
+      └── "What matters to you?" (interest tags)
+            |
+      [Home Dashboard]
+            |
+      ┌─────┼──────────────────┐
+      ↓     ↓                  ↓
+[Mood  [Passion         [Community /
+Track] Discovery]        Resources]
+  |           |                 |
+[Daily    [Guided           [Articles /
+Check-in] Prompts]          Support links]
+  |           |
+[Mood      [Results:
+History]   Career /
+           Interest map]
+
+SECONDARY FLOWS:
+  Notification → Daily check-in reminder
+  Streak system → Engagement & habit forming
+  Share result → Social sharing of passion map
+        </pre>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design Process</h2>
+      <p><strong>Research Phase</strong></p>
+      <p>I began by researching existing mental health and self-discovery apps — mapping their strengths and failure points for Nigerian audiences. Key insights included that users preferred conversational interfaces over clinical questionnaires, and that visual warmth was important for emotional engagement.</p>
+      <p><strong>Wireframe Exploration</strong></p>
+      <p>I explored three different structural approaches for the main dashboard:</p>
+      <ul>
+        <li>Card-based feed (familiar, low learning curve)</li>
+        <li>Mode-switching tabs (clear separation of features)</li>
+        <li>Integrated home screen with mood as the central anchor (chosen approach)</li>
+      </ul>
+      <p>The third approach was selected because it centered the emotional experience — mood tracking isn't a side feature, it's the core ritual that ties everything together.</p>
+      <p><strong>UI Design Iterations</strong></p>
+      <p>The visual system went through three main iterations. The final direction used warm, earthy tones — greens and ambers — to convey calm, growth, and Nigerian landscape references. Typography was friendly but structured, avoiding the clinical feel of purely sans-serif health apps.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Wireframe Breakdown</h2>
+      <div class="cs-flow">
+        <pre>
+SCREEN STRUCTURE — KEY SCREENS
+
+1. ONBOARDING SCREEN 1
+   ┌─────────────────────┐
+   │  [App Logo / Art]   │
+   │                     │
+   │  "Welcome to        │
+   │   Lifemap Naija"    │
+   │                     │
+   │  [Your Name]        │
+   │  [Your Age]         │
+   │                     │
+   │  [Continue →]       │
+   └─────────────────────┘
+
+2. MOOD CHECK-IN SCREEN
+   ┌─────────────────────┐
+   │  "How are you       │
+   │   today, [Name]?"   │
+   │                     │
+   │  😔  😐  🙂  😊  🔥 │
+   │  [Emotion Selector] │
+   │                     │
+   │  [Add a note...]    │
+   │                     │
+   │  [Log it →]         │
+   └─────────────────────┘
+
+3. HOME DASHBOARD
+   ┌─────────────────────┐
+   │  Good morning ☀️    │
+   │  [Mood Ring Visual] │
+   │                     │
+   │  ┌─────┐  ┌───────┐ │
+   │  │Mood │  │Passion│ │
+   │  │Track│  │Disc.  │ │
+   │  └─────┘  └───────┘ │
+   │                     │
+   │  Today's Prompt:    │
+   │  "What's one thing  │
+   │   you'd do for      │
+   │   free?"            │
+   └─────────────────────┘
+        </pre>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>System Design Decisions</h2>
+      <ul>
+        <li><strong>Conversational tone:</strong> All copy uses everyday Nigerian English — warm, direct, no clinical language</li>
+        <li><strong>Emoji as emotional shorthand:</strong> Culturally natural way to express feelings without words</li>
+        <li><strong>Passion map visual:</strong> At the end of discovery prompts, users see a visual "map" of their interests — shareable and meaningful</li>
+        <li><strong>Offline-first mood logging:</strong> Core mood tracking works without internet connection — essential for variable Nigerian network conditions</li>
+        <li><strong>Accessibility:</strong> High contrast ratios, large touch targets (min 48px), scalable font sizes</li>
+      </ul>
+    </div>
+
+    <div class="cs-outcome reveal">
+      <h3>Project Outcome</h3>
+      <div class="cs-outcome-grid">
+        <div class="cs-outcome-item">
+          <label>Design Deliverable</label>
+          <span>Full Figma prototype — onboarding through core flows</span>
+        </div>
+        <div class="cs-outcome-item">
+          <label>Screens Designed</label>
+          <span>Approx. 20+ screens across key user journeys</span>
+        </div>
+        <div class="cs-outcome-item">
+          <label>Cultural Resonance</label>
+          <span>Nigerian English copy, warm colour palette, relatable imagery</span>
+        </div>
+        <div class="cs-outcome-item">
+          <label>Accessibility</label>
+          <span>WCAG AA contrast met, 48px+ touch targets throughout</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>UX Audit & Reflection</h2>
+      <p>If I were to take this project further, the next priorities would be: usability testing with actual Nigerian users (18–30 demographic), refining the Passion Discovery flow based on feedback, and exploring a community/peer support layer that respects cultural norms around privacy and mental health disclosure.</p>
+      <p>The most important design insight from this project: <strong>accessibility for a Nigerian audience includes cultural accessibility</strong> — not just visual or technical. An app that makes users feel misunderstood will be deleted regardless of how beautiful it is.</p>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <h3>More Case Studies</h3>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('project-1.html')">
+        <span class="card-tag">UI/UX · Mobile Redesign</span>
+        <h4>Vitsetech — Mobile Responsiveness</h4>
+        <p>Auditing and redesigning mobile responsiveness for a live tech website.</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('project-3.html')">
+        <span class="card-tag">Game UI · Maliyo Games</span>
+        <h4>Safari City — Game UI Redesign</h4>
+        <p>Redesigning a mobile game's UI with African visual identity.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
