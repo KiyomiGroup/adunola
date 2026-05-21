@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design | Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body data-page="design">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+  <nav class="nav" id="mainNav">
+    <a href="../index.html" class="nav-logo" onclick="navigateTo('../index.html'); return false;">adunola<span class="logo-dot">.</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link" onclick="navigateTo('about.html'); return false;">About</a>
+      <a href="projects.html" class="nav-link" onclick="navigateTo('projects.html'); return false;">Projects</a>
+      <a href="stack.html" class="nav-link" onclick="navigateTo('stack.html'); return false;">Stack</a>
+      <a href="design.html" class="nav-link active-link">Design</a>
+      <a href="https://wa.me/2347088448530" target="_blank" class="btn-nav-cta">Hire Me</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="../index.html" class="mobile-link" onclick="navigateTo('../index.html'); return false;">Home</a>
+    <a href="about.html" class="mobile-link" onclick="navigateTo('about.html'); return false;">About</a>
+    <a href="projects.html" class="mobile-link" onclick="navigateTo('projects.html'); return false;">Projects</a>
+    <a href="stack.html" class="mobile-link" onclick="navigateTo('stack.html'); return false;">Stack</a>
+    <a href="https://wa.me/2347088448530" target="_blank" class="mobile-link mobile-cta">Hire Me</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="page-hero-tag reveal">UI/UX Design Explorations</div>
+    <h1 class="reveal-delay">Design as a tool,<br>not an identity.</h1>
+    <p class="reveal-delay-2">Design is one lens I use to solve problems. Here is where it lives as its own practice. Every piece here informs how I engineer interfaces.</p>
+  </div>
+
+  <div class="page-body">
+    <div class="design-philosophy reveal">
+      <div class="dp-inner">
+        <p>My design background is what separates my engineering work from most. I don't have to hand off to a designer because I am the designer. Every UI decision I make in code is backed by years of thinking about hierarchy, flow, and interaction. These explorations are where that thinking lives in its purest form.</p>
+      </div>
+    </div>
+
+    <div class="uiux-grid" style="max-width:100%; margin-top:48px;">
+      <article class="uiux-card reveal" onclick="navigateTo('../case-studies/project-1.html')">
+        <div class="uiux-card-inner">
+          <div class="uiux-preview vitsetech"><div class="uiux-preview-label">Mobile UI</div></div>
+          <div class="uiux-card-body">
+            <span class="uiux-tag">UI/UX · Mobile Responsiveness</span>
+            <h4>Vitsetech Mobile Redesign</h4>
+            <p>Redesigned the mobile experience of a tech company, improving layout, readability and touch interaction across all breakpoints.</p>
+            <span class="uiux-link">View Case Study &rarr;</span>
+          </div>
+        </div>
+      </article>
+      <article class="uiux-card reveal" onclick="navigateTo('../case-studies/project-2.html')">
+        <div class="uiux-card-inner">
+          <div class="uiux-preview lifemap"><div class="uiux-preview-label">App Design</div></div>
+          <div class="uiux-card-body">
+            <span class="uiux-tag">Product Design · Mental Wellness</span>
+            <h4>Lifemap Naija Wellness App</h4>
+            <p>A passion discovery and mental wellness app for Nigerian users, grounding emotional UX in culturally aware design principles.</p>
+            <span class="uiux-link">View Case Study &rarr;</span>
+          </div>
+        </div>
+      </article>
+      <article class="uiux-card reveal" onclick="navigateTo('../case-studies/project-3.html')">
+        <div class="uiux-card-inner">
+          <div class="uiux-preview safari"><div class="uiux-preview-label">Game UI</div></div>
+          <div class="uiux-card-body">
+            <span class="uiux-tag">Game UI · Maliyo Games</span>
+            <h4>Safari City Game UI Redesign</h4>
+            <p>Redesigned the game UI for Africa's leading mobile game, bringing African inspired aesthetics and micro interactions to every screen.</p>
+            <span class="uiux-link">View Case Study &rarr;</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="design-cta reveal">
+      <h2 class="page-section-h2">Want design plus engineering?</h2>
+      <p>Most clients hire either a designer or a developer. Hiring me means you get both in a single person who ships. No handoff delays, no translation errors between design and code. Just a finished product.</p>
+      <a href="https://wa.me/2347088448530" target="_blank" class="btn-primary" style="margin-top:24px;display:inline-flex;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <span>Start on WhatsApp</span>
+      </a>
+    </div>
+
+  </div>
+
+  <style>
+    .active-link { color: var(--text-primary) !important; }
+    .active-link::after { transform: scaleX(1) !important; }
+    .design-philosophy { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px 32px; margin-bottom: 8px; }
+    .dp-inner p { font-size: 16px; color: var(--text-secondary); line-height: 1.78; font-style: italic; }
+    .page-section-h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 14px; }
+    .design-cta { border-top: 1px solid var(--border); padding-top: 60px; margin-top: 60px; }
+    .design-cta p { font-size: 15px; color: var(--text-secondary); line-height: 1.72; max-width: 560px; }
+    .page-body .uiux-grid { grid-template-columns: repeat(3,1fr); }
+    @media (max-width: 900px) { .page-body .uiux-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <span class="footer-logo">adunola<span class="logo-dot">.</span></span>
+        <p>Full Stack Developer · Lagos, Nigeria</p>
+        <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <a href="../index.html" onclick="navigateTo('../index.html'); return false;">Home</a>
+        <a href="about.html" onclick="navigateTo('about.html'); return false;">About</a>
+        <a href="projects.html" onclick="navigateTo('projects.html'); return false;">Projects</a>
+        <a href="stack.html" onclick="navigateTo('stack.html'); return false;">Stack</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://wa.me/2347088448530" target="_blank">WhatsApp</a>
+        <a href="https://x.com/Nolagraphics_" target="_blank">Twitter / X</a>
+        <a href="mailto:Adunoladiya@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 Adunola Babadiya.</span>
+      <span>Engineered by Adunola.</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

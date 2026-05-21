@@ -3,52 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adunola Babadiya — Full Stack Developer</title>
+  <title>Adunola Babadiya | Full Stack Developer</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 </head>
 <body data-page="home">
 
-  <!-- Custom cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="page-overlay" id="pageOverlay"></div>
-
-  <!-- Canvas background -->
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
 
   <!-- NAV -->
   <nav class="nav" id="mainNav">
     <a href="index.html" class="nav-logo">adunola<span class="logo-dot">.</span></a>
     <div class="nav-links">
-      <a href="#about" class="nav-link">About</a>
-      <a href="#work" class="nav-link">Projects</a>
-      <a href="#stack" class="nav-link">Stack</a>
-      <a href="#uiux" class="nav-link">Design</a>
-      <a href="mailto:Adunoladiya@gmail.com" class="btn-nav-cta">Hire Me</a>
+      <a href="pages/about.html" class="nav-link" onclick="navigateTo('pages/about.html'); return false;">About</a>
+      <a href="pages/projects.html" class="nav-link" onclick="navigateTo('pages/projects.html'); return false;">Projects</a>
+      <a href="pages/stack.html" class="nav-link" onclick="navigateTo('pages/stack.html'); return false;">Stack</a>
+      <a href="pages/design.html" class="nav-link" onclick="navigateTo('pages/design.html'); return false;">Design</a>
+      <a href="https://wa.me/2347088448530" target="_blank" class="btn-nav-cta">Hire Me</a>
     </div>
     <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- MOBILE NAV DRAWER -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#work" class="mobile-link">Projects</a>
-    <a href="#stack" class="mobile-link">Stack</a>
-    <a href="#uiux" class="mobile-link">Design</a>
-    <a href="mailto:Adunoladiya@gmail.com" class="mobile-link mobile-cta">Hire Me</a>
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="pages/about.html" class="mobile-link" onclick="navigateTo('pages/about.html'); return false;">About</a>
+    <a href="pages/projects.html" class="mobile-link" onclick="navigateTo('pages/projects.html'); return false;">Projects</a>
+    <a href="pages/stack.html" class="mobile-link" onclick="navigateTo('pages/stack.html'); return false;">Stack</a>
+    <a href="pages/design.html" class="mobile-link" onclick="navigateTo('pages/design.html'); return false;">Design</a>
+    <a href="https://wa.me/2347088448530" target="_blank" class="mobile-link mobile-cta">Hire Me</a>
   </div>
 
-  <!-- ===================== HERO ===================== -->
+  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-content">
       <div class="hero-badge reveal">
         <span class="badge-dot"></span>
-        Available for new projects · Lagos, Nigeria
+        Available for new projects &nbsp;·&nbsp; Lagos, Nigeria
       </div>
       <h1 class="hero-headline reveal-delay">
         <span class="headline-line">Full Stack</span>
@@ -56,14 +53,14 @@
         <span class="headline-line sub-line">who ships.</span>
       </h1>
       <p class="hero-sub reveal-delay-2">
-        I build production-grade web apps — frontend to backend — using modern engineering workflows and AI-powered toolchains. Fast, functional, beautifully engineered.
+        I build production-grade web apps from frontend to backend using modern engineering workflows and AI-powered toolchains. Fast, functional, beautifully engineered.
       </p>
       <div class="hero-cta reveal-delay-3">
-        <a href="#work" class="btn-primary">
+        <a href="pages/projects.html" class="btn-primary" onclick="navigateTo('pages/projects.html'); return false;">
           <span>View Projects</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="mailto:Adunoladiya@gmail.com" class="btn-ghost">Let's build something</a>
+        <a href="https://wa.me/2347088448530" target="_blank" class="btn-ghost">Let's build something</a>
       </div>
       <div class="hero-meta reveal-delay-3">
         <div class="hero-stat"><span class="stat-num">15+</span><span class="stat-label">Products Shipped</span></div>
@@ -93,12 +90,12 @@
         <div class="code-line">&nbsp;</div>
         <div class="code-line"><span class="code-comment">// Currently building...</span></div>
         <div class="code-line"><span class="code-keyword">export default</span> <span class="code-var">developer</span>;</div>
-        <div class="code-cursor"></div>
+        <div class="code-cursor-blink"></div>
       </div>
     </div>
   </section>
 
-  <!-- Scrolling marquee -->
+  <!-- MARQUEE -->
   <div class="marquee-track">
     <div class="marquee-inner">
       <span>React</span><span class="sep">·</span>
@@ -106,7 +103,7 @@
       <span>TypeScript</span><span class="sep">·</span>
       <span>Node.js</span><span class="sep">·</span>
       <span>REST APIs</span><span class="sep">·</span>
-      <span>AI-Powered Dev</span><span class="sep">·</span>
+      <span>AI Powered Dev</span><span class="sep">·</span>
       <span>Figma</span><span class="sep">·</span>
       <span>Claude Code</span><span class="sep">·</span>
       <span>Cursor</span><span class="sep">·</span>
@@ -117,30 +114,31 @@
       <span>Next.js</span><span class="sep">·</span>
       <span>TypeScript</span><span class="sep">·</span>
       <span>Node.js</span><span class="sep">·</span>
-      <span>AI-Powered Dev</span><span class="sep">·</span>
+      <span>AI Powered Dev</span><span class="sep">·</span>
     </div>
   </div>
 
-  <!-- ===================== ABOUT ===================== -->
+  <!-- ABOUT STRIP -->
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-left">
         <span class="section-tag reveal">About</span>
         <h2 class="section-title reveal-delay">
-          I don't just design interfaces — <em>I engineer them into existence.</em>
+          I don't just design interfaces.<br><em>I engineer them into existence.</em>
         </h2>
         <div class="about-copy reveal-delay-2">
-          <p>Based in Lagos, Nigeria, I'm a full stack developer who thinks in systems. I architect and ship real production applications — from database schema to deployed frontend — using modern engineering practices and AI-assisted workflows.</p>
-          <p>What sets me apart: I combine deep engineering instinct with design precision. My UI/UX background means the products I build don't just work — they convert, retain, and delight. Design is a tool in my engineering stack, not a separate discipline.</p>
-          <p>I use AI tools like Claude Code and Cursor not as crutches, but as force multipliers — shipping in days what teams take weeks to build, without sacrificing code quality.</p>
+          <p>Based in Lagos, Nigeria, I'm a full stack developer who thinks in systems. I architect and ship real production applications from database schema to deployed frontend using modern engineering practices and AI-assisted workflows.</p>
+          <p>What sets me apart: I combine deep engineering instinct with design precision. My UI/UX background means the products I build don't just work. They convert, retain, and delight. Design is a tool in my engineering stack, not a separate discipline.</p>
+          <p>I use AI tools like Claude Code and Cursor not as crutches, but as force multipliers. Shipping in days what teams take weeks to build, without sacrificing code quality.</p>
         </div>
         <div class="about-tags reveal-delay-3">
           <span class="tag">Full Stack Dev</span>
           <span class="tag">Product Engineer</span>
-          <span class="tag">AI-Augmented</span>
+          <span class="tag">AI Augmented</span>
           <span class="tag">Design Systems</span>
           <span class="tag">Rapid Deployment</span>
         </div>
+        <a href="pages/about.html" class="about-more-link reveal-delay-3" onclick="navigateTo('pages/about.html'); return false;">Read full story &rarr;</a>
       </div>
       <div class="about-right reveal-delay">
         <div class="mindset-cards">
@@ -150,7 +148,7 @@
             </div>
             <div class="mc-content">
               <h4>Full Stack Engineer</h4>
-              <p>Frontend to backend, I own the entire stack. React, Node.js, APIs, deployment — no handoffs, no gaps.</p>
+              <p>Frontend to backend, I own the entire stack. React, Node.js, APIs, deployment. No handoffs, no gaps.</p>
             </div>
           </div>
           <div class="mindset-card">
@@ -158,8 +156,8 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
             <div class="mc-content">
-              <h4>AI-Augmented Builder</h4>
-              <p>I leverage Claude Code, Cursor, and Lovable to compress timelines and amplify output — without cutting corners.</p>
+              <h4>AI Augmented Builder</h4>
+              <p>I leverage Claude Code, Cursor, and Lovable to compress timelines and amplify output without cutting corners.</p>
             </div>
           </div>
           <div class="mindset-card">
@@ -168,7 +166,7 @@
             </div>
             <div class="mc-content">
               <h4>Speed to Production</h4>
-              <p>From concept to deployed app, I operate on startup timelines. I've built and launched full products in under 72 hours.</p>
+              <p>From concept to deployed app, I operate on startup timelines. Full products launched in under 72 hours.</p>
             </div>
           </div>
           <div class="mindset-card">
@@ -176,7 +174,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
             <div class="mc-content">
-              <h4>Design × Engineering</h4>
+              <h4>Design x Engineering</h4>
               <p>UI/UX is baked into how I code. I build interfaces that are technically sound and visually exceptional.</p>
             </div>
           </div>
@@ -185,7 +183,7 @@
     </div>
   </section>
 
-  <!-- ===================== PROCESS ===================== -->
+  <!-- PROCESS -->
   <section class="process">
     <div class="section-header">
       <span class="section-tag reveal">Engineering Process</span>
@@ -194,50 +192,46 @@
     <div class="process-flow">
       <div class="process-step reveal">
         <div class="ps-num">01</div>
-        <div class="ps-connector"></div>
         <div class="ps-body">
-          <h3>Problem → Architecture</h3>
+          <h3>Problem to Architecture</h3>
           <p>I start with the system, not the screen. What's the data model? What are the API contracts? What does the component tree look like? Architecture first, UI after.</p>
         </div>
       </div>
       <div class="process-step reveal">
         <div class="ps-num">02</div>
-        <div class="ps-connector"></div>
         <div class="ps-body">
           <h3>Stack Selection</h3>
-          <p>Right tool for the job — React + Next.js for SPAs, REST APIs with Node.js for data, Supabase or Firebase for auth/storage. I don't cargo-cult; I engineer for constraints.</p>
+          <p>Right tool for the job. React and Next.js for SPAs, REST APIs with Node.js for data, Supabase or Firebase for auth and storage. I engineer for constraints, not trends.</p>
         </div>
       </div>
       <div class="process-step reveal">
         <div class="ps-num">03</div>
-        <div class="ps-connector"></div>
         <div class="ps-body">
-          <h3>AI-Accelerated Development</h3>
-          <p>Claude Code and Cursor are running in every sprint. Not for magic — for velocity. Boilerplate eliminated, patterns enforced, code reviewed in real-time.</p>
+          <h3>AI Accelerated Development</h3>
+          <p>Claude Code and Cursor are running in every sprint. Not for magic, but for velocity. Boilerplate eliminated, patterns enforced, code reviewed in real time.</p>
         </div>
       </div>
       <div class="process-step reveal">
         <div class="ps-num">04</div>
-        <div class="ps-connector"></div>
         <div class="ps-body">
-          <h3>Ship → Iterate</h3>
-          <p>Working software over perfect software. Deploy early, gather signal, iterate fast. I stay in the loop post-launch and keep improving what ships.</p>
+          <h3>Ship and Iterate</h3>
+          <p>Working software over perfect software. Deploy early, gather signal, iterate fast. I stay in the loop post launch and keep improving what ships.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PROJECTS ===================== -->
+  <!-- PROJECTS PREVIEW -->
   <section class="work" id="work">
     <div class="section-header">
       <span class="section-tag reveal">Engineering Case Studies</span>
-      <h2 class="section-title reveal-delay">Projects Built & Shipped</h2>
+      <h2 class="section-title reveal-delay">Projects Built and Shipped</h2>
       <p class="section-sub reveal-delay-2">Real products. Real deployments. Full stack thinking.</p>
     </div>
 
     <div class="work-grid">
 
-      <!-- StreetTasker -->
+      <!-- StreetTasker FEATURED -->
       <article class="work-card featured reveal" onclick="navigateTo('case-studies/streettasker.html')">
         <div class="card-inner">
           <div class="card-image">
@@ -253,30 +247,28 @@
                 <div class="ps-badge">Gig Economy Platform</div>
                 <div class="ps-nodes">
                   <div class="ps-node">User Auth</div>
-                  <div class="ps-arrow">→</div>
+                  <div class="ps-arrow">&#8594;</div>
                   <div class="ps-node">Task Matching</div>
-                  <div class="ps-arrow">→</div>
+                  <div class="ps-arrow">&#8594;</div>
                   <div class="ps-node">Payments</div>
                 </div>
               </div>
             </div>
             <div class="card-badges">
               <span class="badge blue">Full Stack</span>
-              <span class="badge">AI-Built</span>
+              <span class="badge">AI Built</span>
               <span class="badge">Live</span>
             </div>
           </div>
           <div class="card-body">
-            <div class="card-meta">
-              <span class="card-tag">React · Node.js · REST API · Deployment</span>
-            </div>
-            <h3 class="card-title">StreetTasker — Gig Economy Platform</h3>
-            <p class="card-desc">A fully deployed platform connecting everyday people with local task workers. Built with a full authentication system, task matching engine, and real-time job board. Architected and shipped in a single focused sprint using AI-assisted development.</p>
+            <div class="card-meta"><span class="card-tag">React · Node.js · REST API · Deployment</span></div>
+            <h3 class="card-title">StreetTasker &mdash; Gig Economy Platform</h3>
+            <p class="card-desc">A fully deployed platform connecting everyday people with local task workers. Built with a full authentication system, task matching engine, and real time job board. Architected and shipped in a single focused sprint using AI assisted development.</p>
             <div class="card-stack">
               <span>React</span><span>Node.js</span><span>REST API</span><span>Auth</span><span>Deployment</span>
             </div>
             <div class="card-footer">
-              <span class="card-link">View Case Study →</span>
+              <span class="card-link">View Case Study &rarr;</span>
               <a href="https://streettasker.com/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
             </div>
           </div>
@@ -287,35 +279,33 @@
       <article class="work-card reveal" onclick="navigateTo('case-studies/andrestylez.html')">
         <div class="card-inner">
           <div class="card-image">
-            <div class="card-preview" style="background:linear-gradient(135deg,#1f1208 0%,#2a1a06 100%);">
+            <div class="card-preview" style="background:linear-gradient(135deg,#0e0a1a 0%,#1a1030 100%);">
               <div class="preview-chrome">
                 <div class="chrome-dots"><span></span><span></span><span></span></div>
                 <span class="chrome-url">andrestylez.com</span>
                 <a href="https://andrestylez.com/" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
               </div>
-              <div class="preview-screen" style="background:linear-gradient(160deg,#2a1508,#1a0e04);">
-                <div class="ps-headline" style="color:#e8a84c;letter-spacing:0.1em;">ANDRE STYLEZ</div>
-                <div class="ps-sub" style="color:#9a7a4a;">Fashion. Identity. Culture.</div>
-                <div class="ps-badge" style="background:rgba(232,168,76,0.15);color:#e8a84c;border-color:rgba(232,168,76,0.3);">E-Commerce Build</div>
+              <div class="preview-screen" style="background:linear-gradient(160deg,#14082a,#0e0520);">
+                <div class="ps-headline" style="color:#c084fc;letter-spacing:0.08em;">ANDRE STYLEZ</div>
+                <div class="ps-sub" style="color:#7c5aab;">Music. Energy. Culture.</div>
+                <div class="ps-badge" style="background:rgba(192,132,252,0.12);color:#c084fc;border-color:rgba(192,132,252,0.3);">Music Artist Site</div>
               </div>
             </div>
             <div class="card-badges">
-              <span class="badge gold">Frontend</span>
-              <span class="badge">E-Commerce</span>
+              <span class="badge purple">Frontend</span>
+              <span class="badge">Music</span>
               <span class="badge">Live</span>
             </div>
           </div>
           <div class="card-body">
-            <div class="card-meta">
-              <span class="card-tag">HTML/CSS/JS · CMS · SEO · Brand System</span>
-            </div>
-            <h3 class="card-title">AndreStylez — Fashion Brand Platform</h3>
-            <p class="card-desc">A performance-optimized fashion brand website with e-commerce functionality. Built a component-based architecture with dynamic product displays, brand identity system, and mobile-first responsive design. Zero to deployed in under 24 hours.</p>
+            <div class="card-meta"><span class="card-tag">HTML · CSS · JS · Brand System · SEO</span></div>
+            <h3 class="card-title">AndreStylez &mdash; Music Artist Platform</h3>
+            <p class="card-desc">A high energy music artist website built to capture the sound and identity of Andre Stylez. Performance optimized with dynamic content displays, a full brand identity system, and mobile first responsive design. Concept to live in under 24 hours.</p>
             <div class="card-stack">
-              <span>HTML/CSS</span><span>JavaScript</span><span>CMS</span><span>SEO</span>
+              <span>HTML/CSS</span><span>JavaScript</span><span>SEO</span><span>Brand System</span>
             </div>
             <div class="card-footer">
-              <span class="card-link">View Case Study →</span>
+              <span class="card-link">View Case Study &rarr;</span>
               <a href="https://andrestylez.com/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
             </div>
           </div>
@@ -333,7 +323,7 @@
                 <a href="https://kiyomigroup.github.io/CVbykiyomi/" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
               </div>
               <div class="preview-screen" style="background:linear-gradient(160deg,#0d1e30,#091525);">
-                <div class="ps-headline" style="color:#64b5f6;font-size:14px;">CV by Kiyomi</div>
+                <div class="ps-headline" style="color:#64b5f6;font-size:15px;">CV by Kiyomi</div>
                 <div class="ps-sub" style="color:#78909c;">Beautiful CVs. Stand out instantly.</div>
                 <div class="ps-nodes" style="margin-top:10px;">
                   <div class="ps-node" style="font-size:9px;padding:3px 6px;">Template A</div>
@@ -349,16 +339,14 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="card-meta">
-              <span class="card-tag">JavaScript · PDF Generation · Template Engine</span>
-            </div>
-            <h3 class="card-title">CV by Kiyomi — Resume Builder App</h3>
-            <p class="card-desc">A client-side resume builder with dynamic template rendering, real-time preview, and PDF export. Built a custom template engine with state management, form validation, and download functionality — no backend required.</p>
+            <div class="card-meta"><span class="card-tag">JavaScript · PDF Generation · Template Engine</span></div>
+            <h3 class="card-title">CV by Kiyomi &mdash; Resume Builder App</h3>
+            <p class="card-desc">A client side resume builder with dynamic template rendering, real time preview, and PDF export. Built a custom template engine with state management, form validation, and download functionality. No backend required.</p>
             <div class="card-stack">
               <span>JavaScript</span><span>PDF API</span><span>State Mgmt</span><span>GitHub Pages</span>
             </div>
             <div class="card-footer">
-              <span class="card-link">View Case Study →</span>
+              <span class="card-link">View Case Study &rarr;</span>
               <a href="https://kiyomigroup.github.io/CVbykiyomi/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
             </div>
           </div>
@@ -388,16 +376,14 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="card-meta">
-              <span class="card-tag">JavaScript · Local Storage · UI System · Responsive</span>
-            </div>
-            <h3 class="card-title">Swappy — Peer-to-Peer Trading Platform</h3>
-            <p class="card-desc">A P2P trade and swap platform with listing management, user matching logic, and a trust/safety UI system. Engineered the full listing flow, search/filter engine, and trade request system. Focus on safe, frictionless exchange UX.</p>
+            <div class="card-meta"><span class="card-tag">JavaScript · Local Storage · UI System · Responsive</span></div>
+            <h3 class="card-title">Swappy &mdash; Peer to Peer Trading Platform</h3>
+            <p class="card-desc">A P2P trade and swap platform with listing management, user matching logic, and a trust and safety UI system. Engineered the full listing flow, search and filter engine, and trade request system. Built for safe, frictionless exchange UX.</p>
             <div class="card-stack">
               <span>JavaScript</span><span>Local Storage</span><span>Search Engine</span><span>Responsive</span>
             </div>
             <div class="card-footer">
-              <span class="card-link">View Case Study →</span>
+              <span class="card-link">View Case Study &rarr;</span>
               <a href="https://kiyomigroup.github.io/Swappy/index.html" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
             </div>
           </div>
@@ -427,16 +413,14 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="card-meta">
-              <span class="card-tag">JavaScript · Dynamic Rendering · GitHub Pages</span>
-            </div>
-            <h3 class="card-title">Portfolia — Creative Portfolio Builder</h3>
-            <p class="card-desc">A no-code portfolio builder for creatives. Engineered a dynamic page generation system, customizable layout engine, and instant preview — all client-side. Focused on eliminating technical friction for non-developer users.</p>
+            <div class="card-meta"><span class="card-tag">JavaScript · Dynamic Rendering · GitHub Pages</span></div>
+            <h3 class="card-title">Portfolia &mdash; Creative Portfolio Builder</h3>
+            <p class="card-desc">A no code portfolio builder for creatives. Engineered a dynamic page generation system, customizable layout engine, and instant preview, all client side. Built to eliminate technical friction for non developer users who want beautiful portfolios fast.</p>
             <div class="card-stack">
               <span>JavaScript</span><span>DOM APIs</span><span>CSS Variables</span><span>GitHub Pages</span>
             </div>
             <div class="card-footer">
-              <span class="card-link">View Case Study →</span>
+              <span class="card-link">View Case Study &rarr;</span>
               <a href="https://kiyomigroup.github.io/portfolia/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
             </div>
           </div>
@@ -444,9 +428,13 @@
       </article>
 
     </div>
+
+    <div class="work-view-all reveal">
+      <a href="pages/projects.html" class="btn-ghost" onclick="navigateTo('pages/projects.html'); return false;">View All Projects &rarr;</a>
+    </div>
   </section>
 
-  <!-- ===================== TECH STACK ===================== -->
+  <!-- STACK PREVIEW -->
   <section class="stack-section" id="stack">
     <div class="section-header">
       <span class="section-tag reveal">Technical Capabilities</span>
@@ -454,9 +442,7 @@
     </div>
     <div class="stack-grid">
       <div class="stack-col reveal">
-        <h3 class="stack-col-title">
-          <span class="stack-icon">⚡</span> Frontend
-        </h3>
+        <h3 class="stack-col-title"><span class="stack-icon">&#9889;</span> Frontend</h3>
         <div class="stack-items">
           <div class="stack-item"><span class="si-name">React / Next.js</span><div class="si-bar"><div class="si-fill" style="width:90%"></div></div></div>
           <div class="stack-item"><span class="si-name">TypeScript</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
@@ -466,9 +452,7 @@
         </div>
       </div>
       <div class="stack-col reveal">
-        <h3 class="stack-col-title">
-          <span class="stack-icon">🔧</span> Backend & APIs
-        </h3>
+        <h3 class="stack-col-title"><span class="stack-icon">&#128295;</span> Backend &amp; APIs</h3>
         <div class="stack-items">
           <div class="stack-item"><span class="si-name">Node.js</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
           <div class="stack-item"><span class="si-name">REST API Design</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
@@ -478,11 +462,9 @@
         </div>
       </div>
       <div class="stack-col reveal">
-        <h3 class="stack-col-title">
-          <span class="stack-icon">🤖</span> AI Toolchain
-        </h3>
+        <h3 class="stack-col-title"><span class="stack-icon">&#129302;</span> AI Toolchain</h3>
         <div class="stack-items">
-          <div class="stack-item"><span class="si-name">Claude Code</span><div class="si-bar"><div class="si-fill" style="width:95%; background: linear-gradient(90deg,#e88c4c,#f0a060);"></div></div></div>
+          <div class="stack-item"><span class="si-name">Claude Code</span><div class="si-bar"><div class="si-fill" style="width:95%;background:linear-gradient(90deg,#e88c4c,#f0a060);"></div></div></div>
           <div class="stack-item"><span class="si-name">Cursor IDE</span><div class="si-bar"><div class="si-fill" style="width:90%"></div></div></div>
           <div class="stack-item"><span class="si-name">Lovable.dev</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
           <div class="stack-item"><span class="si-name">Bolt.new</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
@@ -490,9 +472,7 @@
         </div>
       </div>
       <div class="stack-col reveal">
-        <h3 class="stack-col-title">
-          <span class="stack-icon">🚀</span> Tools & Deployment
-        </h3>
+        <h3 class="stack-col-title"><span class="stack-icon">&#128640;</span> Tools &amp; Deployment</h3>
         <div class="stack-items">
           <div class="stack-item"><span class="si-name">Git / GitHub</span><div class="si-bar"><div class="si-fill" style="width:88%"></div></div></div>
           <div class="stack-item"><span class="si-name">Vercel / Netlify</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
@@ -502,105 +482,59 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- ===================== EXPERIENCE ===================== -->
-  <section class="experience">
-    <div class="section-header">
-      <span class="section-tag reveal">Career</span>
-      <h2 class="section-title reveal-delay">Experience</h2>
-    </div>
-    <div class="exp-list">
-      <div class="exp-item reveal">
-        <div class="exp-year">2024 – Present</div>
-        <div class="exp-body">
-          <h3>Senior Web Developer</h3>
-          <span class="exp-company">Scrum Consult</span>
-          <p>Leading frontend and full stack development for client projects — covering web app builds, responsive UI engineering, and design-to-code delivery. Shipping production-grade work in tight timelines using AI-assisted development workflows.</p>
-          <div class="exp-tags"><span>React</span><span>Full Stack</span><span>Team Lead</span></div>
-        </div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-year">Mar – Jul 2025</div>
-        <div class="exp-body">
-          <h3>Game UI Developer & Designer</h3>
-          <span class="exp-company">Maliyo Games</span>
-          <p>Engineered and designed game interfaces and interactive icon systems for Safari City — Africa's leading mobile gaming platform. Built component systems that balanced functional logic with African-inspired visual identity.</p>
-          <div class="exp-tags"><span>Game Dev</span><span>UI Systems</span><span>Figma</span></div>
-        </div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-year">2022 – 2024</div>
-        <div class="exp-body">
-          <h3>Full Stack Developer & WordPress Engineer</h3>
-          <span class="exp-company">Kiyomi (Self-Directed)</span>
-          <p>Built and maintained full production websites for clients across Nigeria — custom WordPress themes, plugin development, performance optimization, and deployment. Developed intuition for engineering decisions that directly affect business outcomes.</p>
-          <div class="exp-tags"><span>WordPress</span><span>PHP</span><span>JavaScript</span><span>Deployment</span></div>
-        </div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-year">2023 – Present</div>
-        <div class="exp-body">
-          <h3>Independent Builder & Product Engineer</h3>
-          <span class="exp-company">Kiyomi Groups</span>
-          <p>Running an independent build practice — architecting and shipping full stack products for startups, entrepreneurs, and brands across Nigeria. Specializing in AI-accelerated development: from wireframe to deployed app in compressed cycles that traditional teams can't match.</p>
-          <div class="exp-tags"><span>Full Stack</span><span>AI Dev</span><span>Product Engineering</span></div>
-        </div>
-      </div>
+    <div class="work-view-all reveal">
+      <a href="pages/stack.html" class="btn-ghost" onclick="navigateTo('pages/stack.html'); return false;">Full Stack Breakdown &rarr;</a>
     </div>
   </section>
 
-  <!-- ===================== UI/UX SECONDARY SECTION ===================== -->
+  <!-- UI/UX SECONDARY -->
   <section class="uiux-section" id="uiux">
     <div class="section-header">
       <span class="section-tag reveal">Secondary Discipline</span>
       <h2 class="section-title reveal-delay">UI/UX Design Explorations</h2>
-      <p class="section-sub reveal-delay-2">Design is a tool in my engineering stack. Here's where it lives as its own discipline.</p>
+      <p class="section-sub reveal-delay-2">Design is a tool in my engineering stack. Here is where it lives as its own discipline.</p>
     </div>
     <div class="uiux-grid">
       <article class="uiux-card reveal" onclick="navigateTo('case-studies/project-1.html')">
         <div class="uiux-card-inner">
-          <div class="uiux-preview vitsetech">
-            <div class="uiux-preview-label">Mobile UI</div>
-          </div>
+          <div class="uiux-preview vitsetech"><div class="uiux-preview-label">Mobile UI</div></div>
           <div class="uiux-card-body">
             <span class="uiux-tag">UI/UX · Mobile Responsiveness</span>
-            <h4>Vitsetech — Mobile Redesign</h4>
+            <h4>Vitsetech Mobile Redesign</h4>
             <p>Redesigned the mobile experience of a tech company, improving layout, readability and touch interaction across all breakpoints.</p>
-            <span class="uiux-link">View →</span>
+            <span class="uiux-link">View &rarr;</span>
           </div>
         </div>
       </article>
       <article class="uiux-card reveal" onclick="navigateTo('case-studies/project-2.html')">
         <div class="uiux-card-inner">
-          <div class="uiux-preview lifemap">
-            <div class="uiux-preview-label">App Design</div>
-          </div>
+          <div class="uiux-preview lifemap"><div class="uiux-preview-label">App Design</div></div>
           <div class="uiux-card-body">
             <span class="uiux-tag">Product Design · Mental Wellness</span>
-            <h4>Lifemap Naija — Wellness App</h4>
+            <h4>Lifemap Naija Wellness App</h4>
             <p>A passion discovery and mental wellness app for Nigerian users, grounding emotional UX in culturally aware design.</p>
-            <span class="uiux-link">View →</span>
+            <span class="uiux-link">View &rarr;</span>
           </div>
         </div>
       </article>
       <article class="uiux-card reveal" onclick="navigateTo('case-studies/project-3.html')">
         <div class="uiux-card-inner">
-          <div class="uiux-preview safari">
-            <div class="uiux-preview-label">Game UI</div>
-          </div>
+          <div class="uiux-preview safari"><div class="uiux-preview-label">Game UI</div></div>
           <div class="uiux-card-body">
             <span class="uiux-tag">Game UI · Maliyo Games</span>
-            <h4>Safari City — Game UI Redesign</h4>
-            <p>Redesigned the game UI for Africa's leading mobile game, bringing African-inspired aesthetics and micro-interactions.</p>
-            <span class="uiux-link">View →</span>
+            <h4>Safari City Game UI Redesign</h4>
+            <p>Redesigned the game UI for Africa's leading mobile game, bringing African inspired aesthetics and micro interactions.</p>
+            <span class="uiux-link">View &rarr;</span>
           </div>
         </div>
       </article>
     </div>
+    <div class="work-view-all reveal">
+      <a href="pages/design.html" class="btn-ghost" onclick="navigateTo('pages/design.html'); return false;">All Design Work &rarr;</a>
+    </div>
   </section>
 
-  <!-- ===================== CTA ===================== -->
+  <!-- CTA -->
   <section class="cta-section">
     <div class="cta-inner reveal">
       <div class="cta-badge">
@@ -610,43 +544,44 @@
       <h2>Let's build something real.</h2>
       <p>I'm available for full stack development projects, product builds, and engineering collaborations. If you have a product to ship, let's talk.</p>
       <div class="cta-actions">
-        <a href="mailto:Adunoladiya@gmail.com" class="btn-primary large">
-          <span>Start a Conversation</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="https://wa.me/2347088448530" target="_blank" class="btn-primary large">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <span>Message on WhatsApp</span>
         </a>
         <div class="cta-social">
           <a href="https://x.com/Nolagraphics_" target="_blank" class="social-link">Twitter</a>
-          <a href="http://wa.me/+2347088448530" target="_blank" class="social-link">WhatsApp</a>
+          <a href="mailto:Adunoladiya@gmail.com" class="social-link">Email</a>
           <a href="https://youtube.com/NolaDesigns-s5z" target="_blank" class="social-link">YouTube</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-left">
         <span class="footer-logo">adunola<span class="logo-dot">.</span></span>
-        <p>Full Stack Developer · AI-Augmented Builder · Lagos, Nigeria</p>
+        <p>Full Stack Developer · AI Augmented Builder · Lagos, Nigeria</p>
         <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
       </div>
       <div class="footer-links">
-        <h4>Work</h4>
-        <a href="#work">Projects</a>
-        <a href="#uiux">UI/UX Design</a>
-        <a href="#stack">Stack</a>
+        <h4>Pages</h4>
+        <a href="pages/about.html" onclick="navigateTo('pages/about.html'); return false;">About</a>
+        <a href="pages/projects.html" onclick="navigateTo('pages/projects.html'); return false;">Projects</a>
+        <a href="pages/stack.html" onclick="navigateTo('pages/stack.html'); return false;">Stack</a>
+        <a href="pages/design.html" onclick="navigateTo('pages/design.html'); return false;">Design</a>
       </div>
       <div class="footer-links">
         <h4>Connect</h4>
         <a href="https://x.com/Nolagraphics_" target="_blank">Twitter / X</a>
         <a href="https://youtube.com/NolaDesigns-s5z" target="_blank">YouTube</a>
-        <a href="http://wa.me/+2347088448530" target="_blank">WhatsApp</a>
+        <a href="https://wa.me/2347088448530" target="_blank">WhatsApp</a>
         <a href="https://kiyomigroups.framer.website" target="_blank">Framer Site</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Adunola Babadiya. All rights reserved.</span>
+      <span>&#169; 2025 Adunola Babadiya. All rights reserved.</span>
       <span>Engineered by Adunola.</span>
     </div>
   </footer>

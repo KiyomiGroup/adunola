@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stack | Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body data-page="stack">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+  <nav class="nav" id="mainNav">
+    <a href="../index.html" class="nav-logo" onclick="navigateTo('../index.html'); return false;">adunola<span class="logo-dot">.</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link" onclick="navigateTo('about.html'); return false;">About</a>
+      <a href="projects.html" class="nav-link" onclick="navigateTo('projects.html'); return false;">Projects</a>
+      <a href="stack.html" class="nav-link active-link">Stack</a>
+      <a href="design.html" class="nav-link" onclick="navigateTo('design.html'); return false;">Design</a>
+      <a href="https://wa.me/2347088448530" target="_blank" class="btn-nav-cta">Hire Me</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="../index.html" class="mobile-link" onclick="navigateTo('../index.html'); return false;">Home</a>
+    <a href="about.html" class="mobile-link" onclick="navigateTo('about.html'); return false;">About</a>
+    <a href="projects.html" class="mobile-link" onclick="navigateTo('projects.html'); return false;">Projects</a>
+    <a href="design.html" class="mobile-link" onclick="navigateTo('design.html'); return false;">Design</a>
+    <a href="https://wa.me/2347088448530" target="_blank" class="mobile-link mobile-cta">Hire Me</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="page-hero-tag reveal">Technical Capabilities</div>
+    <h1 class="reveal-delay">The Engineering Stack.</h1>
+    <p class="reveal-delay-2">Every tool I use is chosen deliberately. Here is a breakdown of what I build with, why I use it, and how deep the proficiency goes.</p>
+  </div>
+
+  <div class="page-body">
+
+    <div class="stack-grid" style="max-width:100%; margin-bottom:60px;">
+      <div class="stack-col reveal">
+        <h3 class="stack-col-title"><span class="stack-icon">&#9889;</span> Frontend</h3>
+        <div class="stack-items">
+          <div class="stack-item"><span class="si-name">React / Next.js</span><div class="si-bar"><div class="si-fill" style="width:90%"></div></div></div>
+          <div class="stack-item"><span class="si-name">TypeScript</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
+          <div class="stack-item"><span class="si-name">HTML / CSS / JS</span><div class="si-bar"><div class="si-fill" style="width:95%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Tailwind CSS</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Framer Motion</span><div class="si-bar"><div class="si-fill" style="width:75%"></div></div></div>
+        </div>
+      </div>
+      <div class="stack-col reveal">
+        <h3 class="stack-col-title"><span class="stack-icon">&#128295;</span> Backend &amp; APIs</h3>
+        <div class="stack-items">
+          <div class="stack-item"><span class="si-name">Node.js</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
+          <div class="stack-item"><span class="si-name">REST API Design</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Supabase / Firebase</span><div class="si-bar"><div class="si-fill" style="width:78%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Authentication</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Database Design</span><div class="si-bar"><div class="si-fill" style="width:72%"></div></div></div>
+        </div>
+      </div>
+      <div class="stack-col reveal">
+        <h3 class="stack-col-title"><span class="stack-icon">&#129302;</span> AI Toolchain</h3>
+        <div class="stack-items">
+          <div class="stack-item"><span class="si-name">Claude Code</span><div class="si-bar"><div class="si-fill" style="width:95%;background:linear-gradient(90deg,#e88c4c,#f0a060);"></div></div></div>
+          <div class="stack-item"><span class="si-name">Cursor IDE</span><div class="si-bar"><div class="si-fill" style="width:90%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Lovable.dev</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Bolt.new</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
+          <div class="stack-item"><span class="si-name">AI Prompt Engineering</span><div class="si-bar"><div class="si-fill" style="width:92%"></div></div></div>
+        </div>
+      </div>
+      <div class="stack-col reveal">
+        <h3 class="stack-col-title"><span class="stack-icon">&#128640;</span> Tools &amp; Deployment</h3>
+        <div class="stack-items">
+          <div class="stack-item"><span class="si-name">Git / GitHub</span><div class="si-bar"><div class="si-fill" style="width:88%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Vercel / Netlify</span><div class="si-bar"><div class="si-fill" style="width:85%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Figma</span><div class="si-bar"><div class="si-fill" style="width:95%"></div></div></div>
+          <div class="stack-item"><span class="si-name">WordPress / Webflow</span><div class="si-bar"><div class="si-fill" style="width:80%"></div></div></div>
+          <div class="stack-item"><span class="si-name">Performance Optimization</span><div class="si-bar"><div class="si-fill" style="width:78%"></div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-philosophy reveal">
+      <h2 class="page-section-h2">Why These Tools</h2>
+      <div class="stack-phil-grid">
+        <div class="stack-phil-card">
+          <div class="spc-tag">React and Next.js</div>
+          <p>Component based architecture maps directly to how I think about UIs. Next.js adds the file based routing, server rendering, and deployment optimization that takes a React project to production grade fast.</p>
+        </div>
+        <div class="stack-phil-card">
+          <div class="spc-tag">Node.js and REST APIs</div>
+          <p>JavaScript end to end means one mental model, one language, faster development. REST APIs are the backbone of every product I build. I design them to be predictable, versioned, and easy to extend.</p>
+        </div>
+        <div class="stack-phil-card">
+          <div class="spc-tag">Claude Code and Cursor</div>
+          <p>I don't use AI to avoid thinking. I use it to eliminate the mechanical parts of coding so my thinking stays on architecture and product decisions. The result is noticeably faster timelines without quality loss.</p>
+        </div>
+        <div class="stack-phil-card">
+          <div class="spc-tag">Figma</div>
+          <p>Still the best tool for communicating interface decisions before they're in code. I use it for planning and client alignment but I move to code fast. Figma is a communication tool, not a deliverable.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <style>
+    .active-link { color: var(--text-primary) !important; }
+    .active-link::after { transform: scaleX(1) !important; }
+    .page-section-h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 24px; }
+    .stack-philosophy { border-top: 1px solid var(--border); padding-top: 56px; }
+    .stack-phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stack-phil-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 24px; transition: border-color .3s; }
+    .stack-phil-card:hover { border-color: rgba(61,139,255,.25); }
+    .spc-tag { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.06em; margin-bottom: 10px; }
+    .stack-phil-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.72; }
+    @media (max-width: 700px) { .stack-phil-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <span class="footer-logo">adunola<span class="logo-dot">.</span></span>
+        <p>Full Stack Developer · Lagos, Nigeria</p>
+        <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <a href="../index.html" onclick="navigateTo('../index.html'); return false;">Home</a>
+        <a href="about.html" onclick="navigateTo('about.html'); return false;">About</a>
+        <a href="projects.html" onclick="navigateTo('projects.html'); return false;">Projects</a>
+        <a href="design.html" onclick="navigateTo('design.html'); return false;">Design</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://wa.me/2347088448530" target="_blank">WhatsApp</a>
+        <a href="https://x.com/Nolagraphics_" target="_blank">Twitter / X</a>
+        <a href="mailto:Adunoladiya@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 Adunola Babadiya.</span>
+      <span>Engineered by Adunola.</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

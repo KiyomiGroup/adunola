@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body data-page="about">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+  <nav class="nav" id="mainNav">
+    <a href="../index.html" class="nav-logo" onclick="navigateTo('../index.html'); return false;">adunola<span class="logo-dot">.</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link active-link">About</a>
+      <a href="projects.html" class="nav-link" onclick="navigateTo('projects.html'); return false;">Projects</a>
+      <a href="stack.html" class="nav-link" onclick="navigateTo('stack.html'); return false;">Stack</a>
+      <a href="design.html" class="nav-link" onclick="navigateTo('design.html'); return false;">Design</a>
+      <a href="https://wa.me/2347088448530" target="_blank" class="btn-nav-cta">Hire Me</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="../index.html" class="mobile-link" onclick="navigateTo('../index.html'); return false;">Home</a>
+    <a href="projects.html" class="mobile-link" onclick="navigateTo('projects.html'); return false;">Projects</a>
+    <a href="stack.html" class="mobile-link" onclick="navigateTo('stack.html'); return false;">Stack</a>
+    <a href="design.html" class="mobile-link" onclick="navigateTo('design.html'); return false;">Design</a>
+    <a href="https://wa.me/2347088448530" target="_blank" class="mobile-link mobile-cta">Hire Me</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="page-hero-tag reveal">About Me</div>
+    <h1 class="reveal-delay">I build systems.<br>I ship products.</h1>
+    <p class="reveal-delay-2">Full stack developer based in Lagos, Nigeria. I turn ideas into live, working applications using modern engineering and AI accelerated workflows.</p>
+  </div>
+
+  <div class="page-body">
+    <div class="about-page-grid reveal">
+      <div class="about-story">
+        <h2 class="page-section-h2">The Story</h2>
+        <p>I started in design. Figma, wireframes, prototypes. But I kept running into the same wall: great designs sitting in handoff limbo, waiting on developers who had different priorities. So I taught myself to build.</p>
+        <p>That decision changed everything. I stopped being someone who designed systems and became someone who engineers them into existence. Frontend to backend. Concept to deployed URL. The full picture.</p>
+        <p>Today I run Kiyomi Groups, an independent build practice out of Lagos. I work with startups, entrepreneurs, and brands who need real products fast. Not mockups. Not decks. Shipped software.</p>
+        <p>The AI revolution in development is something I've leaned into completely. Claude Code and Cursor aren't shortcuts to me. They're engineering tools that let me build at a pace that traditional cycles simply can't match. I use them intelligently, and the output reflects that.</p>
+
+        <h2 class="page-section-h2" style="margin-top:40px;">What I Believe</h2>
+        <p>Good software is invisible. When you build well, users don't think about the tech. They just experience the product. That's the goal on every project I take on.</p>
+        <p>Design and engineering aren't separate disciplines. They're two lenses on the same problem. I think in both simultaneously, which is why the products I build tend to feel right and work right at the same time.</p>
+        <p>Speed matters. Shipping a working product in 72 hours teaches you more than six weeks in planning. I bias toward building, measuring, and iterating.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="sidebar-block">
+          <h4>Location</h4>
+          <p>Lagos, Nigeria</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Focus</h4>
+          <p>Full Stack Development<br>AI Augmented Engineering<br>Product Builds</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Available For</h4>
+          <p>Freelance projects<br>Product builds<br>Technical collaborations</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Get in Touch</h4>
+          <a href="https://wa.me/2347088448530" target="_blank" class="sidebar-cta">WhatsApp ↗</a>
+          <a href="mailto:Adunoladiya@gmail.com" class="sidebar-cta">Email ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="experience-block">
+      <h2 class="page-section-h2 reveal">Experience</h2>
+      <div class="exp-list">
+        <div class="exp-item reveal">
+          <div class="exp-year">2024 to Present</div>
+          <div class="exp-body">
+            <h3>Senior Web Developer</h3>
+            <span class="exp-company">Scrum Consult</span>
+            <p>Leading frontend and full stack development for client projects covering web app builds, responsive UI engineering, and design to code delivery. Shipping production grade work in tight timelines using AI assisted development workflows.</p>
+            <div class="exp-tags"><span>React</span><span>Full Stack</span><span>Team Lead</span></div>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-year">Mar to Jul 2025</div>
+          <div class="exp-body">
+            <h3>Game UI Developer and Designer</h3>
+            <span class="exp-company">Maliyo Games</span>
+            <p>Engineered and designed game interfaces and interactive icon systems for Safari City, Africa's leading mobile gaming platform. Built component systems that balanced functional logic with African inspired visual identity.</p>
+            <div class="exp-tags"><span>Game Dev</span><span>UI Systems</span><span>Figma</span></div>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-year">2022 to 2024</div>
+          <div class="exp-body">
+            <h3>Full Stack Developer and WordPress Engineer</h3>
+            <span class="exp-company">Kiyomi (Self Directed)</span>
+            <p>Built and maintained full production websites for clients across Nigeria. Custom WordPress themes, plugin development, performance optimization, and deployment. Developed intuition for engineering decisions that directly affect business outcomes.</p>
+            <div class="exp-tags"><span>WordPress</span><span>PHP</span><span>JavaScript</span><span>Deployment</span></div>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-year">2023 to Present</div>
+          <div class="exp-body">
+            <h3>Independent Builder and Product Engineer</h3>
+            <span class="exp-company">Kiyomi Groups</span>
+            <p>Running an independent build practice. Architecting and shipping full stack products for startups, entrepreneurs, and brands across Nigeria. Specializing in AI accelerated development from wireframe to deployed app in compressed cycles.</p>
+            <div class="exp-tags"><span>Full Stack</span><span>AI Dev</span><span>Product Engineering</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .active-link { color: var(--text-primary) !important; }
+    .active-link::after { transform: scaleX(1) !important; }
+    .about-page-grid { display: grid; grid-template-columns: 1fr 260px; gap: 60px; align-items: start; margin-bottom: 72px; }
+    .about-story p { font-size: 15px; color: var(--text-secondary); line-height: 1.78; margin-bottom: 16px; }
+    .page-section-h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -0.03em; color: var(--text-primary); margin-bottom: 20px; }
+    .about-sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 90px; }
+    .sidebar-block h4 { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+    .sidebar-block p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+    .sidebar-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px; }
+    .sidebar-cta { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.04em; margin-top: 8px; transition: letter-spacing .2s; }
+    .sidebar-cta:hover { letter-spacing: 0.08em; }
+    .experience-block { border-top: 1px solid var(--border); padding-top: 60px; }
+    @media (max-width: 900px) {
+      .about-page-grid { grid-template-columns: 1fr; }
+      .about-sidebar { position: static; }
+    }
+  </style>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <span class="footer-logo">adunola<span class="logo-dot">.</span></span>
+        <p>Full Stack Developer · Lagos, Nigeria</p>
+        <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <a href="../index.html" onclick="navigateTo('../index.html'); return false;">Home</a>
+        <a href="projects.html" onclick="navigateTo('projects.html'); return false;">Projects</a>
+        <a href="stack.html" onclick="navigateTo('stack.html'); return false;">Stack</a>
+        <a href="design.html" onclick="navigateTo('design.html'); return false;">Design</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://wa.me/2347088448530" target="_blank">WhatsApp</a>
+        <a href="https://x.com/Nolagraphics_" target="_blank">Twitter / X</a>
+        <a href="mailto:Adunoladiya@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 Adunola Babadiya.</span>
+      <span>Engineered by Adunola.</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

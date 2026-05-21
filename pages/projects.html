@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body data-page="projects">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+  <nav class="nav" id="mainNav">
+    <a href="../index.html" class="nav-logo" onclick="navigateTo('../index.html'); return false;">adunola<span class="logo-dot">.</span></a>
+    <div class="nav-links">
+      <a href="about.html" class="nav-link" onclick="navigateTo('about.html'); return false;">About</a>
+      <a href="projects.html" class="nav-link active-link">Projects</a>
+      <a href="stack.html" class="nav-link" onclick="navigateTo('stack.html'); return false;">Stack</a>
+      <a href="design.html" class="nav-link" onclick="navigateTo('design.html'); return false;">Design</a>
+      <a href="https://wa.me/2347088448530" target="_blank" class="btn-nav-cta">Hire Me</a>
+    </div>
+    <button class="nav-mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose">&#x2715;</button>
+    <a href="../index.html" class="mobile-link" onclick="navigateTo('../index.html'); return false;">Home</a>
+    <a href="about.html" class="mobile-link" onclick="navigateTo('about.html'); return false;">About</a>
+    <a href="stack.html" class="mobile-link" onclick="navigateTo('stack.html'); return false;">Stack</a>
+    <a href="design.html" class="mobile-link" onclick="navigateTo('design.html'); return false;">Design</a>
+    <a href="https://wa.me/2347088448530" target="_blank" class="mobile-link mobile-cta">Hire Me</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="page-hero-tag reveal">Engineering Case Studies</div>
+    <h1 class="reveal-delay">Projects Built<br>and Shipped.</h1>
+    <p class="reveal-delay-2">Real products. Real deployments. Every project here is live, functional, and built with full stack thinking from architecture to launch.</p>
+  </div>
+
+  <div class="page-body">
+    <div class="work-grid" style="max-width:100%;">
+
+      <article class="work-card featured reveal" onclick="navigateTo('../case-studies/streettasker.html')">
+        <div class="card-inner">
+          <div class="card-image">
+            <div class="card-preview" style="background:linear-gradient(135deg,#0d1829 0%,#1a2f50 100%);">
+              <div class="preview-chrome">
+                <div class="chrome-dots"><span></span><span></span><span></span></div>
+                <span class="chrome-url">streettasker.com</span>
+                <a href="https://streettasker.com/" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
+              </div>
+              <div class="preview-screen" style="background:linear-gradient(160deg,#0f1f40,#091525);">
+                <div class="ps-headline" style="color:#5b9cf6;">Task. Earn. Repeat.</div>
+                <div class="ps-sub">Connecting workers with everyday jobs</div>
+                <div class="ps-badge">Gig Economy Platform</div>
+                <div class="ps-nodes">
+                  <div class="ps-node">User Auth</div><div class="ps-arrow">&#8594;</div>
+                  <div class="ps-node">Task Matching</div><div class="ps-arrow">&#8594;</div>
+                  <div class="ps-node">Payments</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-badges"><span class="badge blue">Full Stack</span><span class="badge">AI Built</span><span class="badge">Live</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-tag">React · Node.js · REST API · Deployment</span></div>
+            <h3 class="card-title">StreetTasker &mdash; Gig Economy Platform</h3>
+            <p class="card-desc">A fully deployed platform connecting everyday people with local task workers. Built with a full authentication system, task matching engine, and real time job board. Architected and shipped in a single focused sprint using AI assisted development.</p>
+            <div class="card-stack"><span>React</span><span>Node.js</span><span>REST API</span><span>Auth</span><span>Deployment</span></div>
+            <div class="card-footer">
+              <span class="card-link">View Case Study &rarr;</span>
+              <a href="https://streettasker.com/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('../case-studies/andrestylez.html')">
+        <div class="card-inner">
+          <div class="card-image">
+            <div class="card-preview" style="background:linear-gradient(135deg,#0e0a1a 0%,#1a1030 100%);">
+              <div class="preview-chrome">
+                <div class="chrome-dots"><span></span><span></span><span></span></div>
+                <span class="chrome-url">andrestylez.com</span>
+                <a href="https://andrestylez.com/" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
+              </div>
+              <div class="preview-screen" style="background:linear-gradient(160deg,#14082a,#0e0520);">
+                <div class="ps-headline" style="color:#c084fc;letter-spacing:0.08em;">ANDRE STYLEZ</div>
+                <div class="ps-sub" style="color:#7c5aab;">Music. Energy. Culture.</div>
+                <div class="ps-badge" style="background:rgba(192,132,252,0.12);color:#c084fc;border-color:rgba(192,132,252,0.3);">Music Artist Site</div>
+              </div>
+            </div>
+            <div class="card-badges"><span class="badge purple">Frontend</span><span class="badge">Music</span><span class="badge">Live</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-tag">HTML · CSS · JS · Brand System · SEO</span></div>
+            <h3 class="card-title">AndreStylez &mdash; Music Artist Platform</h3>
+            <p class="card-desc">A high energy music artist website built to capture the sound and identity of Andre Stylez. Performance optimized with dynamic content displays and a full brand identity system. Mobile first. Concept to live in under 24 hours.</p>
+            <div class="card-stack"><span>HTML/CSS</span><span>JavaScript</span><span>SEO</span><span>Brand System</span></div>
+            <div class="card-footer">
+              <span class="card-link">View Case Study &rarr;</span>
+              <a href="https://andrestylez.com/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('../case-studies/cvbykiyomi.html')">
+        <div class="card-inner">
+          <div class="card-image">
+            <div class="card-preview" style="background:linear-gradient(135deg,#0a1520 0%,#141e2a 100%);">
+              <div class="preview-chrome">
+                <div class="chrome-dots"><span></span><span></span><span></span></div>
+                <span class="chrome-url">kiyomigroup.github.io/CVbykiyomi</span>
+                <a href="https://kiyomigroup.github.io/CVbykiyomi/" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
+              </div>
+              <div class="preview-screen" style="background:linear-gradient(160deg,#0d1e30,#091525);">
+                <div class="ps-headline" style="color:#64b5f6;font-size:15px;">CV by Kiyomi</div>
+                <div class="ps-sub" style="color:#78909c;">Beautiful CVs. Stand out instantly.</div>
+                <div class="ps-nodes" style="margin-top:10px;">
+                  <div class="ps-node" style="font-size:9px;padding:3px 6px;">Template A</div>
+                  <div class="ps-node" style="font-size:9px;padding:3px 6px;">Template B</div>
+                  <div class="ps-node" style="font-size:9px;padding:3px 6px;">Export PDF</div>
+                </div>
+              </div>
+            </div>
+            <div class="card-badges"><span class="badge blue">App</span><span class="badge">Career Tech</span><span class="badge">Live</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-tag">JavaScript · PDF Generation · Template Engine</span></div>
+            <h3 class="card-title">CV by Kiyomi &mdash; Resume Builder App</h3>
+            <p class="card-desc">A client side resume builder with dynamic template rendering, real time preview, and PDF export. Built a custom template engine with state management, form validation, and download functionality. No backend required.</p>
+            <div class="card-stack"><span>JavaScript</span><span>PDF API</span><span>State Mgmt</span><span>GitHub Pages</span></div>
+            <div class="card-footer">
+              <span class="card-link">View Case Study &rarr;</span>
+              <a href="https://kiyomigroup.github.io/CVbykiyomi/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('../case-studies/swappy.html')">
+        <div class="card-inner">
+          <div class="card-image">
+            <div class="card-preview" style="background:linear-gradient(135deg,#0f1f18 0%,#142a1e 100%);">
+              <div class="preview-chrome">
+                <div class="chrome-dots"><span></span><span></span><span></span></div>
+                <span class="chrome-url">kiyomigroup.github.io/Swappy</span>
+                <a href="https://kiyomigroup.github.io/Swappy/index.html" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
+              </div>
+              <div class="preview-screen" style="background:linear-gradient(160deg,#122518,#0c1c11);">
+                <div class="ps-headline" style="color:#4caf82;">Swappy</div>
+                <div class="ps-sub" style="color:#6a9a7a;">Trade anything. Fast. Safe.</div>
+                <div class="ps-badge" style="background:rgba(76,175,130,0.15);color:#4caf82;border-color:rgba(76,175,130,0.3);">P2P Marketplace</div>
+              </div>
+            </div>
+            <div class="card-badges"><span class="badge green">Marketplace</span><span class="badge">P2P</span><span class="badge">Live</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-tag">JavaScript · Local Storage · UI System · Responsive</span></div>
+            <h3 class="card-title">Swappy &mdash; Peer to Peer Trading Platform</h3>
+            <p class="card-desc">A P2P trade and swap platform with listing management, user matching logic, and a trust and safety UI system. Engineered the full listing flow, search and filter engine, and trade request system.</p>
+            <div class="card-stack"><span>JavaScript</span><span>Local Storage</span><span>Search Engine</span><span>Responsive</span></div>
+            <div class="card-footer">
+              <span class="card-link">View Case Study &rarr;</span>
+              <a href="https://kiyomigroup.github.io/Swappy/index.html" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card reveal" onclick="navigateTo('../case-studies/portfolia.html')">
+        <div class="card-inner">
+          <div class="card-image">
+            <div class="card-preview" style="background:linear-gradient(135deg,#1a1020 0%,#231530 100%);">
+              <div class="preview-chrome">
+                <div class="chrome-dots"><span></span><span></span><span></span></div>
+                <span class="chrome-url">kiyomigroup.github.io/portfolia</span>
+                <a href="https://kiyomigroup.github.io/portfolia/" target="_blank" class="chrome-live" onclick="event.stopPropagation()">Live ↗</a>
+              </div>
+              <div class="preview-screen" style="background:linear-gradient(160deg,#1e1230,#150e25);">
+                <div class="ps-headline" style="color:#b28ef0;">portfolia.</div>
+                <div class="ps-sub" style="color:#7a6a9a;">Your work, beautifully shown.</div>
+                <div class="ps-badge" style="background:rgba(178,142,240,0.15);color:#b28ef0;border-color:rgba(178,142,240,0.3);">Portfolio Builder</div>
+              </div>
+            </div>
+            <div class="card-badges"><span class="badge purple">SaaS Tool</span><span class="badge">Builder</span><span class="badge">Live</span></div>
+          </div>
+          <div class="card-body">
+            <div class="card-meta"><span class="card-tag">JavaScript · Dynamic Rendering · GitHub Pages</span></div>
+            <h3 class="card-title">Portfolia &mdash; Creative Portfolio Builder</h3>
+            <p class="card-desc">A no code portfolio builder for creatives. Engineered a dynamic page generation system, customizable layout engine, and instant preview, all client side. Built to eliminate technical friction for non developer users.</p>
+            <div class="card-stack"><span>JavaScript</span><span>DOM APIs</span><span>CSS Variables</span><span>GitHub Pages</span></div>
+            <div class="card-footer">
+              <span class="card-link">View Case Study &rarr;</span>
+              <a href="https://kiyomigroup.github.io/portfolia/" target="_blank" class="card-live" onclick="event.stopPropagation()">Live Site ↗</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  <style>
+    .active-link { color: var(--text-primary) !important; }
+    .active-link::after { transform: scaleX(1) !important; }
+    .page-body .work-grid { margin: 0; }
+  </style>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-left">
+        <span class="footer-logo">adunola<span class="logo-dot">.</span></span>
+        <p>Full Stack Developer · Lagos, Nigeria</p>
+        <a href="mailto:Adunoladiya@gmail.com" class="footer-email">Adunoladiya@gmail.com</a>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <a href="../index.html" onclick="navigateTo('../index.html'); return false;">Home</a>
+        <a href="about.html" onclick="navigateTo('about.html'); return false;">About</a>
+        <a href="stack.html" onclick="navigateTo('stack.html'); return false;">Stack</a>
+        <a href="design.html" onclick="navigateTo('design.html'); return false;">Design</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://wa.me/2347088448530" target="_blank">WhatsApp</a>
+        <a href="https://x.com/Nolagraphics_" target="_blank">Twitter / X</a>
+        <a href="mailto:Adunoladiya@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&#169; 2025 Adunola Babadiya.</span>
+      <span>Engineered by Adunola.</span>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
