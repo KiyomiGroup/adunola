@@ -3,6 +3,13 @@
    script.js v3.0
    =================================================== */
 
+// Pre-init theme accent so canvas uses correct color from first frame
+window._themeAccent = (function() {
+  const saved = (typeof localStorage !== 'undefined' && localStorage.getItem('adunola-theme')) || 'dark';
+  const map = { dark:[61,139,255], light:[29,111,232], neon:[0,255,180], glass:[167,139,250] };
+  return map[saved] || [61,139,255];
+})();
+
 // === HERO CANVAS — animated node graph ===
 (function () {
   const canvas = document.getElementById('heroCanvas');
@@ -36,9 +43,10 @@
       if (d < 110) { this.x += dx / d * 1.4; this.y += dy / d * 1.4; }
     }
     draw() {
+      const [r, g, b] = window._themeAccent || [61, 139, 255];
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(61,139,255,${this.alpha * 0.75})`;
+      ctx.fillStyle = `rgba(${r},${g},${b},${this.alpha * 0.75})`;
       ctx.fill();
     }
   }
@@ -58,7 +66,8 @@
         const d = Math.sqrt(dx * dx + dy * dy);
         if (d < max) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(61,139,255,${(1 - d / max) * 0.22})`;
+          const [lr, lg, lb] = window._themeAccent || [61, 139, 255];
+          ctx.strokeStyle = `rgba(${lr},${lg},${lb},${(1 - d / max) * 0.22})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -233,3 +242,56 @@ window.addEventListener('load', () => {
     }, 900);
   }
 });
+
+
+// ===================== THEME SWITCHER =====================
+const THEME_KEY = 'adunola-theme';
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem(THEME_KEY, theme);
+
+  // Update active button
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+  });
+
+  // Update canvas behavior for light theme
+  const canvas = document.getElementById('heroCanvas');
+  if (canvas) {
+    if (theme === 'light') {
+      canvas.style.filter = 'invert(1) hue-rotate(180deg)';
+      canvas.style.opacity = '0.06';
+    } else if (theme === 'neon') {
+      canvas.style.filter = 'none';
+      canvas.style.opacity = '0.5';
+    } else if (theme === 'glass') {
+      canvas.style.filter = 'none';
+      canvas.style.opacity = '0.2';
+    } else {
+      canvas.style.filter = 'none';
+      canvas.style.opacity = '0.3';
+    }
+  }
+
+  // Re-color node graph accent for neon/glass themes
+  window._themeAccent = {
+    dark:  [61, 139, 255],
+    light: [29, 111, 232],
+    neon:  [0, 255, 180],
+    glass: [167, 139, 250],
+  }[theme] || [61, 139, 255];
+}
+
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY) || 'dark';
+  applyTheme(saved);
+}
+
+document.querySelectorAll('.theme-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    applyTheme(btn.getAttribute('data-theme'));
+  });
+});
+
+initTheme();
