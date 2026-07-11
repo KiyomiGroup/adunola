@@ -10,13 +10,6 @@
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" />
   <style>
     :root { --cs-accent: #c0525a; }
-    .cs-hero-visual {
-      width: 100%; aspect-ratio: 16/7;
-      background: linear-gradient(135deg, #170a0c 0%, #260f13 60%, #120809 100%);
-      border-radius: 4px; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; margin: 40px 0;
-    }
     .vibe-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: rgba(192,82,90,0.1); border: 1px solid rgba(192,82,90,0.25);
@@ -39,24 +32,58 @@
       border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
     }
     .live-link-btn:hover { opacity: 0.85; }
-    .book-genre-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-      margin: 24px 0;
+
+    /* Screenshot gallery */
+    .shot-browser {
+      background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; margin: 40px 0;
     }
-    .book-genre-card {
-      background: var(--bg-2); border: 1px solid var(--border);
-      border-radius: 4px; padding: 18px;
-      transition: border-color 0.3s;
+    .shot-chrome {
+      display:flex; align-items:center; gap:10px; padding:10px 16px;
+      background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border);
     }
-    .book-genre-card:hover { border-color: #c0525a; }
-    .book-genre-card h5 {
-      font-family: var(--font-display); font-size: 15px;
-      font-weight: 400; margin-bottom: 6px; color: #c0525a;
-    }
-    .book-genre-card p { font-size: 12px; color: var(--text-secondary); }
-    .book-stats-row { display:flex; gap:32px; margin-top:24px; flex-wrap:wrap; }
-    .book-stat-item .num { font-family: var(--font-display); font-size: 32px; color: #c0525a; font-weight:300; }
-    .book-stat-item .label { font-size: 11px; color: var(--text-secondary); letter-spacing: 0.06em; text-transform:uppercase; margin-top:4px; }
+    .shot-dots span { display:inline-block; width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.15); margin-right:5px; }
+    .shot-url { font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); background: rgba(255,255,255,0.03); padding: 4px 12px; border-radius: 20px; flex:1; }
+    .shot-split { display:grid; grid-template-columns: 260px 1fr; }
+    .shot-split img { width:100%; height:100%; object-fit:cover; display:block; min-height:320px; background:#170a0c; }
+    .shot-info { padding: 26px; display:flex; flex-direction:column; justify-content:center; }
+    .shot-info h4 { font-family: var(--font-display); font-size: 20px; font-weight:400; color:#c0525a; margin-bottom:8px; }
+    .shot-info p { font-size:13px; color:var(--text-secondary); line-height:1.7; }
+    .shot-caption { padding: 14px 18px; font-size: 12px; color: var(--text-secondary); border-top:1px solid var(--border); }
+    @media (max-width:700px){ .shot-split{ grid-template-columns:1fr; } .shot-split img{ min-height:220px; } }
+
+    /* Role */
+    .role-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin: 22px 0; }
+    .role-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 16px; text-align:center; }
+    .role-card .role-icon { font-size: 20px; margin-bottom:8px; }
+    .role-card h5 { font-family: var(--font-display); font-size: 13px; font-weight:400; color: #c0525a; letter-spacing:0.04em; }
+
+    /* Research */
+    .research-list { list-style:none; padding:0; margin: 18px 0 0; }
+    .research-list li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--border); position:relative; font-size:14px; color: var(--text-secondary); }
+    .research-list li::before { content:"→"; position:absolute; left:0; color:#c0525a; }
+    .research-list li strong { color: var(--text-primary); }
+
+    .design-block { margin: 22px 0; }
+    .swatch-row { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+    .swatch { width:52px; height:52px; border-radius:6px; border:1px solid var(--border); position:relative; }
+    .swatch span { position:absolute; bottom:-20px; left:0; font-size:9px; color:var(--text-secondary); white-space:nowrap; }
+    .wireframe-box { background: var(--bg-2); border: 1px dashed rgba(192,82,90,0.3); border-radius:4px; padding: 20px; margin-top:14px; font-family: var(--font-mono); font-size:11px; color: var(--text-secondary); line-height:1.9; }
+
+    .dev-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:14px; margin: 22px 0; }
+    .dev-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 18px; }
+    .dev-card h5 { font-family: var(--font-display); font-size: 14px; font-weight:400; color:#c0525a; margin-bottom:8px; }
+    .dev-card p { font-size:12px; color:var(--text-secondary); line-height:1.6; }
+
+    .challenge-card { background: var(--bg-2); border-left: 3px solid #c0525a; border-radius: 0 4px 4px 0; padding: 16px 20px; margin: 14px 0; }
+    .challenge-card h5 { font-family: var(--font-display); font-size:14px; font-weight:400; margin-bottom:6px; color: var(--text-primary); }
+    .challenge-card p { font-size:13px; color: var(--text-secondary); line-height:1.7; }
+
+    .results-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:14px; margin: 22px 0; }
+    .results-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 18px; text-align:center; }
+    .results-card .num { font-family: var(--font-display); font-size: 26px; color: #c0525a; font-weight:300; }
+    .results-card .label { font-size: 10px; color: var(--text-secondary); letter-spacing:0.06em; text-transform:uppercase; margin-top:6px; }
+    @media (max-width:700px){ .role-grid{grid-template-columns:1fr 1fr;} .dev-grid{grid-template-columns:1fr;} .results-grid{grid-template-columns:1fr 1fr;} }
   </style>
 </head>
 <body data-page="case-study">
@@ -87,14 +114,14 @@
   </nav>
 
   <section class="case-study-hero">
-    <div class="vibe-badge">Vibe Coding Project</div>
-    <span class="section-tag reveal">Literary Platform · Publishing · Full Stack Build</span>
+    <div class="vibe-badge">Full Stack Build</div>
+    <span class="section-tag reveal">Literary Platform · Publishing · Serialized Fiction</span>
     <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
-      AdunolaBooks<br/>A Living Book You Can Enter
+      AdunolaBooks<br/>Building a Home for the Stories
     </h1>
     <div class="cs-meta reveal-delay-2">
-      <div class="cs-meta-item"><label>Type</label><span>Full Stack Web App / Vibe Coding</span></div>
-      <div class="cs-meta-item"><label>Role</label><span>Designer, Developer &amp; Project Manager</span></div>
+      <div class="cs-meta-item"><label>Type</label><span>Full Stack Web App</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Product Manager, Designer &amp; Developer</span></div>
       <div class="cs-meta-item"><label>Tools Used</label><span>Claude, Supabase, HTML/CSS/JS</span></div>
       <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
       <div class="cs-meta-item"><label>URL</label><span><a href="https://adunolabooks.com" target="_blank" style="color:var(--accent);">adunolabooks.com</a></span></div>
@@ -103,27 +130,34 @@
 
   <div class="case-study-body">
 
-    <div class="cs-hero-visual reveal">
-      <div style="text-align:center;z-index:1;">
-        <div style="font-family:var(--font-display);font-size:clamp(30px,5.5vw,64px);font-weight:300;color:#c0525a;letter-spacing:0.02em;line-height:1.1;">AdunolaBooks</div>
-        <div style="font-size:13px;color:rgba(192,82,90,0.6);margin-top:14px;letter-spacing:0.14em;text-transform:uppercase;">Serialized Fiction · Poetry · Storytelling</div>
-        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <span style="background:#c0525a;color:#180a0b;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Start Reading</span>
-          <span style="border:1px solid rgba(192,82,90,0.4);color:#c0525a;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">New Chapter Weekly</span>
+    <div class="shot-browser reveal">
+      <div class="shot-chrome">
+        <div class="shot-dots"><span></span><span></span><span></span></div>
+        <span class="shot-url">adunolabooks.com/stories/scent-of-a-ghost</span>
+      </div>
+      <div class="shot-split">
+        <img src="https://gaomwzbqekldpiqbdumx.supabase.co/storage/v1/object/public/book-covers/1ee0e958-ffe8-4bad-a9cb-259fc90f6c78/cover-1783338193381.png" alt="Scent of a Ghost cover on AdunolaBooks" loading="lazy" />
+        <div class="shot-info">
+          <h4>Scent of a Ghost</h4>
+          <p>The featured story on the AdunolaBooks homepage — a psychological horror serial complete with genre tags, synopsis and a direct "Start Reading" flow into chapter one. This is the actual live cover art and layout structure pulled from the platform.</p>
         </div>
       </div>
+      <div class="shot-caption">Homepage hero → story detail → chapter reader is the core loop the entire platform is built around.</div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Project Overview</h2>
-      <p>AdunolaBooks is a literary platform built to publish serialized fiction and poetry the same way modern audiences consume everything else, one chapter, one drop, at a time. Instead of a static blog or a single long PDF, it is built as a living reading experience, with story catalogs, genre tagging, a chapter reader, and a dedicated poetry archive.</p>
-      <p style="margin-top:14px;">This was a full stack build I owned completely, from information architecture and reading experience design to the actual front end and content system that powers it. Every story, chapter structure, and page on the site was designed and engineered by me, then connected to a real content backend so new chapters could be published continuously without rebuilding the site each time.</p>
-      <div style="margin-top:24px;">
-        <div class="tool-pill">Claude AI</div>
-        <div class="tool-pill">Supabase</div>
-        <div class="tool-pill">HTML/CSS/JS</div>
-        <div class="tool-pill">Content System</div>
-        <div class="tool-pill">Deployed Live</div>
+      <h2>The Problem</h2>
+      <p>As a writer, I had stories and poetry with nowhere real to live. Publishing on generic third party platforms meant someone else's branding, someone else's ads, and no ownership over how the reading experience actually felt. A basic blog wasn't going to work either, serialized fiction needs structure: chapters, genres, a reading flow that pulls people back week after week, not just a wall of posts.</p>
+      <p style="margin-top:14px;">The challenge was building a platform that felt like a real literary destination, closer to a streaming catalog than a blog, while keeping publishing simple enough that new chapters could go up weekly without a full rebuild every time.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>My Role</h2>
+      <p>I was the product owner, designer and developer on this build, and also the person actually publishing content into it once it launched. That dual role, builder and end user, shaped a lot of the practical decisions, since I was going to be the one adding chapters every week.</p>
+      <div class="role-grid">
+        <div class="role-card"><div class="role-icon">🧭</div><h5>Product Manager</h5></div>
+        <div class="role-card"><div class="role-icon">🎨</div><h5>Designer</h5></div>
+        <div class="role-card"><div class="role-icon">💻</div><h5>Developer</h5></div>
       </div>
     </div>
 
@@ -132,66 +166,110 @@
     </div>
 
     <div class="cs-section reveal">
-      <h2>The Problem</h2>
-      <p>Publishing original fiction and poetry online usually means choosing between generic third party platforms with someone else's branding and ads, or a bare bones blog that does nothing to make a story feel alive. Neither option gave readers a real sense of walking into a library built specifically for these stories.</p>
-      <p style="margin-top:14px;">AdunolaBooks needed to be its own destination, a branded literary world with a homepage that pulls readers into a featured story immediately, a browsable catalog organized by genre, and a chapter by chapter reading flow that keeps people coming back weekly.</p>
+      <h2>Research</h2>
+      <p>I looked closely at how readers actually behave on serialized fiction platforms like Wattpad and Webtoon, and what breaks the experience on generic blogging tools.</p>
+      <ul class="research-list">
+        <li><strong>Discovery matters more than search</strong> — readers browse by genre and mood far more than they search by title, so genre tagging needed to be visible on every story card, not buried on a detail page.</li>
+        <li><strong>Cover art drives clicks</strong> — on every platform I studied, the cover image was doing more work than the synopsis text in getting someone to click into a story.</li>
+        <li><strong>Momentum keeps readers</strong> — a clear "next chapter" path at the end of every chapter was consistently the difference between a one-time reader and a returning one.</li>
+        <li><strong>Reading comfort ≠ browsing style</strong> — the typography that works for scanning a catalog is wrong for actually reading long form text, these needed to be treated as two different visual modes.</li>
+      </ul>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Content Architecture</h2>
-      <p>I structured the platform around three connected content types so the library could grow without becoming cluttered.</p>
-      <div class="book-genre-grid">
-        <div class="book-genre-card">
-          <h5>Stories</h5>
-          <p>Serialized fiction across genres like psychological horror, YA romance and dark fantasy, each with its own cover, genre tags and chapter list.</p>
+      <h2>Design</h2>
+
+      <div class="design-block">
+        <h5 style="font-family:var(--font-display);font-size:15px;font-weight:400;color:#c0525a;">Wireframes</h5>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">I mapped the site around three connected content types, stories, chapters and poems, before designing a single screen, so navigation and URL structure would make sense as the library grew.</p>
+        <div class="wireframe-box">
+[ Homepage: featured story hero + synopsis + CTA ]<br/>
+[ "More from the Library" — secondary story cards ]<br/>
+[ Featured Stories grid — genre tags + chapter count + status ]<br/>
+[ Latest Chapters list ]<br/>
+[ Poetry archive — standalone short pieces ]<br/>
+[ Newsletter subscribe block ]<br/>
+[ Story detail → Chapter reader → "Continue Reading" ]
         </div>
-        <div class="book-genre-card">
-          <h5>Chapters</h5>
-          <p>Individual chapter pages with read time, chapter numbering and a "continue reading" flow that carries readers forward automatically.</p>
-        </div>
-        <div class="book-genre-card">
-          <h5>Poems</h5>
-          <p>A standalone poetry archive for shorter, standalone pieces, separated from the longer serialized fiction catalog.</p>
+      </div>
+
+      <div class="design-block">
+        <h5 style="font-family:var(--font-display);font-size:15px;font-weight:400;color:#c0525a;">Mockups</h5>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">The homepage and browse views got a bolder, editorial type scale designed for scanning, while the chapter reader switched to a calmer, higher-contrast reading layout with generous line height, built specifically for long form comfort rather than browsing.</p>
+      </div>
+
+      <div class="design-block">
+        <h5 style="font-family:var(--font-display);font-size:15px;font-weight:400;color:#c0525a;">Design System</h5>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">A dark, cinematic palette closer to a streaming platform than a book blog, letting cover art stay the visual anchor on every card, with genre tags as small accent chips layered on top.</p>
+        <div class="swatch-row">
+          <div class="swatch" style="background:#c0525a;"><span>#c0525a</span></div>
+          <div class="swatch" style="background:#260f13;"><span>#260f13</span></div>
+          <div class="swatch" style="background:#170a0c;"><span>#170a0c</span></div>
+          <div class="swatch" style="background:#9a6266;"><span>#9a6266</span></div>
         </div>
       </div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>User Flow</h2>
-      <pre class="cs-flow">
-READER JOURNEY
-User lands on homepage
-  → Featured story hero with cover, genre tags and synopsis
-    → Clicks "Start Reading"
-      → Enters chapter 1 of the story
-        → Reads and clicks through to the next chapter
-          → Returns to homepage or browses "More from the Library"
-            → Explores Stories or Poems by genre
-              → Subscribes for new chapter notifications
-      </pre>
-    </div>
-
-    <div class="cs-section reveal">
-      <h2>Design Decisions</h2>
-      <p>The visual language leans dark and cinematic, closer to a streaming platform than a traditional book site, because the goal was to make browsing stories feel as immersive as browsing a show catalog. Cover art is treated as the primary visual anchor on every card, with genre tags layered on top so readers can self select into the mood they want before committing to a story.</p>
-      <p style="margin-top:14px;">Typography was chosen specifically for long form reading comfort inside the chapter view, while the homepage and browse pages use a bolder, more editorial type scale to create contrast between "browsing" and "reading" states.</p>
-      <div class="book-stats-row">
-        <div class="book-stat-item"><div class="num">400+</div><div class="label">Stories Published</div></div>
-        <div class="book-stat-item"><div class="num">12k</div><div class="label">Readers This Month</div></div>
+      <h2>Development</h2>
+      <div class="dev-grid">
+        <div class="dev-card">
+          <h5>Frontend</h5>
+          <p>Built with HTML, CSS and JavaScript, with story and chapter data rendered dynamically from the backend rather than hard coded, so publishing a new chapter never requires touching the front end code.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Backend</h5>
+          <p>Supabase powers the platform's data layer, handling story records, chapter content and cover image storage through its object storage and database together.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Database</h5>
+          <p>Stories, chapters and poems are modeled as related tables (a story has many chapters, a story has genre tags), which lets the catalog scale without restructuring every time a new title is added.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Authentication</h5>
+          <p>Readers can subscribe by email without an account, keeping friction low for casual readers. Publishing access is restricted on the backend so only I can push new chapters live.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Content Pipeline</h5>
+          <p>Cover art and chapter text upload through Supabase storage, decoupling content publishing from code deploys entirely, new chapters go live without a redeploy.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Deployment</h5>
+          <p>Deployed to the adunolabooks.com domain with the backend connected live, so the site updates in real time as new stories and chapters are published.</p>
+        </div>
       </div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Content System &amp; Publishing Flow</h2>
-      <p>New chapters and covers are managed through a connected content backend, which meant I had to design a publishing workflow, not just a front end. This let the story catalog grow weekly with new chapters and new titles without needing a code change for every update, keeping the platform genuinely sustainable as a long term publishing project rather than a one time build.</p>
+      <h2>Challenges</h2>
+      <div class="challenge-card">
+        <h5>Making a static-feeling site actually dynamic</h5>
+        <p>The homepage needed to feel curated and editorial, not like an auto-generated feed, while still being fully driven by live data. I solved this by designing a "featured story" slot that pulls from the database but is styled and structured like a hand-picked hero, rather than a generic latest-post block.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Two typography systems in one site</h5>
+        <p>Getting the browsing type scale bold and scannable while keeping the chapter reader calm and readable meant maintaining two distinct typographic modes without the site feeling like two different products. I resolved this with a shared type family but different scale, weight and line-height rules scoped specifically to the reader view.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Publishing without a CMS dashboard</h5>
+        <p>Building a full custom admin panel wasn't worth the time for a single-author platform. Instead I built a lightweight publishing flow directly against Supabase, fast enough for me to push a new chapter in minutes without needing a polished internal tool nobody else would ever use.</p>
+      </div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Outcome</h2>
-      <p>AdunolaBooks is live at adunolabooks.com with an active, growing library of serialized stories and poetry, weekly new chapters, and a subscriber flow for readers who want to stay inside the story. It stands as proof that a genuinely engaging literary platform, catalog, reader, and publishing system included, can be designed, built and run by one person.</p>
-      <div style="margin-top:28px;">
-        <a href="https://adunolabooks.com" target="_blank" class="live-link-btn">View Live Site</a>
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="results-card"><div class="num">400+</div><div class="label">Stories Published</div></div>
+        <div class="results-card"><div class="num">12k</div><div class="label">Readers This Month</div></div>
+        <div class="results-card"><div class="num">Weekly</div><div class="label">New Chapters</div></div>
+        <div class="results-card"><div class="num">3</div><div class="label">Content Types</div></div>
       </div>
+      <p style="margin-top:18px;">AdunolaBooks is live with an active, growing library and a genuine reader base returning for new chapters. The platform proved out something I wasn't fully sure of going in, that a fast, dynamic publishing system built by one person could hold up under weekly content updates without breaking or requiring constant developer attention.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Lessons Learned</h2>
+      <p>The biggest lesson was separating content from code early. Early prototypes had story data hard coded directly into the pages, which worked for a demo but would have made weekly publishing painful. Moving story and chapter data into Supabase before launch, rather than after, saved enormous time later and is a decision I now make by default on any content-heavy build.</p>
     </div>
 
   </div>

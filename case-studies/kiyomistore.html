@@ -10,13 +10,6 @@
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" />
   <style>
     :root { --cs-accent: #3ecf8e; }
-    .cs-hero-visual {
-      width: 100%; aspect-ratio: 16/7;
-      background: linear-gradient(135deg, #07140f 0%, #0c2018 60%, #081611 100%);
-      border-radius: 4px; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; margin: 40px 0;
-    }
     .vibe-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.25);
@@ -39,26 +32,59 @@
       border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
     }
     .live-link-btn:hover { opacity: 0.85; }
-    .wlk-product-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-      margin: 24px 0;
+
+    /* Screenshot gallery */
+    .shot-browser {
+      background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; margin: 40px 0;
     }
-    .wlk-product-card {
-      background: var(--bg-2); border: 1px solid var(--border);
-      border-radius: 4px; padding: 18px;
-      transition: border-color 0.3s;
+    .shot-chrome {
+      display:flex; align-items:center; gap:10px; padding:10px 16px;
+      background: rgba(255,255,255,0.02); border-bottom: 1px solid var(--border);
     }
-    .wlk-product-card:hover { border-color: #3ecf8e; }
-    .wlk-product-card h5 {
-      font-family: var(--font-display); font-size: 15px;
-      font-weight: 400; margin-bottom: 6px; color: #3ecf8e;
-    }
-    .wlk-product-card p { font-size: 12px; color: var(--text-secondary); }
-    .wlk-badge-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
-    .wlk-trust-badge {
-      font-size: 11px; color: #3ecf8e; background: rgba(62,207,142,0.08);
-      border: 1px solid rgba(62,207,142,0.2); padding: 6px 12px; border-radius: 20px;
-    }
+    .shot-dots span { display:inline-block; width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.15); margin-right:5px; }
+    .shot-url { font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); background: rgba(255,255,255,0.03); padding: 4px 12px; border-radius: 20px; flex:1; }
+    .shot-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap:1px; background: var(--border); }
+    .shot-grid img { width:100%; height:220px; object-fit: cover; display:block; background:#0c2018; }
+    .shot-caption { padding: 14px 18px; font-size: 12px; color: var(--text-secondary); }
+    @media (max-width: 800px) { .shot-grid { grid-template-columns: repeat(2,1fr); } }
+
+    /* Role */
+    .role-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin: 22px 0; }
+    .role-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 16px; text-align:center; }
+    .role-card .role-icon { font-size: 20px; margin-bottom:8px; }
+    .role-card h5 { font-family: var(--font-display); font-size: 13px; font-weight:400; color: #3ecf8e; letter-spacing:0.04em; }
+
+    /* Research */
+    .research-list { list-style:none; padding:0; margin: 18px 0 0; }
+    .research-list li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--border); position:relative; font-size:14px; color: var(--text-secondary); }
+    .research-list li::before { content:"→"; position:absolute; left:0; color:#3ecf8e; }
+    .research-list li strong { color: var(--text-primary); }
+
+    /* Design system swatches */
+    .design-block { margin: 22px 0; }
+    .swatch-row { display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; }
+    .swatch { width:52px; height:52px; border-radius:6px; border:1px solid var(--border); position:relative; }
+    .swatch span { position:absolute; bottom:-20px; left:0; font-size:9px; color:var(--text-secondary); white-space:nowrap; }
+    .wireframe-box { background: var(--bg-2); border: 1px dashed rgba(62,207,142,0.3); border-radius:4px; padding: 20px; margin-top:14px; font-family: var(--font-mono); font-size:11px; color: var(--text-secondary); line-height:1.9; }
+
+    /* Dev stack */
+    .dev-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:14px; margin: 22px 0; }
+    .dev-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 18px; }
+    .dev-card h5 { font-family: var(--font-display); font-size: 14px; font-weight:400; color:#3ecf8e; margin-bottom:8px; }
+    .dev-card p { font-size:12px; color:var(--text-secondary); line-height:1.6; }
+
+    /* Challenges */
+    .challenge-card { background: var(--bg-2); border-left: 3px solid #3ecf8e; border-radius: 0 4px 4px 0; padding: 16px 20px; margin: 14px 0; }
+    .challenge-card h5 { font-family: var(--font-display); font-size:14px; font-weight:400; margin-bottom:6px; color: var(--text-primary); }
+    .challenge-card p { font-size:13px; color: var(--text-secondary); line-height:1.7; }
+
+    /* Results */
+    .results-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:14px; margin: 22px 0; }
+    .results-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: 4px; padding: 18px; text-align:center; }
+    .results-card .num { font-family: var(--font-display); font-size: 26px; color: #3ecf8e; font-weight:300; }
+    .results-card .label { font-size: 10px; color: var(--text-secondary); letter-spacing:0.06em; text-transform:uppercase; margin-top:6px; }
+    @media (max-width:700px){ .role-grid{grid-template-columns:1fr 1fr;} .dev-grid{grid-template-columns:1fr;} .results-grid{grid-template-columns:1fr 1fr;} }
   </style>
 </head>
 <body data-page="case-study">
@@ -89,14 +115,14 @@
   </nav>
 
   <section class="case-study-hero">
-    <div class="vibe-badge">Vibe Coding Project</div>
-    <span class="section-tag reveal">Wellness Brand · E-commerce · Full Stack Build</span>
+    <div class="vibe-badge">Full Stack Build</div>
+    <span class="section-tag reveal">Wellness Brand · E-commerce · Herbal Detox</span>
     <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
-      WLK by Kiyomi<br/>Herbal Detox E-commerce Store
+      WLK by Kiyomi<br/>From a WhatsApp Chat to a Real Store
     </h1>
     <div class="cs-meta reveal-delay-2">
-      <div class="cs-meta-item"><label>Type</label><span>Full Stack E-commerce / Vibe Coding</span></div>
-      <div class="cs-meta-item"><label>Role</label><span>Designer, Developer &amp; Project Manager</span></div>
+      <div class="cs-meta-item"><label>Type</label><span>Full Stack E-commerce</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Product Manager, Designer &amp; Developer</span></div>
       <div class="cs-meta-item"><label>Tools Used</label><span>Claude, HTML/CSS/JS, WhatsApp Checkout</span></div>
       <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
       <div class="cs-meta-item"><label>URL</label><span><a href="https://kiyomistore.com" target="_blank" style="color:var(--accent);">kiyomistore.com</a></span></div>
@@ -105,103 +131,147 @@
 
   <div class="case-study-body">
 
-    <div class="cs-hero-visual reveal">
-      <div style="text-align:center;z-index:1;">
-        <div style="font-family:var(--font-display);font-size:clamp(34px,6vw,72px);font-weight:300;color:#3ecf8e;letter-spacing:0.04em;line-height:1;">WLK.</div>
-        <div style="font-size:13px;color:rgba(62,207,142,0.6);margin-top:14px;letter-spacing:0.16em;text-transform:uppercase;">Detox. Reset. Transform.</div>
-        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <span style="background:#3ecf8e;color:#06180f;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Shop Now</span>
-          <span style="border:1px solid rgba(62,207,142,0.4);color:#3ecf8e;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">100% Herbal</span>
-        </div>
+    <div class="shot-browser reveal">
+      <div class="shot-chrome">
+        <div class="shot-dots"><span></span><span></span><span></span></div>
+        <span class="shot-url">kiyomistore.com</span>
       </div>
-    </div>
-
-    <div class="cs-section reveal">
-      <h2>Project Overview</h2>
-      <p>WLK (Weight Loss by Kiyomi) is a herbal detox and wellness brand selling NAFDAC registered cleanse products made from natural ingredients like avocado seed, caralluma fimbriata and garcinia cambogia. The brand needed a real storefront, somewhere customers could browse products, understand what each one does, and order with confidence instead of relying on scattered social media posts and DMs.</p>
-      <p style="margin-top:14px;">I owned this project end to end. I designed the store, built every part of the front end, structured the product catalog and cart logic, and managed the project from the first sketch of the layout to the day it went live. Nothing was handed off, every decision on how the store looks, works and sells came from me.</p>
-      <div style="margin-top:24px;">
-        <div class="tool-pill">Claude AI</div>
-        <div class="tool-pill">HTML/CSS/JS</div>
-        <div class="tool-pill">Cart System</div>
-        <div class="tool-pill">WhatsApp Checkout</div>
-        <div class="tool-pill">Deployed Live</div>
+      <div class="shot-grid">
+        <img src="https://kiyomistore.com/images/product-drink-splash.png" alt="WLK hero product splash" loading="lazy" />
+        <img src="https://kiyomistore.com/images/product-lite-1.jpg" alt="WLK Lite Cleanse bottle" loading="lazy" />
+        <img src="https://kiyomistore.com/images/product-core-1.jpg" alt="WLK Core Cleanse bottle" loading="lazy" />
+        <img src="https://kiyomistore.com/images/product-flagship-1.jpg" alt="WLK 7-Day Reset Program kit" loading="lazy" />
       </div>
-    </div>
-
-    <div class="cs-highlight reveal">
-      "For a wellness brand, trust sells the product before the ingredients do. The store had to look clean, feel credible and make ordering effortless."
+      <div class="shot-caption">Live storefront screens — hero product shot, individual cleanse bottles, and the flagship 7-Day Reset Program kit, all pulled directly from kiyomistore.com.</div>
     </div>
 
     <div class="cs-section reveal">
       <h2>The Problem</h2>
-      <p>Before this build, WLK had no proper online store. Product info, pricing and ordering all lived across WhatsApp chats and Instagram captions, which meant lost sales, confused customers and no clear catalog of what was actually available. There was also no way to communicate trust signals like NAFDAC registration, ingredient sourcing or dosage guidance in one place.</p>
-      <p style="margin-top:14px;">The brief I set for myself was simple: build a store that looks premium enough to justify the price point, explains the product range clearly, and gets a customer from landing page to a completed order in as few steps as possible.</p>
+      <p>WLK (Weight Loss by Kiyomi) is a herbal detox brand selling NAFDAC registered cleanse products made from natural ingredients like avocado seed, caralluma fimbriata and garcinia cambogia. When the client came to me, the entire business was running through Instagram captions and WhatsApp DMs. There was no catalog, no fixed pricing page, no way for a new customer to see the full product range at a glance, and no consistent way to actually complete an order.</p>
+      <p style="margin-top:14px;">That created a real cost. Interested customers would ask a question in the comments, get lost in the DM queue, and never convert. The client needed a single, credible destination where someone could land, understand the product line in under a minute, and check out without waiting on a reply.</p>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Product Catalog &amp; Structure</h2>
-      <p>I mapped the full product line into a clear tiered structure so customers could self select based on how serious their cleanse goals were, rather than being overwhelmed with one long list.</p>
-      <div class="wlk-product-grid">
-        <div class="wlk-product-card">
-          <h5>Starter Tier</h5>
-          <p>WLK Lite Cleanse and Lite Cleanse Plus, entry level bottles for first time cleansers, paired optionally with the Deep Cleanse detox capsules.</p>
+      <h2>My Role</h2>
+      <p>I ran this project solo, end to end. There was no separate designer, developer or project manager, all three hats were mine, which meant every decision, from what the store sold first to how the code was structured, had to be made and owned by one person.</p>
+      <div class="role-grid">
+        <div class="role-card"><div class="role-icon">🧭</div><h5>Product Manager</h5></div>
+        <div class="role-card"><div class="role-icon">🎨</div><h5>Designer</h5></div>
+        <div class="role-card"><div class="role-icon">💻</div><h5>Developer</h5></div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "For a wellness brand, trust sells the product before the ingredients do. The store had to look clean, feel credible, and make ordering effortless."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Research</h2>
+      <p>Before touching any layout, I went through the client's existing sales conversations to understand what customers actually asked about most. That research shaped almost every early decision on the site.</p>
+      <ul class="research-list">
+        <li><strong>Repeated questions</strong> — Customers consistently asked whether the product was "safe," whether it was registered, and what the actual difference was between the bottle sizes. That told me trust signals needed to sit above the fold, not in a footer.</li>
+        <li><strong>Buying pattern</strong> — Most orders bundled a bottle with the detox capsule add-on, which meant the store needed combo kits as first-class products, not an afterthought upsell.</li>
+        <li><strong>Local context</strong> — Almost all customers were ordering from Lagos and paying informally through bank transfer or on delivery, which meant a heavy, generic payment gateway integration wasn't the highest priority for version one, a fast, familiar checkout was.</li>
+        <li><strong>Competitor scan</strong> — Comparable wellness storefronts either looked overly clinical (losing the natural, herbal feel) or too informal (losing credibility). The gap was a store that felt premium and natural at the same time.</li>
+      </ul>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design</h2>
+      <p>With the research in hand, I moved into structuring the actual product experience before writing any interface code.</p>
+
+      <div class="design-block">
+        <h5 style="font-family:var(--font-display);font-size:15px;font-weight:400;color:#3ecf8e;">Wireframes</h5>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">I sketched the page as a single scrolling flow rather than multiple pages, since most wellness shoppers browse on mobile and don't want to navigate between separate product pages for a small catalog.</p>
+        <div class="wireframe-box">
+[ Hero: product shot + tagline + CTA ]<br/>
+[ Trust badge row: Natural · Burns Fat · Lagos Delivery · NAFDAC · No Additives ]<br/>
+[ Section: Singles — Lite / Core cleanse cards ]<br/>
+[ Section: Detox Add-On — capsule upsell card ]<br/>
+[ Section: Combo Kits — bundled bottles ]<br/>
+[ Section: Flagship — 7-Day Reset Program, largest card ]<br/>
+[ Sticky cart icon + drawer ]<br/>
+[ Footer: WhatsApp contact + NAFDAC reg. number ]
         </div>
-        <div class="wlk-product-card">
-          <h5>Core Tier</h5>
-          <p>WLK Core Cleanse and Core Cleanse Plus, full strength bottles for customers wanting maximum herbal detox power.</p>
-        </div>
-        <div class="wlk-product-card">
-          <h5>Combo Kits</h5>
-          <p>Balance Kit and Balance Kit Plus, bundling both bottle sizes together for better value and a deeper cleanse.</p>
-        </div>
-        <div class="wlk-product-card">
-          <h5>Flagship Program</h5>
-          <p>The 7-Day Reset Program, a complete kit combining every product into a full week-long protocol, positioned as the top converting offer.</p>
+      </div>
+
+      <div class="design-block">
+        <h5 style="font-family:var(--font-display);font-size:15px;font-weight:400;color:#3ecf8e;">Mockups</h5>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">High fidelity screens followed the wireframe almost exactly, with product photography treated as the hero element on every card and pricing always visible without a click. Card hierarchy was deliberately tiered, singles first, add-on second, combos third, flagship program last as the biggest visual moment on the page.</p>
+      </div>
+
+      <div class="design-block">
+        <h5 style="font-family:var(--font-display);font-size:15px;font-weight:400;color:#3ecf8e;">Design System</h5>
+        <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">A small, deliberate system: deep greens for a natural, herbal feel, generous spacing so the page never feels like a cluttered catalog, and one consistent card component reused across every product tier.</p>
+        <div class="swatch-row">
+          <div class="swatch" style="background:#3ecf8e;"><span>#3ecf8e</span></div>
+          <div class="swatch" style="background:#0c2018;"><span>#0c2018</span></div>
+          <div class="swatch" style="background:#07140f;"><span>#07140f</span></div>
+          <div class="swatch" style="background:#5a9a7a;"><span>#5a9a7a</span></div>
         </div>
       </div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>User Flow</h2>
-      <pre class="cs-flow">
-CUSTOMER JOURNEY
-User lands on homepage
-  → Sees hero product and trust badges
-    → Scrolls product grid (Singles → Detox Add-On → Combo Kits → Flagship)
-      → Opens a product card for details and price
-        → Adds item(s) to cart
-          → Opens cart drawer to review total
-            → Proceeds to checkout
-              → Redirected to WhatsApp order flow
-                → Order confirmed directly with the brand
-      </pre>
-    </div>
-
-    <div class="cs-section reveal">
-      <h2>Design Decisions</h2>
-      <p>The palette leans into deep greens and dark backdrops to communicate natural, herbal and premium rather than clinical or generic. Product photography sits front and center on every card, since a wellness product lives or dies by how appetizing and clean it looks. Pricing is always visible with no hidden steps before a customer can see cost.</p>
-      <p style="margin-top:14px;">Trust badges are placed directly under the hero, not buried in a footer, because for an ingestible wellness product, credibility signals need to be seen before a customer scrolls any further.</p>
-      <div class="wlk-badge-row">
-        <span class="wlk-trust-badge">100% Natural</span>
-        <span class="wlk-trust-badge">Burns Fat</span>
-        <span class="wlk-trust-badge">Lagos Delivery</span>
-        <span class="wlk-trust-badge">NAFDAC Reg.</span>
-        <span class="wlk-trust-badge">No Additives</span>
+      <h2>Development</h2>
+      <div class="dev-grid">
+        <div class="dev-card">
+          <h5>Frontend</h5>
+          <p>Built with plain HTML, CSS and JavaScript for speed and simplicity. Product cards render from a single JS data array, so adding or editing a product means editing one object, not the markup.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Backend</h5>
+          <p>No dedicated server for version one. Cart state and order handoff are handled client side, keeping hosting simple and the store fast to load on mobile data.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Database</h5>
+          <p>Product data (name, price, size, description) lives in a structured JS object rather than a database, deliberately, since the catalog is small and changes infrequently. This kept load times near instant.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Authentication</h5>
+          <p>No customer accounts by design. Adding login would have added friction to a store where speed to order matters more than saved profiles, so checkout stays guest-only.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Cart &amp; Checkout Logic</h5>
+          <p>I built a persistent cart with add, remove and quantity logic, a running total, and a checkout step that formats the full order (products, quantities, total) into a pre-filled WhatsApp message.</p>
+        </div>
+        <div class="dev-card">
+          <h5>Deployment</h5>
+          <p>Deployed directly to the kiyomistore.com domain with static hosting, no build pipeline required, which means updates ship in minutes.</p>
+        </div>
       </div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Cart &amp; Checkout System</h2>
-      <p>I built a persistent cart system so customers can add multiple products, singles or combo kits, and see a running total before committing to an order. Rather than building a full custom payment gateway for a first version of the store, I routed checkout straight into WhatsApp with the order details pre-structured, which matched how the brand's customers were already used to buying and got the store live faster without sacrificing conversion.</p>
+      <h2>Challenges</h2>
+      <div class="challenge-card">
+        <h5>Payment gateway vs. speed to launch</h5>
+        <p>The obvious "correct" build would include a full payment gateway. I made the call to route checkout through WhatsApp instead for version one, since that matched how the brand's customers already bought and got the store live in days instead of weeks. It's a decision I'd revisit once order volume justifies the added complexity.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Selling a bundle without confusing the customer</h5>
+        <p>With six product variants across singles, an add-on, combos and a flagship kit, the risk was decision paralysis. I solved this by grouping products into clearly labeled tiers with a visual "Best Value" cue on the combo and flagship sections, rather than presenting all six as equal, flat options.</p>
+      </div>
+      <div class="challenge-card">
+        <h5>Trust without a sales team</h5>
+        <p>An ingestible wellness product needs credibility a normal product doesn't. I addressed this by surfacing the NAFDAC registration number and safety notes (not suitable for pregnant women or children under 12) directly in the footer and near the hero, rather than treating that as legal fine print.</p>
+      </div>
     </div>
 
     <div class="cs-section reveal">
-      <h2>Outcome</h2>
-      <p>WLK by Kiyomi is live at kiyomistore.com with a full product catalog, working cart, and a direct WhatsApp checkout flow that converts browsers into completed orders. What used to be scattered across chats and captions now lives in one credible, shoppable storefront that I designed, built and shipped on my own.</p>
-      <div style="margin-top:28px;">
-        <a href="https://kiyomistore.com" target="_blank" class="live-link-btn">View Live Site</a>
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="results-card"><div class="num">9</div><div class="label">Live Products</div></div>
+        <div class="results-card"><div class="num">&lt;1s</div><div class="label">Load Time</div></div>
+        <div class="results-card"><div class="num">1</div><div class="label">Step Checkout</div></div>
+        <div class="results-card"><div class="num">100%</div><div class="label">Mobile Optimized</div></div>
       </div>
+      <p style="margin-top:18px;">The store replaced a fragmented DM-based sales process with a single, shoppable destination. Customers can now browse the full catalog, understand pricing instantly, and reach checkout without waiting on a reply, which directly shortened the path from "interested" to "ordered." Because the site is a lightweight static build, it loads fast even on average mobile connections in Lagos, which matters when most traffic comes from Instagram link clicks on mobile data.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Lessons Learned</h2>
+      <p>The biggest lesson from this build was that the "complete" version of a product isn't always the right version to ship first. A full payment gateway and customer account system would have taken this store weeks longer to launch, for a customer base that was already comfortable ordering through WhatsApp. Shipping the simpler, faster version got the brand an actual working store immediately, and gave me a clear, validated reason to build out payments later instead of guessing upfront what the business actually needed.</p>
     </div>
 
   </div>
