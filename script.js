@@ -152,6 +152,33 @@ if (mobileNav) {
 }
 
 
+// === SYSTEM MAP OVERLAY ===
+const systemMap = document.getElementById('systemMap');
+const openSystemMapBtn = document.getElementById('openSystemMap');
+const mapCloseBtn = document.getElementById('mapClose');
+
+function openSystemMap() {
+  if (!systemMap) return;
+  systemMap.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeSystemMap() {
+  if (!systemMap) return;
+  systemMap.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if (openSystemMapBtn) openSystemMapBtn.addEventListener('click', openSystemMap);
+if (mapCloseBtn) mapCloseBtn.addEventListener('click', closeSystemMap);
+if (systemMap) {
+  // Close when clicking the dark backdrop itself, not the nodes/content
+  systemMap.addEventListener('click', e => { if (e.target === systemMap) closeSystemMap(); });
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && systemMap && systemMap.classList.contains('active')) closeSystemMap();
+});
+
+
 // === PAGE TRANSITIONS ===
 function navigateTo(url) {
   const overlay = document.getElementById('pageOverlay');
