@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WLK by Kiyomi Store Case Study — Adunola Babadiya</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" />
+  <style>
+    :root { --cs-accent: #3ecf8e; }
+    .cs-hero-visual {
+      width: 100%; aspect-ratio: 16/7;
+      background: linear-gradient(135deg, #07140f 0%, #0c2018 60%, #081611 100%);
+      border-radius: 4px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; margin: 40px 0;
+    }
+    .vibe-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(62,207,142,0.1); border: 1px solid rgba(62,207,142,0.25);
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #3ecf8e; margin-bottom: 20px;
+    }
+    .tool-pill {
+      display: inline-block;
+      background: rgba(62,207,142,0.08); border: 1px solid rgba(62,207,142,0.2);
+      color: #3ecf8e; padding: 4px 12px; border-radius: 20px;
+      font-size: 10px; letter-spacing: 0.06em; margin: 3px;
+    }
+    .live-link-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px;
+      background: #3ecf8e; color: #06180f;
+      font-family: var(--font-mono); font-size: 12px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-radius: 3px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .live-link-btn:hover { opacity: 0.85; }
+    .wlk-product-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      margin: 24px 0;
+    }
+    .wlk-product-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 4px; padding: 18px;
+      transition: border-color 0.3s;
+    }
+    .wlk-product-card:hover { border-color: #3ecf8e; }
+    .wlk-product-card h5 {
+      font-family: var(--font-display); font-size: 15px;
+      font-weight: 400; margin-bottom: 6px; color: #3ecf8e;
+    }
+    .wlk-product-card p { font-size: 12px; color: var(--text-secondary); }
+    .wlk-badge-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .wlk-trust-badge {
+      font-size: 11px; color: #3ecf8e; background: rgba(62,207,142,0.08);
+      border: 1px solid rgba(62,207,142,0.2); padding: 6px 12px; border-radius: 20px;
+    }
+  </style>
+</head>
+<body data-page="case-study">
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="page-overlay" id="pageOverlay"></div>
+
+  <div class="system-map" id="systemMap">
+    <button class="map-close" id="mapClose">x Close</button>
+    <div class="map-title">Design System</div>
+    <div class="map-subtitle">Click any world to explore</div>
+    <div class="map-nodes">
+      <div class="map-center-node" onclick="navigateTo('../index.html')"><div class="node-ring"></div><span class="node-label-main">Adunola</span><span class="node-sub">Full Stack Dev</span></div>
+      <div class="map-node node-uiux" onclick="navigateTo('../worlds/uiux.html')"><div class="node-dot"></div><span>UI/UX</span></div>
+      <div class="map-node node-graphic" onclick="navigateTo('../worlds/graphic.html')"><div class="node-dot"></div><span>Graphic</span></div>
+      <div class="map-node node-nocode" onclick="navigateTo('../worlds/nocode.html')"><div class="node-dot"></div><span>No-Code</span></div>
+      <div class="map-node node-vibe" onclick="navigateTo('../worlds/vibe-lab.html')"><div class="node-dot"></div><span>Vibe Coding</span></div>
+    </div>
+    <svg class="map-lines" viewBox="0 0 800 600"><line class="map-line" x1="400" y1="300" x2="200" y2="120"/><line class="map-line" x1="400" y1="300" x2="620" y2="150"/><line class="map-line" x1="400" y1="300" x2="150" y2="430"/><line class="map-line" x1="400" y1="300" x2="650" y2="430"/></svg>
+  </div>
+
+  <nav class="world-nav" id="mainNav">
+    <div class="world-nav-left">
+      <a class="world-back" href="../index.html">Back to Main</a>
+      <span class="world-name">Case Study</span>
+    </div>
+    <button class="nav-system-btn" id="openSystemMap">System Map</button>
+  </nav>
+
+  <section class="case-study-hero">
+    <div class="vibe-badge">Vibe Coding Project</div>
+    <span class="section-tag reveal">Wellness Brand · E-commerce · Full Stack Build</span>
+    <h1 class="hero-headline reveal-delay" style="font-size:clamp(40px,5.5vw,80px);">
+      WLK by Kiyomi<br/>Herbal Detox E-commerce Store
+    </h1>
+    <div class="cs-meta reveal-delay-2">
+      <div class="cs-meta-item"><label>Type</label><span>Full Stack E-commerce / Vibe Coding</span></div>
+      <div class="cs-meta-item"><label>Role</label><span>Designer, Developer &amp; Project Manager</span></div>
+      <div class="cs-meta-item"><label>Tools Used</label><span>Claude, HTML/CSS/JS, WhatsApp Checkout</span></div>
+      <div class="cs-meta-item"><label>Status</label><span>Live</span></div>
+      <div class="cs-meta-item"><label>URL</label><span><a href="https://kiyomistore.com" target="_blank" style="color:var(--accent);">kiyomistore.com</a></span></div>
+    </div>
+  </section>
+
+  <div class="case-study-body">
+
+    <div class="cs-hero-visual reveal">
+      <div style="text-align:center;z-index:1;">
+        <div style="font-family:var(--font-display);font-size:clamp(34px,6vw,72px);font-weight:300;color:#3ecf8e;letter-spacing:0.04em;line-height:1;">WLK.</div>
+        <div style="font-size:13px;color:rgba(62,207,142,0.6);margin-top:14px;letter-spacing:0.16em;text-transform:uppercase;">Detox. Reset. Transform.</div>
+        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <span style="background:#3ecf8e;color:#06180f;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">Shop Now</span>
+          <span style="border:1px solid rgba(62,207,142,0.4);color:#3ecf8e;padding:8px 20px;border-radius:3px;font-size:11px;letter-spacing:0.08em;">100% Herbal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Project Overview</h2>
+      <p>WLK (Weight Loss by Kiyomi) is a herbal detox and wellness brand selling NAFDAC registered cleanse products made from natural ingredients like avocado seed, caralluma fimbriata and garcinia cambogia. The brand needed a real storefront, somewhere customers could browse products, understand what each one does, and order with confidence instead of relying on scattered social media posts and DMs.</p>
+      <p style="margin-top:14px;">I owned this project end to end. I designed the store, built every part of the front end, structured the product catalog and cart logic, and managed the project from the first sketch of the layout to the day it went live. Nothing was handed off, every decision on how the store looks, works and sells came from me.</p>
+      <div style="margin-top:24px;">
+        <div class="tool-pill">Claude AI</div>
+        <div class="tool-pill">HTML/CSS/JS</div>
+        <div class="tool-pill">Cart System</div>
+        <div class="tool-pill">WhatsApp Checkout</div>
+        <div class="tool-pill">Deployed Live</div>
+      </div>
+    </div>
+
+    <div class="cs-highlight reveal">
+      "For a wellness brand, trust sells the product before the ingredients do. The store had to look clean, feel credible and make ordering effortless."
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The Problem</h2>
+      <p>Before this build, WLK had no proper online store. Product info, pricing and ordering all lived across WhatsApp chats and Instagram captions, which meant lost sales, confused customers and no clear catalog of what was actually available. There was also no way to communicate trust signals like NAFDAC registration, ingredient sourcing or dosage guidance in one place.</p>
+      <p style="margin-top:14px;">The brief I set for myself was simple: build a store that looks premium enough to justify the price point, explains the product range clearly, and gets a customer from landing page to a completed order in as few steps as possible.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Product Catalog &amp; Structure</h2>
+      <p>I mapped the full product line into a clear tiered structure so customers could self select based on how serious their cleanse goals were, rather than being overwhelmed with one long list.</p>
+      <div class="wlk-product-grid">
+        <div class="wlk-product-card">
+          <h5>Starter Tier</h5>
+          <p>WLK Lite Cleanse and Lite Cleanse Plus, entry level bottles for first time cleansers, paired optionally with the Deep Cleanse detox capsules.</p>
+        </div>
+        <div class="wlk-product-card">
+          <h5>Core Tier</h5>
+          <p>WLK Core Cleanse and Core Cleanse Plus, full strength bottles for customers wanting maximum herbal detox power.</p>
+        </div>
+        <div class="wlk-product-card">
+          <h5>Combo Kits</h5>
+          <p>Balance Kit and Balance Kit Plus, bundling both bottle sizes together for better value and a deeper cleanse.</p>
+        </div>
+        <div class="wlk-product-card">
+          <h5>Flagship Program</h5>
+          <p>The 7-Day Reset Program, a complete kit combining every product into a full week-long protocol, positioned as the top converting offer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>User Flow</h2>
+      <pre class="cs-flow">
+CUSTOMER JOURNEY
+User lands on homepage
+  → Sees hero product and trust badges
+    → Scrolls product grid (Singles → Detox Add-On → Combo Kits → Flagship)
+      → Opens a product card for details and price
+        → Adds item(s) to cart
+          → Opens cart drawer to review total
+            → Proceeds to checkout
+              → Redirected to WhatsApp order flow
+                → Order confirmed directly with the brand
+      </pre>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Design Decisions</h2>
+      <p>The palette leans into deep greens and dark backdrops to communicate natural, herbal and premium rather than clinical or generic. Product photography sits front and center on every card, since a wellness product lives or dies by how appetizing and clean it looks. Pricing is always visible with no hidden steps before a customer can see cost.</p>
+      <p style="margin-top:14px;">Trust badges are placed directly under the hero, not buried in a footer, because for an ingestible wellness product, credibility signals need to be seen before a customer scrolls any further.</p>
+      <div class="wlk-badge-row">
+        <span class="wlk-trust-badge">100% Natural</span>
+        <span class="wlk-trust-badge">Burns Fat</span>
+        <span class="wlk-trust-badge">Lagos Delivery</span>
+        <span class="wlk-trust-badge">NAFDAC Reg.</span>
+        <span class="wlk-trust-badge">No Additives</span>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Cart &amp; Checkout System</h2>
+      <p>I built a persistent cart system so customers can add multiple products, singles or combo kits, and see a running total before committing to an order. Rather than building a full custom payment gateway for a first version of the store, I routed checkout straight into WhatsApp with the order details pre-structured, which matched how the brand's customers were already used to buying and got the store live faster without sacrificing conversion.</p>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Outcome</h2>
+      <p>WLK by Kiyomi is live at kiyomistore.com with a full product catalog, working cart, and a direct WhatsApp checkout flow that converts browsers into completed orders. What used to be scattered across chats and captions now lives in one credible, shoppable storefront that I designed, built and shipped on my own.</p>
+      <div style="margin-top:28px;">
+        <a href="https://kiyomistore.com" target="_blank" class="live-link-btn">View Live Site</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-next">
+    <div class="cs-next-label">More Projects</div>
+    <div class="cs-next-grid">
+      <div class="cs-next-card" onclick="navigateTo('adunolabooks.html')">
+        <span class="cs-next-tag">Full Stack · Publishing Platform</span>
+        <h4>AdunolaBooks</h4>
+        <p>Serialized fiction and poetry platform</p>
+      </div>
+      <div class="cs-next-card" onclick="navigateTo('kiyomigroups.html')">
+        <span class="cs-next-tag">Full Stack · Agency Website</span>
+        <h4>Kiyomi Group</h4>
+        <p>Studio site, portfolio &amp; tutorials platform</p>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- THEME SWITCHER -->
+  <div class="theme-switcher" id="themeSwitcher">
+    <button class="theme-btn active" data-theme="dark"  data-tooltip="Dark"  title="Dark">🌑</button>
+    <button class="theme-btn"        data-theme="light" data-tooltip="Light" title="Light">☀️</button>
+    <button class="theme-btn"        data-theme="neon"  data-tooltip="Neon"  title="Neon">⚡</button>
+    <button class="theme-btn"        data-theme="glass" data-tooltip="Glass" title="Glass">🪟</button>
+  </div>
+
+<script src="../script.js"></script>
+</body>
+</html>
