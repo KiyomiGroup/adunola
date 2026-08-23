@@ -1,5 +1,5 @@
 /* ===================================================
-   ADUNOLA BABADIYA — Full Stack Developer Portfolio
+   ADUNOLA BABADIYA — Product Designer Portfolio
    script.js v3.0
    =================================================== */
 

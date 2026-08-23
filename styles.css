@@ -1,5 +1,5 @@
 /* ===================================================
-   ADUNOLA BABADIYA — Full Stack Developer Portfolio
+   ADUNOLA BABADIYA — Product Designer Portfolio
    Clash Display + Bricolage Grotesque + DM Mono
    4-Theme System: dark | light | neon | glass
    =================================================== */
@@ -968,6 +968,17 @@ body:hover .cursor-dot { opacity: 1; }
 .uiux-preview.vitsetech { background: linear-gradient(135deg,#1a1f2e,#0d1117); }
 .uiux-preview.lifemap   { background: linear-gradient(135deg,#1a1020,#1f0d2a); }
 .uiux-preview.safari    { background: linear-gradient(135deg,#1a1a0a,#2a2800); }
+.uiux-preview.hotview     { background: linear-gradient(135deg,#0c1b16,#0a2a1f); }
+.uiux-preview.retro       { background: linear-gradient(135deg,#150c22,#1f0a2e); }
+.uiux-preview.scrumconsult{ background: linear-gradient(135deg,#0a121f,#0d1c30); }
+.uiux-card.featured-card { opacity: 1; border-color: var(--border-strong,var(--border)); }
+.uiux-status { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; border: 1px solid; display: inline-block; margin-left: 8px; vertical-align: middle; }
+.uiux-status.status-live { color: #3ecf8e; border-color: rgba(62,207,142,0.35); background: rgba(62,207,142,0.08); }
+.uiux-status.status-ongoing { color: #e8a94c; border-color: rgba(232,169,76,0.35); background: rgba(232,169,76,0.08); }
+.uiux-status.status-concept { color: #7c8cff; border-color: rgba(124,140,255,0.35); background: rgba(124,140,255,0.08); }
+.hero-flow { display: flex; align-items: center; gap: 8px; margin-top: 22px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--text-muted); flex-wrap: wrap; }
+.hero-flow span.flow-step { color: var(--text-secondary); background: var(--surface); border: 1px solid var(--border); padding: 5px 11px; border-radius: 20px; }
+.hero-flow span.flow-arrow { color: var(--accent); }
 .uiux-preview::before {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(circle at 30% 40%, rgba(61,139,255,.07) 0%, transparent 60%),
