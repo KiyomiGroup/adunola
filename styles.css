@@ -966,7 +966,6 @@ body:hover .cursor-dot { opacity: 1; }
   display: flex; align-items: flex-end; padding: 14px;
 }
 .uiux-preview.vitsetech { background: linear-gradient(135deg,#1a1f2e,#0d1117); }
-.uiux-preview.lifemap   { background: linear-gradient(135deg,#1a1020,#1f0d2a); }
 .uiux-preview.safari    { background: linear-gradient(135deg,#1a1a0a,#2a2800); }
 .uiux-preview.hotview     { background: linear-gradient(135deg,#0c1b16,#0a2a1f); }
 .uiux-preview.retro       { background: linear-gradient(135deg,#150c22,#1f0a2e); }
@@ -1007,6 +1006,13 @@ body:hover .cursor-dot { opacity: 1; }
   letter-spacing: 0.04em; opacity: 0.7; transition: opacity .2s;
 }
 .uiux-card:hover .uiux-link { opacity: 1; }
+.uiux-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.uiux-live {
+  font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted);
+  border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px;
+  transition: all .2s; white-space: nowrap;
+}
+.uiux-live:hover { color: var(--text-primary); border-color: var(--border-2); }
 
 /* ===================== CTA ===================== */
 .cta-section { padding: 110px 56px; position: relative; z-index: 1; overflow: hidden; }
@@ -1388,6 +1394,19 @@ body:hover .cursor-dot { opacity: 1; }
   color: var(--text-muted);
 }
 .cs-meta-item span { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.cs-meta-item span a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+.cs-meta-item span a:hover { border-color: var(--accent); }
+.cs-live-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 0; }
+.cs-live-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 22px; background: var(--accent); color: var(--bg-1);
+  font-family: var(--font-display); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.03em; text-transform: uppercase; border-radius: var(--r, 6px);
+  text-decoration: none; transition: all 0.2s;
+}
+.cs-live-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+.cs-live-btn.secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+.cs-live-btn.secondary:hover { border-color: var(--border-2); }
 .cs-section { margin: 44px 0; }
 .cs-section h2 {
   font-family: var(--font-display); font-size: clamp(20px, 3vw, 26px); font-weight: 700;
@@ -1492,7 +1511,6 @@ body:hover .cursor-dot { opacity: 1; }
   background: linear-gradient(135deg,#1a1f2e,#0d1117);
 }
 .card-img-placeholder.vitsetech { background: linear-gradient(135deg,#0d1829,#1a2f50); }
-.card-img-placeholder.lifemap   { background: linear-gradient(135deg,#1a1020,#1f0d2a); }
 .card-img-placeholder.retro     { background: linear-gradient(135deg,#241a08,#1a1204); }
 .placeholder-pattern {
   position: absolute; inset: 0;

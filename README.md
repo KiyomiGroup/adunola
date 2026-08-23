@@ -35,7 +35,6 @@ Just open `index.html` in your browser. Or use VS Code Live Server for best resu
   portfolia.html         Portfolia case study
   tailorcv.html          Tailor CV case study
   project-1.html         Vitsetech case study
-  project-2.html         Lifemap Naija case study
   project-3.html         Safari City case study
 ```
 
